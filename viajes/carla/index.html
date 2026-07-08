@@ -261,12 +261,12 @@
   <!-- Screen 1: Cover -->
   <div id="screen-cover" class="w-full min-h-screen flex flex-col items-center justify-center relative px-5 overflow-hidden">
    <button type="button" onclick="toggleMobileMenu()" aria-label="Abrir menú" class="absolute" style="top:20px; left:20px; z-index:60; background:transparent; border:none; color: var(--cream); font-size:24px; cursor:pointer; padding:6px;">☰</button>
-   <img loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" alt="Japón" src="">
+   <img loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" alt="Japón" src="https://images.unsplash.com/photo-1540959375944-7049f642e9cc?w=1200&h=600&fit=crop">
    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(20,45,87,0.92), rgba(91,201,214,0.75));"></div>
    <div class="relative text-center space-y-6">
     <h1 class="canva-text font-serif t-cover-title" style="color: rgb(250, 248, 245); font-weight: 500; letter-spacing: -0.02em;">Japón</h1>
     <p class="canva-text t-cover-sub" style="color: rgb(250, 248, 245); opacity: 0.95; font-weight: 400;">Tu viaje, diseñado para ti.</p>
-    <p class="canva-text" style="color: rgb(250, 248, 245); opacity: 0.85; font-weight: 400;"></p>
+    <p class="canva-text" style="color: rgb(250, 248, 245); opacity: 0.85; font-weight: 400;">15 días de bienestar y gastronomía (fechas a confirmar)</p>
    </div>
    <button type="button" onclick="navigateScreen('designed')" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-2 px-6 py-3 rounded-full" style="background: rgba(255,255,255,0.15); color: var(--cream); font-weight: 500; border: 1px solid rgba(255,255,255,0.3);"> Explorar <i data-lucide="arrow-right" style="width:16px;height:16px;"></i> </button>
   </div>
@@ -274,16 +274,16 @@
   <!-- Screen 2: Designed for you -->
   <div id="screen-designed" class="w-full min-h-screen hidden flex-col" style="background: var(--cream); padding-top: 92px;">
    <div style="height: clamp(260px, 48vw, 380px); overflow: hidden;">
-    <img loading="lazy" class="canva-image w-full h-full object-cover" alt="Japón" src="">
+    <img loading="lazy" class="canva-image w-full h-full object-cover" alt="Japón" src="https://images.unsplash.com/photo-1540959375944-7049f642e9cc?w=1200&h=600&fit=crop">
    </div>
    <div class="responsive-wrapper">
     <div class="responsive-content" style="max-width: 900px; padding-top: 28px; padding-bottom: 40px;">
      <button type="button" onclick="goBack()" class="back-btn"><i data-lucide="arrow-left" style="width:16px;height:16px;"></i> <span>Atrás</span></button>
      <div class="text-center mb-8">
       <p class="canva-text tracking-[0.3em] uppercase mb-3" style="color: var(--beige); font-weight: 600; font-size: clamp(10px,1.4vw,12px) !important;">Japón, en pocas palabras</p>
-      <p style="text-align:left;" class="canva-text leading-relaxed italic mb-8 text-center" style="color: rgb(20, 45, 87); font-weight: 400;"></p>
+      <p style="text-align:left;" class="canva-text leading-relaxed italic mb-8 text-center" style="color: rgb(20, 45, 87); font-weight: 400;">Minimalismo japonés, tranquilidad y excelencia gastronómica en pequeños espacios</p>
       <h1 class="canva-text font-serif mb-4 t-section-title" style="color: rgb(20, 45, 87); font-weight: 500;">Tu viaje, diseñado para ti</h1>
-      <p style="text-align:left;" class="canva-text leading-relaxed" style="color: rgb(20, 45, 87); opacity: 0.9; font-weight: 400;">Este itinerario se ha construido a partir de lo que nos contaste que buscabas en este viaje: tu ritmo, tus ganas y lo que querias evitar. Cada dia refleja esas prioridades.</p>
+      <p style="text-align:left;" class="canva-text leading-relaxed" style="color: rgb(20, 45, 87); opacity: 0.9; font-weight: 400;">Sabemos que buscas escapar del ruido turístico y sumergirte en la esencia del Japón más auténtico. Por eso hemos diseñado un recorrido que prioriza la calidad sobre la cantidad, con hoteles minimalistas de habitaciones blancas, restaurantes sin colas y experiencias wellness que te reconecten.</p>
      </div>
      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div class="canva-card rounded-xl p-6" style="background: rgb(250, 248, 245); border: 1px solid var(--beige);">
@@ -299,15 +299,7 @@
        </div>
       </div>
      </div>
-     <div class="canva-card mt-10 rounded-xl px-6 py-5" style="background: rgb(255, 244, 214); border: 1px solid var(--beige);">
-      <div class="flex items-start gap-3">
-       <span class="moment-emoji shrink-0 pt-0.5">🌍</span>
-       <div>
-        <p class="canva-text tracking-wider uppercase mb-1 t-uppercase-small" style="font-weight: 700; color: rgb(20, 45, 87);">Una nota de Carla</p>
-        <p class="canva-text leading-relaxed" style="color: rgb(20, 45, 87);">Este espacio es tuyo, Carla: escribe aqui cualquier indicacion o mensaje personal para este viajero en concreto.</p>
-       </div>
-      </div>
-     </div>
+
      <div class="mt-10 text-center">
       <button type="button" onclick="navigateScreen('overview')" class="inline-flex items-center gap-2 px-8 py-3 rounded-full" style="background: var(--navy); color: var(--cream); font-weight: 600;"> Tu viaje de un vistazo <i data-lucide="arrow-right" style="width:16px;height:16px;"></i> </button>
      </div>
@@ -328,9 +320,9 @@
         <p class="canva-text" style="color: var(--beige); font-weight: 700; font-size: clamp(19px, 4vw, 25px) !important; margin:0; line-height:1;">·</p>
         <div style="text-align:center;"><p class="canva-text" style="color: rgb(20, 45, 87); font-weight: 700; font-size: clamp(19px, 4vw, 25px) !important; margin:0; line-height:1;">15</p><p class="canva-text" style="color: rgb(20, 45, 87); font-weight: 600; font-size: clamp(11px, 1.6vw, 13px) !important; margin-top:4px; text-transform:uppercase; letter-spacing:0.06em;">Días</p></div>
         <p class="canva-text" style="color: var(--beige); font-weight: 700; font-size: clamp(19px, 4vw, 25px) !important; margin:0; line-height:1;">·</p>
-        <div style="text-align:center;"><p class="canva-text" style="color: rgb(20, 45, 87); font-weight: 700; font-size: clamp(19px, 4vw, 25px) !important; margin:0; line-height:1;"></p><p class="canva-text" style="color: rgb(20, 45, 87); font-weight: 600; font-size: clamp(11px, 1.6vw, 13px) !important; margin-top:4px; text-transform:uppercase; letter-spacing:0.06em;">Zonas</p></div>
+        <div style="text-align:center;"><p class="canva-text" style="color: rgb(20, 45, 87); font-weight: 700; font-size: clamp(19px, 4vw, 25px) !important; margin:0; line-height:1;">3</p><p class="canva-text" style="color: rgb(20, 45, 87); font-weight: 600; font-size: clamp(11px, 1.6vw, 13px) !important; margin-top:4px; text-transform:uppercase; letter-spacing:0.06em;">Zonas</p></div>
        </div>
-       <p class="canva-text" style="color: rgb(91, 201, 214); font-weight: 600; font-size: clamp(12px, 1.8vw, 14px) !important; margin-top: 14px; text-align:center;"></p>
+       <p class="canva-text" style="color: rgb(91, 201, 214); font-weight: 600; font-size: clamp(12px, 1.8vw, 14px) !important; margin-top: 14px; text-align:center;">15 días de bienestar y gastronomía (fechas a confirmar)</p>
       </div>
      </div>
      <div class="grid grid-cols-2" style="gap: 12px;">
@@ -413,7 +405,7 @@
 
   <!-- Screen 9: Cierre final -->
   <div id="screen-closing" class="w-full min-h-screen hidden flex-col items-center justify-center px-5 py-10 relative overflow-hidden">
-   <img loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" alt="Japón" src="">
+   <img loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover" alt="Japón" src="https://images.unsplash.com/photo-1540959375944-7049f642e9cc?w=1200&h=600&fit=crop">
    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(20,45,87,0.88), rgba(91,201,214,0.62));"></div>
    <div class="responsive-wrapper relative">
     <div class="responsive-content text-center">
