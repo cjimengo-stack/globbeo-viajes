@@ -145,7 +145,7 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
       <p class="disclaimer" id="disclaimer-normal">Este es tu precio cerrado, sin sorpresas ni ajustes de última hora.</p>
       <p class="disclaimer" id="disclaimer-especial" style="display:none;">Escríbeme y lo hablamos juntos para darte un precio cerrado hecho a tu medida.</p>
 
-      <a href="https://docs.google.com/forms/d/1Iv2f4BUTGG__2yLjvDAyXzRw1ALkHTbYl4pUGtmNGuI/viewform" class="cta" id="cta-normal">
+      <a href="#" class="cta" id="cta-normal">
         Empezar con el formulario
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
@@ -183,6 +183,8 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
   var ctaNote = document.getElementById('cta-note-normal');
   var ctaDivider = document.getElementById('cta-divider-normal');
   var ctaDirecto = document.getElementById('cta-directo');
+  var stripeBaseUrl = 'https://book.stripe.com/9B6cN7fey1afdI9eGfdjO01';
+  var formBaseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfCxTqMg8LL-XWOKDPd_9KfnJD3yZvn-zMhckier30iwClsaQ/viewform';
   var ctaEspecial = document.getElementById('cta-especial');
   var personas = 1;
   var zona = 1;
@@ -243,6 +245,9 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
     ctaEspecial.style.display = esEspecial ? 'flex' : 'none';
 
     var precio = precioCompleto(d, zona, personas);
+    var ref = precio + 'eur-' + d + 'dias-' + personas + 'pers-z' + zona;
+    ctaDirecto.href = stripeBaseUrl + '?client_reference_id=' + encodeURIComponent(ref);
+    ctaNormal.href = formBaseUrl + '?usp=pp_url&entry.1127958753=' + encodeURIComponent(precio);
 
     if (esEspecial){
       if (esViajeLargo && esGrupoGrande){
