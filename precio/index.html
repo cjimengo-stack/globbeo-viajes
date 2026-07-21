@@ -100,7 +100,7 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
     <div class="form-side">
       <div class="field">
         <label>Días de viaje</label>
-        <input type="range" min="1" max="22" value="9" id="dias">
+        <input type="range" min="1" max="22" value="1" id="dias">
         <div class="range-labels">
           <span>1</span>
           <span id="dias-out">9 días</span>
@@ -133,7 +133,7 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
       <div id="resultado-normal" class="result-box">
         <p class="result-label">Precio de tu itinerario</p>
         <p class="result-price" id="precio-out">209€</p>
-        <p class="result-note">50€ de reserva se descuentan de este precio</p>
+        <p class="result-note">Se descuentan 50€ de reserva de este precio.</p>
       </div>
 
       <div id="resultado-especial" class="result-box" style="display:none;">
@@ -152,7 +152,7 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
       <p class="cta-note" id="cta-note-normal">No se paga nada aquí. Te llegará un email con los datos para reservar tu plaza.</p>
 
       <div class="cta-divider" id="cta-divider-normal"><span>¿Ya hablamos antes?</span></div>
-      <a href="https://book.stripe.com/14A8wRaYi06bfQhbu3djO00" class="cta cta-secondary" id="cta-directo">
+      <a href="https://book.stripe.com/9B6cN7fey1afdI9eGfdjO01" class="cta cta-secondary" id="cta-directo">
         Reservar mi plaza (50€)
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
@@ -184,7 +184,7 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
   var ctaDivider = document.getElementById('cta-divider-normal');
   var ctaDirecto = document.getElementById('cta-directo');
   var ctaEspecial = document.getElementById('cta-especial');
-  var personas = 2;
+  var personas = 1;
   var zona = 1;
 
   function styleButtons(){
