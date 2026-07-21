@@ -10,47 +10,45 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Inter', -apple-system, sans-serif; background: #faf8f5; color: #142d57; padding: 32px 16px; }
-.wrap { max-width: 900px; margin: 0 auto; }
+.wrap { max-width: 640px; margin: 0 auto; }
 
-.logo-img { display: block; margin: 0 auto 10px; height: 80px; width: auto; }
-.subtitle { text-align: center; font-size: 15px; color: #6b6459; margin-bottom: 36px; }
+.logo-img { display: block; margin: 0 auto 12px; height: 80px; width: auto; }
+.subtitle { text-align: center; font-size: 16px; color: #6b6459; margin-bottom: 36px; }
 
-.card { background: #fff; border-radius: 20px; padding: 28px; box-shadow: 0 4px 24px rgba(20,45,87,0.08); }
-.grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+.card { background: #fff; border-radius: 20px; padding: 36px; box-shadow: 0 4px 24px rgba(20,45,87,0.08); }
 
-label { display:block; font-size: 14px; color: #142d57; margin-bottom: 10px; font-weight:600; }
+label { display:block; font-size: 15px; color: #142d57; margin-bottom: 12px; font-weight:600; }
 input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
-.range-labels { display:flex; justify-content:space-between; margin-top:6px; }
-.range-labels span:first-child, .range-labels span:last-child { font-size:12px; color:#8a8378; }
-#dias-out { font-size: 15px; font-weight:600; color:#142d57; }
+.range-labels { display:flex; justify-content:space-between; margin-top:8px; }
+.range-labels span:first-child, .range-labels span:last-child { font-size:13px; color:#8a8378; }
+#dias-out { font-size: 16px; font-weight:600; color:#142d57; }
 
-.field { margin-bottom: 26px; }
+.field { margin-bottom: 32px; }
 .field:last-child { margin-bottom: 0; }
-.pill-row { display:flex; gap:10px; }
-.pill { flex:1; padding:12px 8px; border-radius:10px; border:1.5px solid #dcc8b0; background:#fff; color:#142d57; font-size:15px; cursor:pointer; font-family:inherit; transition: all .15s; }
+.pill-row { display:flex; gap:12px; }
+.pill { flex:1; padding:14px 8px; border-radius:10px; border:1.5px solid #dcc8b0; background:#fff; color:#142d57; font-size:16px; cursor:pointer; font-family:inherit; transition: all .15s; }
 .pill:hover { border-color: #5bc9d6; }
 .pill.active { background:#5bc9d6; border-color:#5bc9d6; color: #06323a; font-weight: 600; }
 
-.zona-btn { text-align:left; width:100%; padding:14px 16px; border-radius:10px; border:1.5px solid #dcc8b0; background:#fff; color:#142d57; font-size:15px; cursor:pointer; font-family:inherit; margin-bottom:10px; display:block; transition: all .15s; }
+.zona-btn { text-align:left; width:100%; padding:16px 18px; border-radius:10px; border:1.5px solid #dcc8b0; background:#fff; color:#142d57; font-size:16px; cursor:pointer; font-family:inherit; margin-bottom:12px; display:block; transition: all .15s; }
 .zona-btn:hover { border-color: #5bc9d6; }
 .zona-btn.active { background:#5bc9d6; border-color:#5bc9d6; color: #06323a; font-weight: 600; }
 
-.result-col { display: flex; flex-direction: column; }
-.result-box { background: #fff4d6; border-radius: 16px; padding: 26px; text-align:center; flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.result-label { font-size: 14px; color: #142d57; opacity:0.75; margin-bottom:8px; }
-.result-price { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 600; color: #142d57; line-height: 1.1; }
+.result-box { background: #fff4d6; border-radius: 16px; padding: 30px; text-align:center; }
+.result-label { font-size: 15px; color: #142d57; opacity:0.75; margin-bottom:8px; }
+.result-price { font-family: 'Playfair Display', Georgia, serif; font-size: 44px; font-weight: 600; color: #142d57; line-height: 1.1; }
 .result-note { font-size: 13px; color: #142d57; opacity:0.6; margin-top:10px; }
-.disclaimer { font-size: 12.5px; color: #8a8378; margin:16px 0 0; line-height:1.5; text-align:center; }
+.disclaimer { font-size: 13px; color: #8a8378; margin:18px 0 0; line-height:1.6; text-align:center; }
 
-.cta { width:100%; margin-top: 18px; padding:16px; border-radius:10px; border:none; background:#142d57; color:#faf8f5; font-size:16px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; font-family:'Inter', inherit; transition: opacity .15s; }
+.cta { width:100%; margin-top: 20px; padding:18px; border-radius:10px; border:none; background:#142d57; color:#faf8f5; font-size:17px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; font-family:'Inter', inherit; transition: opacity .15s; }
 .cta:hover { opacity: 0.88; }
-.cta svg { width: 16px; height: 16px; }
+.cta svg { width: 17px; height: 17px; }
 
-@media (min-width: 720px) {
+@media (min-width: 700px) {
   body { padding: 56px 24px; }
   .logo-img { height: 96px; }
-  .card { padding: 44px; }
-  .grid { grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: stretch; }
+  .card { padding: 48px; }
+  .subtitle { font-size: 17px; margin-bottom: 44px; }
 }
 </style>
 </head>
@@ -60,67 +58,61 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
   <p class="subtitle">Calcula el precio orientativo de tu itinerario</p>
 
   <div class="card">
-    <div class="grid">
 
-      <div>
-        <div class="field">
-          <label>Días de viaje</label>
-          <input type="range" min="1" max="22" value="9" id="dias">
-          <div class="range-labels">
-            <span>1</span>
-            <span id="dias-out">9 días</span>
-            <span>21+</span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Personas</label>
-          <div class="pill-row" id="personas-group">
-            <button type="button" class="pill" data-p="1">1</button>
-            <button type="button" class="pill" data-p="2">2</button>
-            <button type="button" class="pill" data-p="3">3</button>
-            <button type="button" class="pill" data-p="4">4</button>
-            <button type="button" class="pill" data-p="5">5+</button>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>¿Cómo es tu ruta?</label>
-          <div id="zona-group">
-            <button type="button" class="zona-btn" data-z="1">Un solo destino o zona</button>
-            <button type="button" class="zona-btn" data-z="2">Varias zonas dentro del mismo país</button>
-            <button type="button" class="zona-btn" data-z="3">Varios países en el mismo viaje</button>
-          </div>
-        </div>
+    <div class="field">
+      <label>Días de viaje</label>
+      <input type="range" min="1" max="22" value="9" id="dias">
+      <div class="range-labels">
+        <span>1</span>
+        <span id="dias-out">9 días</span>
+        <span>21+</span>
       </div>
-
-      <div class="result-col">
-        <div id="resultado-normal" class="result-box">
-          <p class="result-label">Precio orientativo del diseño de tu itinerario</p>
-          <p class="result-price" id="precio-out">209€</p>
-          <p class="result-note">30€ de reserva se descuentan de este precio</p>
-        </div>
-
-        <div id="resultado-especial" class="result-box" style="display:none;">
-          <p class="result-label" id="etiqueta-especial">Viaje largo</p>
-          <p class="result-price" id="precio-especial">Desde 349€</p>
-          <p class="result-note">Presupuesto a medida — escríbeme y lo hablamos juntos</p>
-        </div>
-
-        <p class="disclaimer">Número orientativo. El precio final te lo confirmo por escrito, cerrado y sin sorpresas, antes de empezar a diseñar.</p>
-
-        <a href="https://docs.google.com/forms/d/1Iv2f4BUTGG__2yLjvDAyXzRw1ALkHTbYl4pUGtmNGuI/viewform" class="cta" id="cta-normal">
-          Reservar mi plaza
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-
-        <a href="https://wa.me/34657571172?text=Hola%20Carla,%20tengo%20un%20grupo%20grande%20o%20un%20viaje%20largo%20y%20quiero%20hablar%20sobre%20mi%20presupuesto" class="cta" id="cta-especial" style="display:none;">
-          Escríbeme para tu presupuesto
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-
     </div>
+
+    <div class="field">
+      <label>Personas</label>
+      <div class="pill-row" id="personas-group">
+        <button type="button" class="pill" data-p="1">1</button>
+        <button type="button" class="pill" data-p="2">2</button>
+        <button type="button" class="pill" data-p="3">3</button>
+        <button type="button" class="pill" data-p="4">4</button>
+        <button type="button" class="pill" data-p="5">5+</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>¿Cómo es tu ruta?</label>
+      <div id="zona-group">
+        <button type="button" class="zona-btn" data-z="1">Un solo destino o zona</button>
+        <button type="button" class="zona-btn" data-z="2">Varias zonas dentro del mismo país</button>
+        <button type="button" class="zona-btn" data-z="3">Varios países en el mismo viaje</button>
+      </div>
+    </div>
+
+    <div id="resultado-normal" class="result-box">
+      <p class="result-label">Precio orientativo del diseño de tu itinerario</p>
+      <p class="result-price" id="precio-out">209€</p>
+      <p class="result-note">30€ de reserva se descuentan de este precio</p>
+    </div>
+
+    <div id="resultado-especial" class="result-box" style="display:none;">
+      <p class="result-label" id="etiqueta-especial">Viaje largo</p>
+      <p class="result-price" id="precio-especial">Desde 349€</p>
+      <p class="result-note">Presupuesto a medida — escríbeme y lo hablamos juntos</p>
+    </div>
+
+    <p class="disclaimer">Número orientativo. El precio final te lo confirmo por escrito, cerrado y sin sorpresas, antes de empezar a diseñar.</p>
+
+    <a href="https://docs.google.com/forms/d/1Iv2f4BUTGG__2yLjvDAyXzRw1ALkHTbYl4pUGtmNGuI/viewform" class="cta" id="cta-normal">
+      Reservar mi plaza
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+
+    <a href="https://wa.me/34657571172?text=Hola%20Carla,%20tengo%20un%20grupo%20grande%20o%20un%20viaje%20largo%20y%20quiero%20hablar%20sobre%20mi%20presupuesto" class="cta" id="cta-especial" style="display:none;">
+      Escríbeme para tu presupuesto
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+
   </div>
 </div>
 
@@ -185,8 +177,8 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
     var esGrupoGrande = personas >= 5;
     var esEspecial = esViajeLargo || esGrupoGrande;
 
-    resNormal.style.display = esEspecial ? 'none' : 'flex';
-    resEspecial.style.display = esEspecial ? 'flex' : 'none';
+    resNormal.style.display = esEspecial ? 'none' : 'block';
+    resEspecial.style.display = esEspecial ? 'block' : 'none';
     ctaNormal.style.display = esEspecial ? 'none' : 'flex';
     ctaEspecial.style.display = esEspecial ? 'flex' : 'none';
 
