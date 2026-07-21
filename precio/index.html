@@ -4,136 +4,105 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calcula el precio de tu itinerario | Globbeo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #faf8f5; color: #142d57; padding: 32px 16px; }
-.wrap { max-width: 880px; margin: 0 auto; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: #faf8f5; color: #142d57; padding: 32px 16px; }
+.wrap { max-width: 480px; margin: 0 auto; }
 
-.brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 6px; }
-.brand svg { width: 30px; height: 30px; flex-shrink: 0; }
-.brand span { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; letter-spacing: 2px; color: #142d57; }
-.subtitle { text-align: center; font-size: 15px; color: #6b6459; margin-bottom: 36px; }
+.logo-img { display: block; margin: 0 auto 12px; height: 56px; width: auto; }
+.subtitle { text-align: center; font-size: 14px; color: #6b6459; margin-bottom: 28px; }
 
-.card { background: #fff; border-radius: 20px; padding: 32px; box-shadow: 0 4px 24px rgba(20,45,87,0.08); }
-.grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+.card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(20,45,87,0.06); }
 
-label { display:block; font-size: 14px; color: #142d57; margin-bottom: 10px; font-weight:600; }
-input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
-.range-labels { display:flex; justify-content:space-between; margin-top:6px; }
+label { display:block; font-size: 14px; color: #142d57; margin-bottom: 8px; font-weight:600; }
+input[type=range] { width:100%; accent-color:#5bc9d6; }
+.range-labels { display:flex; justify-content:space-between; margin-top:4px; }
 .range-labels span:first-child, .range-labels span:last-child { font-size:12px; color:#8a8378; }
 #dias-out { font-size: 15px; font-weight:600; color:#142d57; }
 
-.field { margin-bottom: 28px; }
-.field:last-child { margin-bottom: 0; }
-.pill-row { display:flex; gap:10px; }
-.pill { flex:1; padding:12px 8px; border-radius:10px; border:1.5px solid #dcc8b0; background:#fff; color:#142d57; font-size:15px; cursor:pointer; font-family:inherit; transition: all .15s; }
-.pill:hover { border-color: #5bc9d6; }
+.field { margin-bottom: 24px; }
+.pill-row { display:flex; gap:8px; }
+.pill { flex:1; padding:10px 8px; border-radius:8px; border:1px solid #dcc8b0; background:#fff; color:#142d57; font-size:14px; cursor:pointer; font-family:inherit; }
 .pill.active { background:#5bc9d6; border-color:#5bc9d6; color: #06323a; font-weight: 600; }
 
-.zona-btn { text-align:left; width:100%; padding:14px 16px; border-radius:10px; border:1.5px solid #dcc8b0; background:#fff; color:#142d57; font-size:15px; cursor:pointer; font-family:inherit; margin-bottom:10px; display:flex; align-items:center; gap:10px; transition: all .15s; }
-.zona-btn:hover { border-color: #5bc9d6; }
+.zona-btn { text-align:left; width:100%; padding:12px 14px; border-radius:8px; border:1px solid #dcc8b0; background:#fff; color:#142d57; font-size:14px; cursor:pointer; font-family:inherit; margin-bottom:8px; display:block; }
 .zona-btn.active { background:#5bc9d6; border-color:#5bc9d6; color: #06323a; font-weight: 600; }
-.zona-dot { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #dcc8b0; flex-shrink: 0; }
-.zona-btn.active .zona-dot { background: #142d57; border-color: #142d57; }
 
-.result-col { display: flex; flex-direction: column; }
-.result-box { background: #fff4d6; border-radius: 16px; padding: 28px; text-align:center; flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.result-label { font-size: 14px; color: #142d57; opacity:0.75; margin-bottom:8px; }
-.result-price { font-size: 40px; font-weight: 700; color: #142d57; line-height: 1.1; }
-.result-note { font-size: 13px; color: #142d57; opacity:0.6; margin-top:12px; }
-.disclaimer { font-size: 12.5px; color: #8a8378; margin:16px 0 0; line-height:1.5; text-align:center; }
+.result-box { background: #fff4d6; border-radius: 12px; padding: 20px; text-align:center; }
+.result-label { font-size: 13px; color: #142d57; opacity:0.75; margin-bottom:4px; }
+.result-price { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 600; color: #142d57; }
+.result-note { font-size: 12px; color: #142d57; opacity:0.6; margin-top:8px; }
+.disclaimer { font-size: 12px; color: #8a8378; margin:14px 0 0; line-height:1.5; text-align:center; }
 
-.cta { width:100%; margin-top: 18px; padding:16px; border-radius:10px; border:none; background:#142d57; color:#faf8f5; font-size:16px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; font-family:inherit; transition: opacity .15s; }
-.cta:hover { opacity: 0.88; }
-.cta svg { width: 16px; height: 16px; }
-
-@media (min-width: 720px) {
-  body { padding: 56px 24px; }
-  .card { padding: 44px; }
-  .grid { grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: stretch; }
-  .brand svg { width: 36px; height: 36px; }
-  .brand span { font-size: 32px; }
-  .subtitle { font-size: 16px; margin-bottom: 44px; }
-}
+.cta { width:100%; margin-top: 16px; padding:14px; border-radius:8px; border:none; background:#142d57; color:#faf8f5; font-size:15px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none; font-family:'Inter', inherit; }
+.cta:hover { opacity: 0.9; }
+.cta svg { width: 15px; height: 15px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-
-  <div class="brand">
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="9.5" stroke="#142d57" stroke-width="1.4"/>
-      <ellipse cx="12" cy="12" rx="4" ry="9.5" stroke="#142d57" stroke-width="1.4"/>
-      <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#142d57" stroke-width="1.4"/>
-      <path d="M4 7.5C6.5 9 9 9.7 12 9.7C15 9.7 17.5 9 20 7.5" stroke="#142d57" stroke-width="1.4"/>
-      <path d="M4 16.5C6.5 15 9 14.3 12 14.3C15 14.3 17.5 15 20 16.5" stroke="#142d57" stroke-width="1.4"/>
-    </svg>
-    <span>globbeo</span>
-  </div>
+  <img class="logo-img" alt="Globbeo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwODAgMTA4MCIgZmlsbD0iIzFhMjk0MiI+PHBhdGggZD0iTTI5My44OCw1ODUuMjZ2LTM4LjFjLTE3LjA4LDEuNzEtMjEuMjEsMTQuMzctMjIuMTcsMjEuMzF2MTYuNzljMCwyNi4xMS01LjE3LDMzLjAxLTE1Ljc3LDMyLjUydjIuMjJoNTMuNzF2LTIuMjJjLTEwLjU5LjQ5LTE1Ljc3LTYuNC0xNS43Ny0zMi41MloiLz48cGF0aCBkPSJNMjcxLjcsNDg2LjIzdjI3Ljk0LS4xOHMtMS4xLDIzLjQ5LDIyLjE3LDI2LjAydi0xMDQuNzdjLTYuNjUsOS42MS0yMy40LDE2LjI2LTM3Ljk0LDE2LjI2djIuMjJjMTAuNTktLjQ5LDE1Ljc3LDYuNCwxNS43NywzMi41MloiLz48cGF0aCBkPSJNODc0LjU2LDQ4Ni4yM2MtMzMuMzIsMC02MC44MywyNC40NC02NS45MSw1Ni4zNGguMDZ2LjA1aDEuNTVjLjc1LjAyLDYuMzQtLjIzLDEyLjc2LS41MywxLjQ4LS4wNywzLjAxLS4xNCw0LjUzLS4yMSw4LjA4LS4zOCwxNi4wNC0uNzksMTYuNTQtLjg0LDkuMDktLjM2LDM1LjA5LTEuNyw0NC41Ni0yLjg3LTQuMzUtOS4xMS04LjgyLTE4LjQ3LTEzLjQ5LTI4LjI2LDIuMzMuNzgsNC4yMiwxLjI0LDUuNDcsMy4wNCwxLjE1LDEuNjUsMi40NiwzLjE5LDMuNjEsNC44NC45LDEuMywxLjk4LDIuMDEsMy42MiwxLjgzLjUtLjA2LDEuMDkuMDMsMS41Mi4yNy40Ni4yNSwxLjExLjgsMS4wNywxLjE1LS4wNi41LS42MSwxLjAxLTEuMDYsMS4zOS0uMjYuMjItLjc0LjE3LTEuMy4yOC45MiwxLjIzLDEuNjcsMi4xNywyLjM1LDMuMTcsMS4wNiwxLjU2LDIuMTcsMi44Miw0LjQsMi4zNC41NS0uMTIsMS4yOC42MywxLjkzLjk3LS40NC44Mi0uODgsMS42NC0xLjUsMi43OCwxLjE4LDEuNTcsMi41OSwzLjU3LDQuMTYsNS40NS4zNi40NCwxLjIzLjU5LDEuODguNjMsMy42Mi4yLDcuMjcuMTQsMTAuODYuNTYsMS44MS4yMSwzLjU3LDEuMTksNS4yOCwxLjk2LjE1LjA3LjI0LjE3LjM1LjI2LjQ5LjM4LjY1LjkxLjQyLDEuNC0uMS4yLS4yNS40LS40Ny41Ni0xLjE2Ljg4LTIuNSwxLjgyLTMuODgsMi4wNi0zLjY1LjY0LTcuMzUsMS4wNi0xMS4wNCwxLjI3LTIsLjExLTMuMjUuNzUtNC4xNCwyLjU2LS44LDEuNjEtMS45NSwzLjA0LTIuNjYsNC4xMS44NywxLjA4LDEuMzgsMS43MiwxLjg4LDIuMzYtLjYyLjQzLTEuMjMsMS4yMy0xLjg2LDEuMjQtMi40NC4wNi0zLjc5LDEuMzQtNC43NSwzLjQyLS4zOS44NS0xLjEyLDEuNTUtMS44NywyLjU1LjcxLjA3LDEuMjctLjAyLDEuNjMuMjEuNDQuMjcuOTQuNzguOTksMS4yMy4wNS40Mi0uNDEuOTQtLjc2LDEuMzItLjE5LjIxLS42MS4zNC0uOS4zMS0zLjQ4LS4zNi00LjUsMi40NC02LjAzLDQuNjItMS41OCwyLjI2LTIuNzMsNC45Ny01LjgsNS43NC0uMjMuMDYtLjQ4LjA2LS45Ni4xMi4xMy0uNTcuMTctLjk5LjMzLTEuMzcsMy41LTguNTMsNy4wMi0xNy4wNiwxMC41MS0yNS42LjkxLTIuMjIuODUtMi4yLTEuNDctMi4yOS04Ljc1LS4zNC0zNC41NS0yLTQzLjMxLTIuMjgtLjQyLS4wMS04LjE0LS4zLTE2LjA2LS41OC0xLjU2LS4wNi0zLjEzLS4xMS00LjY1LS4xNy02LjM2LS4yMy0xMS45MS0uNDItMTIuNjktLjQzaC0xLjU1czAsLjM2LDAsLjM2aC0uMjFjLS40NiwzLjE3LS43LDYuNDEtLjcsOS43LDAsMzYuOTUsMjkuODEsNjYuNzYsNjYuNzYsNjYuNzZzNjcuMDEtMjkuODEsNjcuMDEtNjYuNzYtMzAuMDYtNjcuMDEtNjcuMDEtNjcuMDFaIi8+PHBhdGggZD0iTTgwOC42NCw1NDIuNjJzMC0uMDMsMC0uMDVsLTI5LjMtLjA5LS4wMi0uMDZzMCwuMDUsMCwuMDdsMjkuMzEuMTNaIi8+PHBhdGggZD0iTTgwOC42NSw1NDIuNTdsLTIuMTMtLjIxYy43Mi4xMiwxLjQzLjIxLDIuMTMuMjEsMCwwLDAsMCwwLDBaIi8+PHBhdGggZD0iTTgwOC43MSw1NDMuMTloLS4xNmMtLjAyLjEyLS4wMy4yNC0uMDQuMzVoLjIxczAtLjM1LDAtLjM1WiIvPjxwYXRoIGQ9Ik04MDguNyw1NDIuNThoLS4wNnMwLDAsMCwwYy4wMiwwLC4wNCwwLC4wNiwwWiIvPjxwYXRoIGQ9Ik04MDguNjQsNTQyLjYyaC4wN3YtLjA1aC0uMDZzMCwuMDMsMCwuMDVaIi8+PHBhdGggZD0iTTY4My42OSw1NDQuMDVsLTIuNDEuMDJjLTMyLjQsMS43Ny05LjIzLDQzLjAzLTkuMjMsNDMuMDNsLS4wOS0uMDdjMTEuNjMsMTkuNzUsMzMuMTIsMzIuOTgsNTcuNTYsMzIuOTgsMzEuNTMsMCw1Ny42NS0yMS42OCw2NS4wNC01MC43NWgtMi4yMmMtOC4zOCwyNC4xNC0yNy4xLDM4LjQzLTQ2LjgxLDQwLjY1LTMxLjUzLDMuNDUtNTQuMi0yMi45MS02MC44NS01MS0xLjQ4LTYuMTYtMS4zNS01LjY3LTEuNTktMTEuNThsMTI1LjQxLTMuNzhjLjAyLS4xMi4wMy0uMjMuMDQtLjM1bC00Mi40MS4yOS04Mi40NC41N1oiLz48cGF0aCBkPSJNODA2LjUyLDU0Mi4zNmMtMTYuMTMtMi43My0zOC4wMy0zMy44Ni0zOC4wMy0zMy44NmwuMDMuMDhjLTguNzEtMTIuODctMjIuMjUtMjIuMy0zOS0yMi4zNi01Ljg5LS4wMi0xMS42Ljc1LTE3LjA2LDIuMTktNy4zOSwyLjItMTcuMiw2LjY0LTI2LjksMTUuNTMtMTAuNDEsMTEuMTgtMzEuMTgsMzYuNzEtNS4zLDM4LjExbDMuNzkuMDIsOTUuMjcuNDJzMC0uMDUsMC0uMDdsLjAyLjA2LDI5LjMuMDlzMCwwLDAsMGMtLjY5LDAtMS40MS0uMDktMi4xMy0uMjFaTTc0Ny45Nyw1NDAuMTloLTY1LjVjLjk4LTE5Ljk1LDEwLjgzLTQwLjQxLDI2LjM2LTQ1LjgzLDIyLjEzLTcuODcsNDkuMTUsMTIuMjYsNTIuNjcsNDUuNjYsMCwuMDYuMDIuMTEuMDIuMTdoLTEzLjU0WiIvPjxwYXRoIGQ9Ik04MDguNjUsNTQyLjU4aC4wNnMtLjA0LDAtLjA2LDBjMCwwLDAsMCwwLDBaIi8+PHBhdGggZD0iTTU5MC4zNCw2MTUuNTZjLTE3LDAtMTguNDgtMTcuMjQtMTguNDgtMzAuM3YtMTAuNjhsLjEyLjQycy0uMTItMjQuOTQsMTguMS0yOS40MmwtMTguMjIuMTNoLS40NnMtNS44NS4wNC01Ljg1LjA0Yy0xMi4zMiwzLjk1LTE1LjIyLDE5LjY1LTE1Ljg2LDI4LjUydjEwLjk5YzAsMjYuMTEtNC45MywzMy4wMS0xNS43NywzMi41MnYyLjIyaDYwLjM2YzQxLjY3LDAsNjQuODUtMzguMjcsNjcuMjgtNzQuOTFsLTIyLjM4LjE2Yy0xLjc2LDI4LjI4LTE2LjA3LDcwLjMyLTQ4Ljg0LDcwLjMyWiIvPjxwYXRoIGQ9Ik02MjEuNjIsNDg2LjIzYy0yMC42OSwwLTM3Ljk0LDEzLjA2LTQ5Ljc2LDI5LjMydi04MC4zMWMtNy4xNSw5Ljg1LTIzLjE2LDE2LjI2LTM3Ljk0LDE2LjI2djIuMjJjMTAuODQtLjQ5LDE1Ljc3LDYuNjUsMTUuNzcsMzIuNTJ2MjIuNmMuMzcsOC44LDIuODUsMjguNDYsMTcuMjcsMzIuMTZoMi4yNnMyLjY0LjAyLDIuNjQuMDJsMjAuMzguMDljLTIxLjY4LTMuNDgtMTIuMDQtMjMtNS45NS0zMi40Miw2LjktOC43MSwxNS44LTExLjM4LDE4Ljg0LTEyLjA1LDMuMjEtLjU4LDYuNTctLjY0LDEwLjA5LS4wNSwxOS43MSwzLjIsMjQuMTQsMjcuODQsMjQuMTQsNDQuMzQsMCwuMTMsMCwuMjYtLjAxLjM5bDIyLjM4LjFjLjAzLS45LjA1LTEuODEuMDUtMi43MSwwLTI4LjA4LTEzLjc5LTUyLjQ4LTQwLjE2LTUyLjQ4WiIvPjxwYXRoIGQ9Ik00NzYuMTIsNjE1LjU2Yy0xNywwLTE4LjQ4LTE3LjI0LTE4LjQ4LTMwLjN2LTEwLjY4bC4xMi40MnMtLjEyLTI0Ljk0LDE4LjEtMjkuNDJsLTE4LjIyLjEzaC0uNDZzLTUuODUuMDQtNS44NS4wNGMtMTIuMzIsMy45NS0xNS4yMiwxOS42NS0xNS44NiwyOC41MnYxMC45OWMwLDI2LjExLTQuOTMsMzMuMDEtMTUuNzcsMzIuNTJ2Mi4yMmg2MC4zNmM0MS42NywwLDY0Ljg1LTM4LjI3LDY3LjI4LTc0LjkxbC0yMi4zOC4xNmMtMS43NiwyOC4yOC0xNi4wNyw3MC4zMi00OC44NCw3MC4zMloiLz48cGF0aCBkPSJNNTA3LjQxLDQ4Ni4yM2MtMjAuNjksMC0zNy45NCwxMy4wNi00OS43NiwyOS4zMnYtODAuMzFjLTcuMTUsOS44NS0yMy4xNiwxNi4yNi0zNy45NCwxNi4yNnYyLjIyYzEwLjg0LS40OSwxNS43Nyw2LjY1LDE1Ljc3LDMyLjUydjIyLjZjLjM3LDguOCwyLjg1LDI4LjQ2LDE3LjI3LDMyLjE2aDIuMjZzMi42NC4wMiwyLjY0LjAybDIwLjM4LjA5Yy0yMS42OC0zLjQ4LTEyLjA0LTIzLTUuOTUtMzIuNDIsNi45LTguNzEsMTUuOC0xMS4zOCwxOC44NC0xMi4wNSwzLjIxLS41OCw2LjU3LS42NCwxMC4wOS0uMDUsMTkuNzEsMy4yLDI0LjE0LDI3Ljg0LDI0LjE0LDQ0LjM0LDAsLjEzLDAsLjI2LS4wMS4zOWwyMi4zOC4xYy4wMy0uOS4wNS0xLjgxLjA1LTIuNzEsMC0yOC4wOC0xMy43OS01Mi40OC00MC4xNi01Mi40OFoiLz48cGF0aCBkPSJNNDMxLjU3LDU0Ni4wNWwtMjEuODkuMTVjNy4zLDI5Ljc3LTIuNTMsNTguMjItMjMuNzksNjUuOTEtMTkuMTgsNi42Ni00MS41MS01LjM5LTU1LjMxLTI3Ljg2aDBzLS4wMy0uMDUtLjA5LS4xNGMtLjQtLjY2LS43OC0xLjM0LTEuMTctMi4wMS00LjM4LTcuODQtMTcuNjUtMzQuNTQsNC40LTM1LjM4bC05LjQ4LjA3LTYuMDYuMDZoLS4wOGMtMTguNzkuNzMtMTkuNDEsMTMuNjYtMTguNDcsMjAuMzEsNi4zOSwzMC4yMywzMy4xMyw1Mi44Myw2NS4zMSw1Mi44MywzNi45NSwwLDY3LjAxLTI5LjgxLDY3LjAxLTY2Ljc2LDAtMi40My0uMTQtNC44Mi0uMzktNy4xOFoiLz48cGF0aCBkPSJNMzE3LjkxLDU0MC4yN3MwLDAsLjAxLDBjLjA5LDAsLjE2LjAyLjI1LjAyaC0uMTkuNzRzMTYuODkuMDgsMTYuODkuMDhjLTE4LjE5LS45Mi0xMy44NS0yMC45Mi0xMi43Ny0yNS4wMSw0LjQ0LTEwLjA0LDExLjc0LTE3LjY0LDIxLjQtMjEsMjMuNC04LjM3LDUxLjQ5LDExLjMzLDYzLjA3LDQzLjg1LjI5LjgzLjU1LDEuNjUuODEsMi40OGwyMi42NC4xYy01Ljg1LTMxLjAyLTMzLjEzLTU0LjU2LTY1LjgzLTU0LjU2LTIwLjE1LDAtMzguMTYsOC45NS01MC4zOSwyMy4wNi0yLjk4LDMuODUtMjIuMTQsMjkuODUsMy4zNSwzMC45OFoiLz48cGF0aCBkPSJNMjY0LjI0LDU0OC43MWMwLDguNDQtLjA1LDE2Ljg4LjAxLDI1LjMzLjE0LDE4LjkxLTYuOTYsMzQuNjYtMjAuODQsNDcuMy0yLjg5LDIuNjMtMi40OCwzLjk2LjE4LDYuMzksMTYuNTIsMTUuMTEsMjIuOCwzNC4xMSwyMC4xNiw1Ni4wNy0yLjgyLDIzLjQyLTIyLjE4LDQ1LjItNDUuMDIsNTEtNC4zMSwxLjA5LTguNzksMS41My0xMy4yLDIuMjMtMi42Ny40Mi0zLjg0LS42NC0zLjc4LTMuNDguMTQtNi4wNi4xNC0xMi4xNC4wMS0xOC4yLS4wNi0yLjc4LjktMy44OCwzLjc3LTQuMjgsMTUuNzEtMi4xNywyNi4xOC0xMC45NCwzMS4yNS0yNS45NCw2LjM2LTE4LjgxLTUuNDEtNDAuODYtMjQuNjItNDYuMDEtNC4wMi0xLjA4LTguMjktMS41Ny0xMi40Ni0xLjY3LTI4Ljg1LS43Mi01My43Ni0yMS44NS01OS42MS00OS4zNC03LjMtMzQuMjgsMTMuNjUtNjcuODgsNDkuMzQtNzUuMzUsNC4yMi0uODgsOC42NS0xLjAyLDEyLjk4LTEuMDEsMTkuMTEuMDMsMzguMjIuMzMsNTcuMzIuMzIsMy41NSwwLDQuNDcsMS4yMiw0LjQyLDQuNi0uMTgsMTAuNjgtLjA3LDIxLjM3LS4wNywzMi4wNS4wNSwwLC4wOSwwLC4xNCwwWk0yMDEuNDIsNjExLjQ1YzIwLjEyLjExLDM2LjkxLTE2LjQxLDM3LjA0LTM2LjQ1LjEzLTIwLjgtMTYuMjYtMzcuMjUtMzcuMjgtMzcuNDItMTkuODItLjE2LTM2LjQ1LDE2LjU5LTM2LjYyLDM2Ljg4LS4xNywyMC4yNSwxNi40LDM2Ljg4LDM2Ljg2LDM2Ljk5WiIvPjwvc3ZnPg==">
   <p class="subtitle">Calcula el precio orientativo de tu itinerario</p>
 
   <div class="card">
-    <div class="grid">
 
-      <div>
-        <div class="field">
-          <label>Días de viaje</label>
-          <input type="range" min="1" max="22" value="9" id="dias">
-          <div class="range-labels">
-            <span>1</span>
-            <span id="dias-out">9 días</span>
-            <span>21+</span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Personas</label>
-          <div class="pill-row" id="personas-group">
-            <button type="button" class="pill" data-p="1">1</button>
-            <button type="button" class="pill" data-p="2">2</button>
-            <button type="button" class="pill" data-p="3">3</button>
-            <button type="button" class="pill" data-p="4">4</button>
-            <button type="button" class="pill" data-p="5">5+</button>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>¿Cómo es tu ruta?</label>
-          <div id="zona-group">
-            <button type="button" class="zona-btn" data-z="1"><span class="zona-dot"></span>Un solo destino o zona</button>
-            <button type="button" class="zona-btn" data-z="2"><span class="zona-dot"></span>Varias zonas dentro del mismo país</button>
-            <button type="button" class="zona-btn" data-z="3"><span class="zona-dot"></span>Varios países en el mismo viaje</button>
-          </div>
-        </div>
+    <div class="field">
+      <label>Días de viaje</label>
+      <input type="range" min="1" max="22" value="9" id="dias">
+      <div class="range-labels">
+        <span>1</span>
+        <span id="dias-out">9 días</span>
+        <span>21+</span>
       </div>
-
-      <div class="result-col">
-        <div id="resultado-normal" class="result-box">
-          <p class="result-label">Precio orientativo del diseño de tu itinerario</p>
-          <p class="result-price" id="precio-out">209€</p>
-          <p class="result-note">30€ de reserva se descuentan de este precio</p>
-        </div>
-
-        <div id="resultado-especial" class="result-box" style="display:none;">
-          <p class="result-label" id="etiqueta-especial">Viaje largo</p>
-          <p class="result-price" id="precio-especial">Desde 349€</p>
-          <p class="result-note">Presupuesto a medida — escríbeme y lo hablamos juntos</p>
-        </div>
-
-        <p class="disclaimer">Número orientativo. El precio final te lo confirmo por escrito, cerrado y sin sorpresas, antes de empezar a diseñar.</p>
-
-        <a href="https://docs.google.com/forms/d/1Iv2f4BUTGG__2yLjvDAyXzRw1ALkHTbYl4pUGtmNGuI/viewform" class="cta" id="cta-normal">
-          Reservar mi plaza
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-
-        <a href="https://wa.me/34657571172?text=Hola%20Carla,%20tengo%20un%20grupo%20grande%20o%20un%20viaje%20largo%20y%20quiero%20hablar%20sobre%20mi%20presupuesto" class="cta" id="cta-especial" style="display:none;">
-          Escríbeme para tu presupuesto
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-
     </div>
+
+    <div class="field">
+      <label>Personas</label>
+      <div class="pill-row" id="personas-group">
+        <button type="button" class="pill" data-p="1">1</button>
+        <button type="button" class="pill" data-p="2">2</button>
+        <button type="button" class="pill" data-p="3">3</button>
+        <button type="button" class="pill" data-p="4">4</button>
+        <button type="button" class="pill" data-p="5">5+</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>¿Cómo es tu ruta?</label>
+      <div id="zona-group">
+        <button type="button" class="zona-btn" data-z="1">Un solo destino o zona</button>
+        <button type="button" class="zona-btn" data-z="2">Varias zonas dentro del mismo país</button>
+        <button type="button" class="zona-btn" data-z="3">Varios países en el mismo viaje</button>
+      </div>
+    </div>
+
+    <div id="resultado-normal" class="result-box">
+      <p class="result-label">Precio orientativo del diseño de tu itinerario</p>
+      <p class="result-price" id="precio-out">209€</p>
+      <p class="result-note">30€ de reserva se descuentan de este precio</p>
+    </div>
+
+    <div id="resultado-especial" class="result-box" style="display:none;">
+      <p class="result-label" id="etiqueta-especial">Viaje largo</p>
+      <p class="result-price" id="precio-especial">Desde 349€</p>
+      <p class="result-note">Presupuesto a medida — escríbeme y lo hablamos juntos</p>
+    </div>
+
+    <p class="disclaimer">Número orientativo. El precio final te lo confirmo por escrito, cerrado y sin sorpresas, antes de empezar a diseñar.</p>
+
+    <a href="https://docs.google.com/forms/d/1Iv2f4BUTGG__2yLjvDAyXzRw1ALkHTbYl4pUGtmNGuI/viewform" class="cta" id="cta-normal">
+      Reservar mi plaza
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+
+    <a href="https://wa.me/34657571172?text=Hola%20Carla,%20tengo%20un%20grupo%20grande%20o%20un%20viaje%20largo%20y%20quiero%20hablar%20sobre%20mi%20presupuesto" class="cta" id="cta-especial" style="display:none;">
+      Escríbeme para tu presupuesto
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+
   </div>
 </div>
 
@@ -198,8 +167,8 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
     var esGrupoGrande = personas >= 5;
     var esEspecial = esViajeLargo || esGrupoGrande;
 
-    resNormal.style.display = esEspecial ? 'none' : 'flex';
-    resEspecial.style.display = esEspecial ? 'flex' : 'none';
+    resNormal.style.display = esEspecial ? 'none' : 'block';
+    resEspecial.style.display = esEspecial ? 'block' : 'none';
     ctaNormal.style.display = esEspecial ? 'none' : 'flex';
     ctaEspecial.style.display = esEspecial ? 'flex' : 'none';
 
