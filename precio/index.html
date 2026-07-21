@@ -44,22 +44,33 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
 .cta:hover { opacity: 0.88; }
 .cta svg { width: 18px; height: 18px; }
 
+.cta-note { font-size: 13px; color: #8a8378; text-align: center; margin-top: 10px; line-height: 1.5; }
+
+.cta-secondary { background: transparent; border: 1.5px solid #142d57; color: #142d57; margin-top: 14px; }
+.cta-secondary:hover { opacity: 1; background: rgba(20,45,87,0.06); }
+
+.cta-divider { display:flex; align-items:center; gap:12px; margin-top: 24px; }
+.cta-divider::before, .cta-divider::after { content:''; flex:1; height:1px; background:#dcc8b0; }
+.cta-divider span { font-size: 13px; color: #8a8378; white-space: nowrap; }
+
 .form-side .field:first-child { margin-top: 4px; }
 .result-side { display: flex; flex-direction: column; }
 
-@media (min-width: 860px) {
-  body { padding: 64px 32px; font-size: 17px; }
-  .wrap { max-width: 1140px; }
-  .logo-img { height: 100px; }
-  .subtitle { font-size: 20px; margin-bottom: 48px; }
+@media (min-width: 780px) {
+  body { padding: 48px 32px; font-size: 17px; }
+  .wrap { max-width: 1360px; }
+  .logo-img { height: 88px; margin-bottom: 8px; }
+  .subtitle { font-size: 20px; margin-bottom: 36px; }
 
   .card {
-    padding: 56px;
+    padding: 48px 64px;
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 64px;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
   }
+
+  .field { margin-bottom: 24px; }
 
   label { font-size: 18px; }
   #dias-out { font-size: 19px; }
@@ -74,6 +85,8 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
   .result-note { font-size: 15px; }
   .disclaimer { font-size: 15px; }
   .cta { font-size: 19px; padding: 20px; }
+  .cta-note { font-size: 14px; }
+  .cta-divider span { font-size: 14px; }
 }
 </style>
 </head>
@@ -133,7 +146,14 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
       <p class="disclaimer" id="disclaimer-especial" style="display:none;">Escríbeme y lo hablamos juntos para darte un precio cerrado hecho a tu medida.</p>
 
       <a href="https://docs.google.com/forms/d/1Iv2f4BUTGG__2yLjvDAyXzRw1ALkHTbYl4pUGtmNGuI/viewform" class="cta" id="cta-normal">
-        Reservar mi plaza
+        Empezar con el formulario
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <p class="cta-note" id="cta-note-normal">No se paga nada aquí. Te llegará un email con los datos para reservar tu plaza.</p>
+
+      <div class="cta-divider" id="cta-divider-normal"><span>¿Ya hablamos antes?</span></div>
+      <a href="https://book.stripe.com/14A8wRaYi06bfQhbu3djO00" class="cta cta-secondary" id="cta-directo">
+        Reservar mi plaza (50€)
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
 
@@ -160,6 +180,9 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
   var discNormal = document.getElementById('disclaimer-normal');
   var discEspecial = document.getElementById('disclaimer-especial');
   var ctaNormal = document.getElementById('cta-normal');
+  var ctaNote = document.getElementById('cta-note-normal');
+  var ctaDivider = document.getElementById('cta-divider-normal');
+  var ctaDirecto = document.getElementById('cta-directo');
   var ctaEspecial = document.getElementById('cta-especial');
   var personas = 2;
   var zona = 1;
@@ -214,6 +237,9 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
     discNormal.style.display = esEspecial ? 'none' : 'block';
     discEspecial.style.display = esEspecial ? 'block' : 'none';
     ctaNormal.style.display = esEspecial ? 'none' : 'flex';
+    ctaNote.style.display = esEspecial ? 'none' : 'block';
+    ctaDivider.style.display = esEspecial ? 'none' : 'flex';
+    ctaDirecto.style.display = esEspecial ? 'none' : 'flex';
     ctaEspecial.style.display = esEspecial ? 'flex' : 'none';
 
     var precio = precioCompleto(d, zona, personas);
