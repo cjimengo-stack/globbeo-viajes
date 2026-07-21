@@ -250,13 +250,18 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
     ctaNormal.href = formBaseUrl + '?usp=pp_url&entry.1127958753=' + encodeURIComponent(precio);
 
     if (esEspecial){
+      var msgEspecial;
       if (esViajeLargo && esGrupoGrande){
         etiquetaEspecial.textContent = 'Viaje largo y grupo grande';
+        msgEspecial = '¡Hola! Somos un grupo grande (más de 5 personas) y queremos hacer un viaje de más de 21 días. Me gustaría hablar sobre el presupuesto.';
       } else if (esViajeLargo){
         etiquetaEspecial.textContent = 'Viaje largo';
+        msgEspecial = '¡Hola! Quiero hacer un viaje de más de 21 días y me gustaría hablar sobre el presupuesto.';
       } else {
         etiquetaEspecial.textContent = 'Grupo grande';
+        msgEspecial = '¡Hola! Somos un grupo grande (más de 5 personas) y queremos hablar sobre nuestro viaje.';
       }
+      ctaEspecial.href = 'https://wa.me/34657571172?text=' + encodeURIComponent(msgEspecial);
       precioEspecial.textContent = 'Desde ' + precio + '€';
       return;
     }
