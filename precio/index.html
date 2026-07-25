@@ -184,7 +184,7 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
   var ctaDivider = document.getElementById('cta-divider-normal');
   var ctaDirecto = document.getElementById('cta-directo');
   var stripeBaseUrl = 'https://book.stripe.com/9B6cN7fey1afdI9eGfdjO01';
-  var formBaseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfCxTqMg8LL-XWOKDPd_9KfnJD3yZvn-zMhckier30iwClsaQ/viewform';
+  var formBaseUrl = 'https://cjimengo-stack.github.io/globbeo-viajes/formulario/';
   var ctaEspecial = document.getElementById('cta-especial');
   var personas = 1;
   var zona = 1;
@@ -247,7 +247,7 @@ input[type=range] { width:100%; accent-color:#5bc9d6; height: 6px; }
     var precio = precioCompleto(d, zona, personas);
     var ref = precio + 'eur-' + d + 'dias-' + personas + 'pers-z' + zona;
     ctaDirecto.href = stripeBaseUrl + '?client_reference_id=' + encodeURIComponent(ref);
-    ctaNormal.href = formBaseUrl + '?usp=pp_url&entry.1127958753=' + encodeURIComponent(precio);
+    ctaNormal.href = formBaseUrl + '?precio=' + encodeURIComponent(precio);
 
     if (esEspecial){
       var msgEspecial;
