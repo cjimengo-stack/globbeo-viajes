@@ -379,7 +379,7 @@
 </style>
 </head>
 <body>
-<a href="/" class="mini-nav"><span id="miniNavLogoSlot"></span><span>&larr; Volver</span></a>
+<a href="/" class="mini-nav"><span>&larr; Volver</span></a>
 
 <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 
@@ -1082,10 +1082,6 @@ function submitForm() {
 }
 
 showStep('intro');
-
-// Clonar el logo ya existente en el mini-nav de "Volver", sin duplicar el SVG
-document.getElementById('miniNavLogoSlot').innerHTML =
-  '<img alt="Globbeo" src="' + document.getElementById('mainLogo').getAttribute('src') + '">';
 </script>
 
 </body>
