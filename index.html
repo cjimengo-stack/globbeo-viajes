@@ -138,31 +138,32 @@
 
   /* ===== DIFERENCIADOR ===== */
   .diff {
-    background: var(--navy); color: var(--cream);
+    background: #eef7f8; color: var(--navy);
   }
   .diff .section-eyebrow { color: var(--turquoise); }
-  .diff .section-title { color: var(--cream); }
+  .diff .section-title { color: var(--navy); }
   .diff-grid {
-    margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-    border-top: 1px solid rgba(250,248,245,0.18);
+    margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
   }
-  .diff-col { padding: 32px clamp(16px, 4vw, 48px); }
-  .diff-col:first-child { border-right: 1px solid rgba(250,248,245,0.18); }
-  .diff-label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.55; margin-bottom: 14px; }
-  .diff-them .diff-label { color: rgba(250,248,245,0.55); }
+  .diff-col { padding: 22px 18px; border-radius: 14px; }
+  .diff-them { background: var(--cream); border: 1px solid var(--beige); }
+  .diff-us { background: var(--navy); }
+  .diff-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+  .diff-them .diff-label { color: #8a8378; }
   .diff-us .diff-label { color: var(--turquoise); }
-  .diff-line { font-family: 'Playfair Display', serif; font-size: clamp(19px, 2.6vw, 25px); line-height: 1.4; }
-  .diff-them .diff-line { opacity: 0.55; text-decoration: line-through; text-decoration-color: rgba(250,248,245,0.35); text-decoration-thickness: 1px; }
-  .diff-pain-stack { max-width: 560px; margin: 0 auto 40px; text-align: center; }
+  .diff-line { font-family: 'Playfair Display', serif; font-size: 15px; line-height: 1.4; }
+  .diff-them .diff-line { color: #6b6459; opacity: 1; text-decoration: line-through; text-decoration-color: #b8ab97; }
+  .diff-us .diff-line { color: var(--cream); }
+  .diff-pain-stack { max-width: 560px; margin: 0 auto 32px; text-align: center; }
   .diff-pain-stack p {
     font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; opacity: 0.85;
+    font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; opacity: 0.75;
     margin-bottom: 6px;
   }
   .diff-pain-stack p:last-child { opacity: 1; font-weight: 600; margin-bottom: 0; }
   .diff-pain-sub {
     font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: clamp(13px, 1.6vw, 14.5px); opacity: 0.65; margin-top: -2px;
+    font-size: clamp(13px, 1.6vw, 14.5px); opacity: 0.55; margin-top: -2px;
   }
   .quote-accent { color: var(--butter); font-style: normal; font-weight: 700; font-size: 1.08em; }
   .diff-desire {
@@ -171,7 +172,6 @@
   }
   @media (max-width: 620px) {
     .diff-grid { grid-template-columns: 1fr; }
-    .diff-col:first-child { border-right: none; border-bottom: 1px solid rgba(250,248,245,0.18); }
   }
 
   /* ===== CÓMO FUNCIONA ===== */
@@ -315,7 +315,7 @@
         </div>
         <h3>Nos conocemos</h3>
         <p class="step-lead">Antes de proponerte nada, queremos entenderte.</p>
-        <p class="step-detail">Cómo viajas, qué buscas, qué te sobra de los viajes de siempre.</p>
+        <p class="step-detail">Cómo viajas, qué buscas, qué te falta y qué te sobra de los viajes de siempre.</p>
         <p class="step-list-label">Eliges cómo contárnoslo:</p>
         <ul class="step-list">
           <li>Videollamada de 45 min</li>
