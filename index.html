@@ -153,11 +153,14 @@
   .diff-us .diff-label { color: var(--turquoise); }
   .diff-line { font-family: 'Playfair Display', serif; font-size: clamp(19px, 2.6vw, 25px); line-height: 1.4; }
   .diff-them .diff-line { opacity: 0.55; text-decoration: line-through; text-decoration-color: rgba(250,248,245,0.35); text-decoration-thickness: 1px; }
-  .diff-pain {
-    text-align: center; font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; max-width: 620px;
-    margin: 0 auto 40px; opacity: 0.85;
+  .diff-pain-stack { max-width: 560px; margin: 0 auto 40px; text-align: center; }
+  .diff-pain-stack p {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; opacity: 0.85;
+    margin-bottom: 6px;
   }
+  .diff-pain-stack p:last-child { opacity: 1; font-weight: 600; margin-bottom: 0; }
+  .quote-accent { color: var(--butter); font-style: normal; font-weight: 600; }
   .diff-desire {
     text-align: center; font-family: 'Playfair Display', serif; font-style: italic;
     font-size: clamp(17px, 2.2vw, 20px); margin-top: 32px;
@@ -189,6 +192,17 @@
   .step h3 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 20px; margin-bottom: 12px; }
   .step-lead { font-size: 15.5px; font-weight: 600; color: var(--navy); line-height: 1.5; margin-bottom: 8px; }
   .step-detail { font-size: 14px; color: var(--navy); opacity: 0.65; line-height: 1.65; }
+  .step-list { list-style: none; margin: 12px 0 10px; padding: 0; }
+  .step-list li {
+    font-size: 14px; color: var(--navy); padding: 8px 0 8px 22px; position: relative;
+    border-top: 1px solid rgba(20,45,87,0.08);
+  }
+  .step-list li:first-child { border-top: none; }
+  .step-list li::before {
+    content: ''; position: absolute; left: 2px; top: 15px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--turquoise);
+  }
+  .step-note { font-size: 13.5px; font-style: italic; color: var(--navy); opacity: 0.55; margin-top: 10px; }
 
   /* ===== DOS CAMINOS ===== */
   .paths { background: var(--butter); }
@@ -264,7 +278,11 @@
   <div class="section-inner">
     <p class="section-eyebrow">La diferencia</p>
     <h2 class="section-title">La mayoría empieza por el destino.<br><em>Nosotros empezamos por la persona.</em></h2>
-    <p class="diff-pain">Has vuelto de un viaje agotada de organizarlo todo. Has hecho cola para ver lo mismo que ve todo el mundo. Has sentido que ibas en piloto automático, convertida en turista — y que necesitabas unas vacaciones de las vacaciones.</p>
+    <div class="diff-pain-stack">
+      <p>Perdiste horas organizando en vez de disfrutando.</p>
+      <p>Hiciste cola para ver lo mismo que ve todo el mundo.</p>
+      <p>Y acabaste convirtiéndote en un turista más.</p>
+    </div>
     <div class="diff-grid">
       <div class="diff-col diff-them">
         <p class="diff-label">El viaje checklist</p>
@@ -272,7 +290,7 @@
       </div>
       <div class="diff-col diff-us">
         <p class="diff-label">Globbeo</p>
-        <p class="diff-line">"¿Cómo te gusta viajar?" y a partir de ahí, un itinerario que solo tendría sentido para ti — el destino es la consecuencia, no el punto de partida.</p>
+        <p class="diff-line"><span class="quote-accent">"¿Cómo te gusta viajar?"</span> y a partir de ahí, un itinerario que solo tendría sentido para ti — el destino es la consecuencia, no el punto de partida.</p>
       </div>
     </div>
     <p class="diff-desire">Así se siente cuando el viaje sí era el tuyo.</p>
@@ -291,7 +309,12 @@
         </div>
         <h3>Nos conocemos</h3>
         <p class="step-lead">Antes de proponerte nada, queremos entenderte.</p>
-        <p class="step-detail">Cómo viajas, qué buscas, qué te sobra de los viajes de siempre. Eliges cómo contárnoslo — videollamada de 45 min o nuestro bot de Telegram, a tu ritmo. En los dos casos, terminamos sabiendo para quién estamos diseñando.</p>
+        <p class="step-detail">Cómo viajas, qué buscas, qué te sobra de los viajes de siempre. Eliges cómo contárnoslo:</p>
+        <ul class="step-list">
+          <li>Videollamada de 45 min</li>
+          <li>Nuestro bot de Telegram, a tu ritmo</li>
+        </ul>
+        <p class="step-note">En los dos casos, terminamos sabiendo para quién estamos diseñando.</p>
       </div>
       <div class="step">
         <p class="step-num">02</p>
@@ -299,8 +322,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 10L3 5l9-5 9 5-9 5z"/><path d="M3 15v-5"/><path d="M21 15v-5"/></svg>
         </div>
         <h3>Lo diseñamos</h3>
-        <p class="step-lead">Construimos tu día a día con el mismo criterio de nuestra Biblioteca curada.</p>
-        <p class="step-detail">Alojamiento, ritmo, dónde comer, qué hacer y cuándo descansar — cada decisión filtrada por cómo nos has dicho que quieres vivir el viaje, no por una lista genérica de "imprescindibles".</p>
+        <p class="step-lead">Cada decisión responde a cómo nos has dicho que quieres vivir el viaje.</p>
+        <p class="step-detail">Nada de listas genéricas de sitios "imprescindibles". Construimos tu día a día pensado para ti, con criterio real detrás de cada elección.</p>
       </div>
       <div class="step">
         <p class="step-num">03</p>
@@ -309,7 +332,8 @@
         </div>
         <h3>Tú lo vives</h3>
         <p class="step-lead">Recibes tu itinerario, listo para vivirlo desde el móvil.</p>
-        <p class="step-detail">Y si algo cambia sobre el terreno, tienes 2 ajustes incluidos durante los 7 días de soporte — porque un buen plan se adapta contigo, no al revés.</p>
+        <p class="step-detail">Y si algo cambia sobre el terreno, tienes 2 ajustes incluidos durante los 7 días de soporte.</p>
+        <p class="step-note">Porque un buen plan se adapta contigo, no al revés.</p>
       </div>
     </div>
   </div>
