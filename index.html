@@ -158,13 +158,6 @@
     font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; max-width: 620px;
     margin: 0 auto 40px; opacity: 0.85;
   }
-  .diff-photo {
-    margin-top: 32px; border-radius: 14px; overflow: hidden;
-    background: rgba(91,201,214,0.12);
-    height: 220px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .diff-photo span { font-size: 12.5px; color: var(--cream); opacity: 0.45; }
   .diff-desire {
     text-align: center; font-family: 'Playfair Display', serif; font-style: italic;
     font-size: clamp(17px, 2.2vw, 20px); margin-top: 32px;
@@ -182,14 +175,20 @@
     font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600;
     color: var(--turquoise); margin-bottom: 18px; letter-spacing: 0.04em;
   }
+  .step {
+    text-align: left; background: #ffffff; border-radius: 18px;
+    padding: 32px 28px; border: 1px solid rgba(20,45,87,0.08);
+    box-shadow: 0 2px 10px rgba(20,45,87,0.04);
+  }
   .step-icon-wrap {
-    width: 68px; height: 68px; margin: 0 auto 22px;
+    width: 56px; height: 56px; margin-bottom: 20px;
     display: flex; align-items: center; justify-content: center;
     border-radius: 50%; background: var(--butter);
   }
-  .step-icon-wrap svg { width: 30px; height: 30px; color: var(--navy); }
-  .step h3 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 21px; margin-bottom: 10px; }
-  .step p { font-size: 15px; opacity: 0.72; line-height: 1.65; max-width: 280px; margin: 0 auto; }
+  .step-icon-wrap svg { width: 26px; height: 26px; color: var(--navy); }
+  .step h3 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 20px; margin-bottom: 12px; }
+  .step-lead { font-size: 15.5px; font-weight: 600; color: var(--navy); line-height: 1.5; margin-bottom: 8px; }
+  .step-detail { font-size: 14px; color: var(--navy); opacity: 0.65; line-height: 1.65; }
 
   /* ===== DOS CAMINOS ===== */
   .paths { background: var(--butter); }
@@ -276,7 +275,6 @@
         <p class="diff-line">"¿Cómo te gusta viajar?" y a partir de ahí, un itinerario que solo tendría sentido para ti — el destino es la consecuencia, no el punto de partida.</p>
       </div>
     </div>
-    <div class="diff-photo"><span>foto real de viaje / mockup del itinerario</span></div>
     <p class="diff-desire">Así se siente cuando el viaje sí era el tuyo.</p>
   </div>
 </section>
@@ -292,7 +290,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <h3>Nos conocemos</h3>
-        <p>Antes de proponerte nada, queremos entenderte: cómo viajas, qué buscas, qué te sobra de los viajes de siempre. Eliges cómo contárnoslo — una videollamada de 45 min si prefieres hablarlo en directo, o nuestro bot de Telegram si te va mejor a tu ritmo. En los dos casos, terminamos sabiendo exactamente para quién estamos diseñando.</p>
+        <p class="step-lead">Antes de proponerte nada, queremos entenderte.</p>
+        <p class="step-detail">Cómo viajas, qué buscas, qué te sobra de los viajes de siempre. Eliges cómo contárnoslo — videollamada de 45 min o nuestro bot de Telegram, a tu ritmo. En los dos casos, terminamos sabiendo para quién estamos diseñando.</p>
       </div>
       <div class="step">
         <p class="step-num">02</p>
@@ -300,7 +299,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 10L3 5l9-5 9 5-9 5z"/><path d="M3 15v-5"/><path d="M21 15v-5"/></svg>
         </div>
         <h3>Lo diseñamos</h3>
-        <p>Con todo lo que nos has contado, construimos tu día a día: alojamiento, ritmo, dónde comer, qué hacer y cuándo descansar — cada decisión filtrada por cómo nos has dicho que quieres vivir el viaje, no por una lista genérica de "imprescindibles". El mismo criterio de nuestra Biblioteca curada, aplicado a ti.</p>
+        <p class="step-lead">Construimos tu día a día con el mismo criterio de nuestra Biblioteca curada.</p>
+        <p class="step-detail">Alojamiento, ritmo, dónde comer, qué hacer y cuándo descansar — cada decisión filtrada por cómo nos has dicho que quieres vivir el viaje, no por una lista genérica de "imprescindibles".</p>
       </div>
       <div class="step">
         <p class="step-num">03</p>
@@ -308,7 +308,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
         </div>
         <h3>Tú lo vives</h3>
-        <p>Recibes tu itinerario interactivo, listo desde el móvil. Y si algo cambia, tienes 2 ajustes incluidos durante los 7 días de soporte — porque un buen plan se adapta contigo, no al revés.</p>
+        <p class="step-lead">Recibes tu itinerario, listo para vivirlo desde el móvil.</p>
+        <p class="step-detail">Y si algo cambia sobre el terreno, tienes 2 ajustes incluidos durante los 7 días de soporte — porque un buen plan se adapta contigo, no al revés.</p>
       </div>
     </div>
   </div>
