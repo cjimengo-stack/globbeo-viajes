@@ -153,6 +153,22 @@
   .diff-us .diff-label { color: var(--turquoise); }
   .diff-line { font-family: 'Playfair Display', serif; font-size: clamp(19px, 2.6vw, 25px); line-height: 1.4; }
   .diff-them .diff-line { opacity: 0.55; text-decoration: line-through; text-decoration-color: rgba(250,248,245,0.35); text-decoration-thickness: 1px; }
+  .diff-pain {
+    text-align: center; font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; max-width: 620px;
+    margin: 0 auto 40px; opacity: 0.85;
+  }
+  .diff-photo {
+    margin-top: 32px; border-radius: 14px; overflow: hidden;
+    background: rgba(91,201,214,0.12);
+    height: 220px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .diff-photo span { font-size: 12.5px; color: var(--cream); opacity: 0.45; }
+  .diff-desire {
+    text-align: center; font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(17px, 2.2vw, 20px); margin-top: 32px;
+  }
   @media (max-width: 620px) {
     .diff-grid { grid-template-columns: 1fr; }
     .diff-col:first-child { border-right: none; border-bottom: 1px solid rgba(250,248,245,0.18); }
@@ -249,6 +265,7 @@
   <div class="section-inner">
     <p class="section-eyebrow">La diferencia</p>
     <h2 class="section-title">La mayoría empieza por el destino.<br><em>Nosotros empezamos por la persona.</em></h2>
+    <p class="diff-pain">Has vuelto de un viaje agotada de organizarlo todo. Has hecho cola para ver lo mismo que ve todo el mundo. Has sentido que ibas en piloto automático, convertida en turista — y que necesitabas unas vacaciones de las vacaciones.</p>
     <div class="diff-grid">
       <div class="diff-col diff-them">
         <p class="diff-label">El viaje checklist</p>
@@ -259,6 +276,8 @@
         <p class="diff-line">"¿Cómo te gusta viajar?" y a partir de ahí, un itinerario que solo tendría sentido para ti — el destino es la consecuencia, no el punto de partida.</p>
       </div>
     </div>
+    <div class="diff-photo"><span>foto real de viaje / mockup del itinerario</span></div>
+    <p class="diff-desire">Así se siente cuando el viaje sí era el tuyo.</p>
   </div>
 </section>
 
@@ -272,8 +291,8 @@
         <div class="step-icon-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
-        <h3>Nos cuentas tu viaje</h3>
-        <p>Empezamos con un formulario rápido. Luego, en una conversación de verdad —por Telegram o en una llamada de 45 min, tú eliges— nos cuentas fechas, presupuesto, con quién vas y cómo te gusta viajar.</p>
+        <h3>Nos conocemos</h3>
+        <p>Antes de proponerte nada, queremos entenderte: cómo viajas, qué buscas, qué te sobra de los viajes de siempre. Eliges cómo contárnoslo — una videollamada de 45 min si prefieres hablarlo en directo, o nuestro bot de Telegram si te va mejor a tu ritmo. En los dos casos, terminamos sabiendo exactamente para quién estamos diseñando.</p>
       </div>
       <div class="step">
         <p class="step-num">02</p>
@@ -281,7 +300,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 10L3 5l9-5 9 5-9 5z"/><path d="M3 15v-5"/><path d="M21 15v-5"/></svg>
         </div>
         <h3>Lo diseñamos</h3>
-        <p>Día a día, con criterio real — no una plantilla con tu nombre pegado encima. Alojamiento, ritmo, sitios que no salen en las guías.</p>
+        <p>Con todo lo que nos has contado, construimos tu día a día: alojamiento, ritmo, dónde comer, qué hacer y cuándo descansar — cada decisión filtrada por cómo nos has dicho que quieres vivir el viaje, no por una lista genérica de "imprescindibles". El mismo criterio de nuestra Biblioteca curada, aplicado a ti.</p>
       </div>
       <div class="step">
         <p class="step-num">03</p>
@@ -289,7 +308,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
         </div>
         <h3>Tú lo vives</h3>
-        <p>Recibes tu itinerario interactivo, listo para consultar desde el móvil. Y 7 días de soporte por si algo te surge en el camino.</p>
+        <p>Recibes tu itinerario interactivo, listo desde el móvil. Y si algo cambia, tienes 2 ajustes incluidos durante los 7 días de soporte — porque un buen plan se adapta contigo, no al revés.</p>
       </div>
     </div>
   </div>
