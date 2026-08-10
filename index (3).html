@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Globbeo Pro — Viajes para profesionales en movimiento</title>
+<meta name="description" content="Viajes grupales diseñados a medida para profesionales, marcas y comunidades. Tú aportas la idea. Globbeo diseña el viaje.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #142d57;
+  --turquoise: #5bc9d6;
+  --cream: #faf8f5;
+  --butter: #fff4d6;
+  --beige: #dcc8b0;
+  --text: #142d57;
+  --muted: #6b7280;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* NAV */
+header {
+  background: var(--cream);
+  border-bottom: 1px solid var(--beige);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--turquoise); }
+nav { display: flex; align-items: center; gap: 2rem; }
+nav a {
+  text-decoration: none;
+  color: var(--navy);
+  font-size: 0.875rem;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+nav a:hover { opacity: 1; }
+.nav-pro { opacity: 1 !important; font-weight: 600; }
+.btn-nav {
+  background: var(--navy);
+  color: var(--cream) !important;
+  opacity: 1 !important;
+  padding: 0.55rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  padding: 7rem 2rem 6rem;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--turquoise);
+  border: 1px solid var(--turquoise);
+  padding: 0.3rem 0.9rem;
+  border-radius: 100px;
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--turquoise);
+}
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-right: 0.75rem;
+}
+.btn-primary:hover { opacity: 0.85; }
+.btn-secondary {
+  display: inline-block;
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--beige);
+  padding-bottom: 1px;
+  transition: border-color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--navy); }
+
+/* DIVIDER */
+.divider {
+  width: 48px;
+  height: 2px;
+  background: var(--beige);
+  margin: 0 auto;
+}
+
+/* SECTIONS */
+.section { padding: 5rem 2rem; }
+.section-inner { max-width: 760px; margin: 0 auto; }
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--turquoise);
+  margin-bottom: 1rem;
+}
+.section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.75px;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+.section h2 em { font-style: italic; color: var(--turquoise); }
+.section-lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 580px;
+}
+
+/* DOS COLUMNAS QUÉ ES */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5px;
+  background: var(--beige);
+  border: 1.5px solid var(--beige);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+.two-col-item {
+  background: var(--cream);
+  padding: 2rem 2rem 2rem;
+}
+.two-col-item.dark { background: var(--navy); }
+.two-col-item .col-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--turquoise);
+  margin-bottom: 0.75rem;
+}
+.two-col-item h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.two-col-item.dark h3 { color: var(--cream); }
+.two-col-item p { font-size: 0.95rem; color: #555; line-height: 1.75; }
+.two-col-item.dark p { color: var(--beige); }
+
+/* SECTORES */
+.sectors-bg { background: var(--butter); }
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.sector {
+  background: var(--cream);
+  border: 1px solid var(--beige);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.sector.dark { background: var(--navy); border-color: var(--navy); }
+.sector-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+.sector h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+.sector.dark h3 { color: var(--cream); }
+.sector p { font-size: 0.85rem; color: #777; line-height: 1.6; }
+.sector.dark p { color: var(--beige); }
+
+/* PASOS */
+.steps { margin-top: 3rem; }
+.step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-left: 1px solid var(--beige);
+  padding-left: 0;
+  margin-left: 30px;
+  position: relative;
+}
+.step:last-child { border-left-color: transparent; padding-bottom: 0; }
+.step-num {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--navy);
+  color: var(--turquoise);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.step-body { padding-left: 48px; padding-bottom: 2.5rem; }
+.step-body h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  padding-top: 0.9rem;
+}
+.step-body p { font-size: 0.95rem; color: #555; line-height: 1.8; }
+
+/* POR QUÉ — DARK SECTION */
+.why-bg { background: var(--navy); }
+.why-bg .section-label { color: var(--turquoise); }
+.why-bg h2 { color: var(--cream); }
+.why-bg .section-lead { color: var(--beige); }
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.why-item { border-left: 2px solid var(--turquoise); padding-left: 1.25rem; }
+.why-item h4 { font-size: 0.95rem; font-weight: 600; color: var(--cream); margin-bottom: 0.4rem; }
+.why-item p { font-size: 0.875rem; color: var(--beige); line-height: 1.7; }
+
+/* CTA FINAL */
+.cta-final {
+  padding: 7rem 2rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.cta-final h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.cta-final h2 em { font-style: italic; color: var(--turquoise); }
+.cta-final p { color: var(--muted); font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.8; }
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  padding: 2rem;
+  text-align: center;
+}
+footer p { font-size: 0.8rem; color: var(--beige); opacity: 0.7; }
+footer a { color: var(--turquoise); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .two-col { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  nav a:not(.btn-nav):not(.nav-pro) { display: none; }
+  .hero { padding: 4.5rem 1.5rem 4rem; }
+  .section { padding: 4rem 1.5rem; }
+  .step-body { padding-left: 40px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">globbeo<span>.</span></a>
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="/precio/">Precios</a>
+    <a href="/pro/" class="nav-pro">Globbeo Pro</a>
+    <a href="/formulario/" class="btn-nav">Cuéntanos tu viaje</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-badge">Globbeo Pro</span>
+  <h1>Tienes la comunidad.<br><em>Nosotros diseñamos el viaje.</em></h1>
+  <p>Viajes grupales a medida para profesionales, marcas y comunidades. Tú aportas la idea y lideras el contenido. Globbeo construye el viaje alrededor de todo eso.</p>
+  <a href="mailto:info@globbeo.com?subject=Globbeo Pro" class="btn-primary">Cuéntame tu idea →</a>
+  <a href="#como-funciona" class="btn-secondary">Cómo funciona</a>
+</div>
+
+<div class="divider"></div>
+
+<!-- QUÉ ES -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">Qué es Globbeo Pro</p>
+    <h2>No es un viaje de empresa.<br><em>No es un team building genérico.</em></h2>
+    <p class="section-lead">Es un viaje diseñado desde cero alrededor de tu comunidad, tu proyecto y lo que quieres que ocurra durante esos días.</p>
+
+    <div class="two-col">
+      <div class="two-col-item">
+        <p class="col-label">Tú aportas</p>
+        <h3>La comunidad y la idea</h3>
+        <p>Tú conoces a tu grupo. Sabes qué los une, qué buscan y qué tipo de experiencia tendría sentido para ellos. Tú lideras el contenido.</p>
+      </div>
+      <div class="two-col-item dark">
+        <p class="col-label">Globbeo aporta</p>
+        <h3>El diseño del viaje</h3>
+        <p>Destino, ruta, alojamientos, actividades, restaurantes, ritmo y logística. Todo pensado específicamente para tu grupo y para lo que quieres crear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="section sectors-bg">
+  <div class="section-inner">
+    <p class="section-label">Para quién es</p>
+    <h2>Para profesionales con<br><em>una comunidad y una idea.</em></h2>
+    <p class="section-lead">Si tienes un grupo de personas que comparten algo y crees que un viaje podría ser el escenario perfecto para lo que quieres crear, podemos diseñarlo.</p>
+
+    <div class="sectors-grid">
+      <div class="sector">
+        <div class="sector-icon">🏃</div>
+        <h3>Salud y movimiento</h3>
+        <p>Fisioterapeutas, entrenadores, nutricionistas, profesionales del bienestar.</p>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">💻</div>
+        <h3>Negocio y trabajo remoto</h3>
+        <p>Emprendedores, freelancers, nómadas digitales, comunidades de negocio.</p>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">📸</div>
+        <h3>Creatividad</h3>
+        <p>Fotógrafos, diseñadores, creadores de contenido y comunidades creativas.</p>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">🎓</div>
+        <h3>Formación</h3>
+        <p>Mentores, formadores, academias y profesionales con comunidad propia.</p>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">💪</div>
+        <h3>Fitness y deporte</h3>
+        <p>Coaches, comunidades HYROX, clubes de running, boxes de CrossFit.</p>
+      </div>
+      <div class="sector dark">
+        <div class="sector-icon">🌍</div>
+        <h3>¿No encajas en ninguna?</h3>
+        <p>Si tienes una comunidad y una idea que tendría sentido convertir en un viaje, podemos diseñarla.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section" id="como-funciona">
+  <div class="section-inner">
+    <p class="section-label">Cómo funciona</p>
+    <h2>Del <em>'tengo una idea'</em><br>al viaje diseñado.</h2>
+    <p class="section-lead">No necesitas llegar con el destino decidido ni tener todos los detalles resueltos. Empezamos por tu idea.</p>
+
+    <div class="steps">
+      <div style="position:relative; padding-left:48px; padding-bottom:2.5rem; border-left: 1px solid var(--beige); margin-left:30px;">
+        <div class="step-num">01</div>
+        <div style="padding-top:0.9rem;">
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Nos cuentas la idea</h3>
+          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Empezamos con una llamada para entender qué quieres crear. Quiénes viajarían, qué une al grupo, qué quieres que ocurra durante esos días, presupuesto aproximado y fechas.</p>
+        </div>
+      </div>
+      <div style="position:relative; padding-left:48px; padding-bottom:2.5rem; border-left: 1px solid var(--beige); margin-left:30px;">
+        <div class="step-num">02</div>
+        <div style="padding-top:0.9rem;">
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Definimos el concepto</h3>
+          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Convertimos esa idea en una propuesta concreta: destino, duración, estructura del viaje y tipo de experiencias. Antes de diseñar cada detalle, definimos qué viaje tiene sentido crear.</p>
+        </div>
+      </div>
+      <div style="position:relative; padding-left:48px; padding-bottom:2.5rem; border-left: 1px solid var(--beige); margin-left:30px;">
+        <div class="step-num">03</div>
+        <div style="padding-top:0.9rem;">
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Diseñamos el viaje</h3>
+          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Construimos el itinerario completo: ruta, alojamientos, actividades, restaurantes, espacios de trabajo o entrenamiento cuando sean necesarios. Todo funciona como un único viaje, no como una lista de cosas que hacer.</p>
+        </div>
+      </div>
+      <div style="position:relative; padding-left:48px; padding-bottom:2.5rem; border-left: 1px solid var(--beige); margin-left:30px;">
+        <div class="step-num">04</div>
+        <div style="padding-top:0.9rem;">
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Lo adaptamos contigo</h3>
+          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Revisamos la propuesta y hacemos los ajustes necesarios. Tú conoces tu sector y tu comunidad. Nosotros conocemos el diseño del viaje.</p>
+        </div>
+      </div>
+      <div style="position:relative; padding-left:48px; margin-left:30px;">
+        <div class="step-num">05</div>
+        <div style="padding-top:0.9rem;">
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Recibes el viaje listo</h3>
+          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Una propuesta estructurada y lista para la siguiente fase. Tú lideras el grupo y el contenido. Globbeo está detrás del diseño.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="section why-bg">
+  <div class="section-inner">
+    <p class="section-label">Por qué Globbeo</p>
+    <h2>Primero entendemos qué quieres crear.<br><em>Después decidimos el viaje.</em></h2>
+    <p class="section-lead">Un viaje grupal profesional no debería ser un viaje genérico al que después se le añade una actividad de tu sector. Lo diseñamos desde el principio alrededor de tu comunidad.</p>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <h4>Diseño desde cero</h4>
+        <p>No adaptamos un viaje existente. Construimos el tuyo partiendo de quién es tu comunidad y qué quieres que vivan.</p>
+      </div>
+      <div class="why-item">
+        <h4>Criterio real</h4>
+        <p>Más de 45 destinos recorridos. Sabemos qué funciona, qué no y cómo hacer que un viaje de grupo tenga sentido de principio a fin.</p>
+      </div>
+      <div class="why-item">
+        <h4>Tú llevas el contenido</h4>
+        <p>Nosotros no lideramos el grupo ni el contenido de tu sector. Eso es tuyo. Nosotros hacemos que el viaje sea el escenario perfecto para ello.</p>
+      </div>
+      <div class="why-item">
+        <h4>Precio a consultar</h4>
+        <p>Cada Globbeo Pro es diferente. El precio depende del proyecto. Hablamos y lo vemos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <p class="section-label" style="text-align:center;">Empezamos</p>
+  <h2>Cuéntame<br><em>qué tienes en mente.</em></h2>
+  <p>No necesitas saber el destino ni tener todos los detalles. Solo necesitas una idea y una comunidad. El resto lo construimos juntos.</p>
+  <a href="mailto:info@globbeo.com?subject=Globbeo Pro" class="btn-primary">Escribir a Globbeo →</a>
+</div>
+
+<footer>
+  <p>© 2026 Globbeo · <a href="/">Inicio</a> · <a href="/precio/">Precios</a> · <a href="/formulario/">Cuéntanos tu viaje</a> · info@globbeo.com</p>
+</footer>
+
+</body>
+</html>
