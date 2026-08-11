@@ -1,373 +1,272 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-172V06VMXW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-172V06VMXW');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Globbeo Pro — Viajes para profesionales en movimiento</title>
 <meta name="description" content="Viajes grupales diseñados a medida para profesionales, marcas y comunidades. Tú aportas la idea. Globbeo diseña el viaje.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #142d57;
+    --turquoise: #5bc9d6;
+    --cream: #faf8f5;
+    --butter: #fff4d6;
+    --beige: #dcc8b0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    font-family: 'Inter', sans-serif;
+    color: var(--navy);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
 
-:root {
-  --navy: #142d57;
-  --turquoise: #5bc9d6;
-  --cream: #faf8f5;
-  --butter: #fff4d6;
-  --beige: #dcc8b0;
-  --text: #142d57;
-  --muted: #6b7280;
-}
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px clamp(20px, 5vw, 56px);
+    z-index: 50;
+    background: rgba(250,248,245,0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease;
+  }
+  nav.scrolled { border-bottom-color: var(--beige); }
+  .nav-logo { height: 46px; width: auto; display: block; }
+  .nav-links { display: flex; gap: clamp(16px, 3vw, 32px); align-items: center; font-size: 14px; font-weight: 500; }
+  .nav-links a.ig { opacity: 0.7; display: inline-flex; align-items: center; gap: 6px; }
+  .nav-links a.ig:hover { opacity: 1; }
+  .nav-cta {
+    background: var(--navy); color: var(--cream);
+    padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 13.5px;
+    transition: opacity .15s ease;
+  }
+  .nav-cta:hover { opacity: 0.88; }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--cream);
-  color: var(--text);
-  line-height: 1.7;
-  font-size: 16px;
-}
+  /* ===== BTN ===== */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 15px 30px; border-radius: 999px; font-weight: 600; font-size: 15.5px;
+    transition: opacity .15s ease, transform .15s ease;
+    border: none; cursor: pointer; font-family: inherit;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--navy); color: var(--cream); }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  .btn-secondary:hover { background: rgba(20,45,87,0.05); }
 
-/* NAV */
-header {
-  background: var(--cream);
-  border-bottom: 1px solid var(--beige);
-  padding: 1.25rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.logo {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--navy);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-.logo span { color: var(--turquoise); }
-nav { display: flex; align-items: center; gap: 2rem; }
-nav a {
-  text-decoration: none;
-  color: var(--navy);
-  font-size: 0.875rem;
-  opacity: 0.65;
-  transition: opacity 0.2s;
-}
-nav a:hover { opacity: 1; }
-.nav-pro { opacity: 1 !important; font-weight: 600; }
-.btn-nav {
-  background: var(--navy);
-  color: var(--cream) !important;
-  opacity: 1 !important;
-  padding: 0.55rem 1.25rem;
-  border-radius: 6px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
+  /* ===== HERO PRO ===== */
+  .hero-pro {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 140px 20px 80px;
+    background: var(--navy);
+  }
+  .pro-badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--navy); background: var(--turquoise);
+    padding: 6px 16px; border-radius: 999px; margin-bottom: 32px;
+    opacity: 0; animation: riseIn .8s ease forwards;
+  }
+  .hero-pro h1 {
+    font-family: 'Playfair Display', serif; font-weight: 500;
+    font-size: clamp(34px, 6vw, 64px); line-height: 1.15;
+    color: var(--cream); max-width: 800px;
+    opacity: 0; animation: riseIn .8s ease .15s forwards;
+  }
+  .hero-pro h1 em { font-style: italic; color: var(--turquoise); }
+  .hero-pro p {
+    font-size: clamp(16px, 2vw, 19px); color: var(--beige);
+    max-width: 540px; line-height: 1.7; margin-top: 28px;
+    opacity: 0; animation: riseIn .8s ease .3s forwards;
+  }
+  .hero-pro-actions {
+    margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    opacity: 0; animation: riseIn .8s ease .45s forwards;
+  }
+  .btn-turquoise { background: var(--turquoise); color: var(--navy); }
+  .btn-turquoise:hover { opacity: 0.9; }
+  .btn-ghost { background: transparent; color: var(--cream); border: 1.5px solid rgba(250,248,245,0.4); }
+  .btn-ghost:hover { border-color: var(--cream); }
 
-/* HERO */
-.hero {
-  padding: 7rem 2rem 6rem;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-.hero-badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--turquoise);
-  border: 1px solid var(--turquoise);
-  padding: 0.3rem 0.9rem;
-  border-radius: 100px;
-  margin-bottom: 2rem;
-}
-.hero h1 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -1.5px;
-  color: var(--navy);
-  margin-bottom: 1.5rem;
-}
-.hero h1 em {
-  font-style: italic;
-  color: var(--turquoise);
-}
-.hero p {
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 520px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.8;
-}
-.btn-primary {
-  display: inline-block;
-  background: var(--navy);
-  color: var(--cream);
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: opacity 0.2s;
-  margin-right: 0.75rem;
-}
-.btn-primary:hover { opacity: 0.85; }
-.btn-secondary {
-  display: inline-block;
-  color: var(--navy);
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px solid var(--beige);
-  padding-bottom: 1px;
-  transition: border-color 0.2s;
-}
-.btn-secondary:hover { border-color: var(--navy); }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(14px);} to {opacity: 1; transform: translateY(0);} }
 
-/* DIVIDER */
-.divider {
-  width: 48px;
-  height: 2px;
-  background: var(--beige);
-  margin: 0 auto;
-}
+  /* ===== SECTION SHARED ===== */
+  section { padding: 100px 20px; }
+  .section-inner { max-width: 1040px; margin: 0 auto; }
+  .section-eyebrow {
+    text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--turquoise); margin-bottom: 14px;
+  }
+  .section-title {
+    text-align: center; font-family: 'Playfair Display', serif; font-weight: 500;
+    font-size: clamp(26px, 4vw, 38px); line-height: 1.25; max-width: 700px; margin: 0 auto;
+  }
+  .section-title em { font-style: italic; color: var(--turquoise); }
 
-/* SECTIONS */
-.section { padding: 5rem 2rem; }
-.section-inner { max-width: 760px; margin: 0 auto; }
-.section-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--turquoise);
-  margin-bottom: 1rem;
-}
-.section h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.75px;
-  color: var(--navy);
-  margin-bottom: 1.25rem;
-}
-.section h2 em { font-style: italic; color: var(--turquoise); }
-.section-lead {
-  font-size: 1.05rem;
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 3rem;
-  max-width: 580px;
-}
+  /* ===== QUÉ ES ===== */
+  .que-es-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: var(--beige); border-radius: 20px; overflow: hidden;
+    margin-top: 48px;
+  }
+  .que-es-col {
+    padding: 40px 36px;
+  }
+  .que-es-col.light { background: var(--cream); }
+  .que-es-col.dark { background: var(--navy); }
+  .que-es-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--turquoise); margin-bottom: 16px;
+  }
+  .que-es-col.light .que-es-label { color: var(--turquoise); }
+  .que-es-col h3 {
+    font-family: 'Playfair Display', serif; font-weight: 500; font-size: 22px;
+    margin-bottom: 12px; color: var(--navy);
+  }
+  .que-es-col.dark h3 { color: var(--cream); }
+  .que-es-col p { font-size: 15px; line-height: 1.7; color: var(--navy); opacity: 0.75; }
+  .que-es-col.dark p { color: var(--beige); opacity: 1; }
+  @media (max-width: 640px) { .que-es-grid { grid-template-columns: 1fr; } }
 
-/* DOS COLUMNAS QUÉ ES */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5px;
-  background: var(--beige);
-  border: 1.5px solid var(--beige);
-  border-radius: 16px;
-  overflow: hidden;
-  margin-top: 2.5rem;
-}
-.two-col-item {
-  background: var(--cream);
-  padding: 2rem 2rem 2rem;
-}
-.two-col-item.dark { background: var(--navy); }
-.two-col-item .col-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--turquoise);
-  margin-bottom: 0.75rem;
-}
-.two-col-item h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
-.two-col-item.dark h3 { color: var(--cream); }
-.two-col-item p { font-size: 0.95rem; color: #555; line-height: 1.75; }
-.two-col-item.dark p { color: var(--beige); }
+  /* ===== PARA QUIÉN ===== */
+  .para-quien { background: var(--butter); }
+  .sectors-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;
+    margin-top: 48px;
+  }
+  .sector-card {
+    background: var(--cream); border-radius: 18px; padding: 28px 24px;
+    border: 1px solid rgba(20,45,87,0.08);
+    box-shadow: 0 2px 10px rgba(20,45,87,0.04);
+  }
+  .sector-card.dark { background: var(--navy); border-color: var(--navy); }
+  .sector-icon { font-size: 1.5rem; margin-bottom: 14px; display: block; }
+  .sector-card h3 {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .sector-card.dark h3 { color: var(--cream); }
+  .sector-card p { font-size: 14px; color: var(--navy); opacity: 0.65; line-height: 1.6; }
+  .sector-card.dark p { color: var(--beige); opacity: 1; }
 
-/* SECTORES */
-.sectors-bg { background: var(--butter); }
-.sectors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-.sector {
-  background: var(--cream);
-  border: 1px solid var(--beige);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-.sector.dark { background: var(--navy); border-color: var(--navy); }
-.sector-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
-.sector h3 {
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--navy);
-  margin-bottom: 0.4rem;
-}
-.sector.dark h3 { color: var(--cream); }
-.sector p { font-size: 0.85rem; color: #777; line-height: 1.6; }
-.sector.dark p { color: var(--beige); }
+  /* ===== CÓMO FUNCIONA ===== */
+  .steps-pro { margin-top: 64px; display: flex; flex-direction: column; gap: 0; }
+  .step-pro {
+    display: grid; grid-template-columns: 60px 1fr; gap: 28px;
+    padding-bottom: 40px; position: relative;
+  }
+  .step-pro:not(:last-child)::after {
+    content: ''; position: absolute; left: 29px; top: 60px; bottom: 0;
+    width: 1px; background: var(--beige);
+  }
+  .step-pro-num {
+    width: 60px; height: 60px; flex-shrink: 0;
+    background: var(--navy); color: var(--turquoise);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600;
+    position: relative; z-index: 1;
+  }
+  .step-pro-body { padding-top: 12px; }
+  .step-pro-body h3 {
+    font-family: 'Playfair Display', serif; font-weight: 500; font-size: 20px;
+    margin-bottom: 10px; color: var(--navy);
+  }
+  .step-pro-body p { font-size: 15px; color: var(--navy); opacity: 0.65; line-height: 1.7; }
 
-/* PASOS */
-.steps { margin-top: 3rem; }
-.step {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  gap: 1.5rem;
-  padding-bottom: 2.5rem;
-  border-left: 1px solid var(--beige);
-  padding-left: 0;
-  margin-left: 30px;
-  position: relative;
-}
-.step:last-child { border-left-color: transparent; padding-bottom: 0; }
-.step-num {
-  position: absolute;
-  left: -30px;
-  top: 0;
-  width: 60px;
-  height: 60px;
-  background: var(--navy);
-  color: var(--turquoise);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-.step-body { padding-left: 48px; padding-bottom: 2.5rem; }
-.step-body h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 0.5rem;
-  padding-top: 0.9rem;
-}
-.step-body p { font-size: 0.95rem; color: #555; line-height: 1.8; }
+  /* ===== POR QUÉ ===== */
+  .por-que { background: var(--navy); }
+  .por-que .section-eyebrow { color: var(--turquoise); }
+  .por-que .section-title { color: var(--cream); }
+  .por-que-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px;
+    margin-top: 48px;
+  }
+  .por-que-item { border-left: 2px solid var(--turquoise); padding-left: 20px; }
+  .por-que-item h4 { font-size: 15px; font-weight: 600; color: var(--cream); margin-bottom: 8px; }
+  .por-que-item p { font-size: 14px; color: var(--beige); line-height: 1.7; }
+  @media (max-width: 640px) { .por-que-grid { grid-template-columns: 1fr; } }
 
-/* POR QUÉ — DARK SECTION */
-.why-bg { background: var(--navy); }
-.why-bg .section-label { color: var(--turquoise); }
-.why-bg h2 { color: var(--cream); }
-.why-bg .section-lead { color: var(--beige); }
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-.why-item { border-left: 2px solid var(--turquoise); padding-left: 1.25rem; }
-.why-item h4 { font-size: 0.95rem; font-weight: 600; color: var(--cream); margin-bottom: 0.4rem; }
-.why-item p { font-size: 0.875rem; color: var(--beige); line-height: 1.7; }
+  /* ===== CTA FINAL ===== */
+  .cta-final {
+    text-align: center; padding: 100px 20px;
+    background: var(--butter);
+  }
+  .cta-final .section-title { margin-bottom: 16px; }
+  .cta-final p { font-size: 16px; opacity: 0.7; max-width: 480px; margin: 0 auto 40px; line-height: 1.7; }
 
-/* CTA FINAL */
-.cta-final {
-  padding: 7rem 2rem;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.cta-final h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -1px;
-  line-height: 1.15;
-  color: var(--navy);
-  margin-bottom: 1rem;
-}
-.cta-final h2 em { font-style: italic; color: var(--turquoise); }
-.cta-final p { color: var(--muted); font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.8; }
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 64px 20px 40px; text-align: center; border-top: 1px solid var(--beige);
+  }
+  .footer-logo { height: 56px; width: auto; margin: 0 auto 18px; display: block; }
+  .footer-line { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; opacity: 0.75; margin-bottom: 24px; }
+  .footer-links { display: flex; gap: 24px; justify-content: center; font-size: 13.5px; font-weight: 500; opacity: 0.7; flex-wrap: wrap; }
+  .footer-links a:hover { color: var(--turquoise); }
+  .footer-copy { margin-top: 28px; font-size: 12px; opacity: 0.45; }
 
-/* FOOTER */
-footer {
-  background: var(--navy);
-  padding: 2rem;
-  text-align: center;
-}
-footer p { font-size: 0.8rem; color: var(--beige); opacity: 0.7; }
-footer a { color: var(--turquoise); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-
-@media (max-width: 640px) {
-  .two-col { grid-template-columns: 1fr; }
-  .why-grid { grid-template-columns: 1fr; }
-  nav a:not(.btn-nav):not(.nav-pro) { display: none; }
-  .hero { padding: 4.5rem 1.5rem 4rem; }
-  .section { padding: 4rem 1.5rem; }
-  .step-body { padding-left: 40px; }
-}
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--turquoise); outline-offset: 3px; }
 </style>
 </head>
 <body>
 
-<header>
-  <a href="/" class="logo">globbeo<span>.</span></a>
-  <nav>
+<nav id="nav">
+  <img class="nav-logo" alt="Globbeo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwODAgMTA4MCI+PGNpcmNsZSBjeD0iNTQwIiBjeT0iNTQwIiByPSI1NDAiIGZpbGw9IiMxYTI5NDIiLz48cGF0aCBkPSJNNTYzLjExLDQxMS40MmMtNi41OC0uMzktMTQuMjYtLjYxLTIxLjAyLS45Mi0uMTgtLjAxLS4zOC0uMDItLjU3LS4wMy0uMzgtLjAyLS43OC0uMDMtMS4xNS0uMDUtLjUtLjAyLS44Ni0uMDEtMS4xMi4wMy0zMi4wMiwwLTY0LjA1LS40OC05Ni4wNy0uNTQtNy4zOC0uMDEtMTQuOTIuMjItMjIuMSwxLjcyLTYwLjc2LDEyLjcyLTk2LjQyLDY5LjkzLTg0LDEyOC4yOSw5Ljk2LDQ2LjgsNTIuMzYsODIuNzcsMTAxLjQ5LDg0LDcuMS4xOCwxNC4zNywxLjAxLDIxLjIsMi44NCwzMi43LDguNzcsNTIuNzQsNDYuMyw0MS45MSw3OC4zMy04LjY0LDI1LjU0LTI2LjQ2LDQwLjQ3LTUzLjIxLDQ0LjE2LTQuODguNjctNi41MSwyLjU2LTYuNDIsNy4yOC4yMSwxMC4zMy4yMiwyMC42Ni0uMDMsMzAuOTktLjEyLDQuODQsMS44OCw2LjY1LDYuNDMsNS45Myw3LjUxLTEuMTgsMTUuMTMtMS45MywyMi40Ny0zLjgsMzguODgtOS44Nyw3MS44NS00Ni45NSw3Ni42NC04Ni44Myw0LjQ5LTM3LjM5LTYuMjEtNjkuNzQtMzQuMzMtOTUuNDYtNC41Mi00LjEzLTUuMjItNi40LS4zLTEwLjg4LDIzLjYzLTIxLjUzLDM1LjczLTQ4LjM0LDM1LjQ4LTgwLjU0LS4xMS0xNC4zNy0uMDItMjguNzUtLjAyLTQzLjEyaC0uMjNjMC0xNS43NS0uMTMtMzEuNS4wMy00Ny4yNS4wMi4wNC4wNC4wOC4wNS4xMS0uMDYtMTAuMjkuODctMTMuMDUsMTQuODUtMTQuM1pNNDQxLjQ1LDU3OS42OGMtMzQuODQtLjE5LTYzLjA0LTI4LjUtNjIuNzUtNjIuOTguMjktMzQuNTUsMjguNi02My4wNiw2Mi4zNS02Mi43OSwzNS43OC4yOSw2My42OSwyOC4zMSw2My40Nyw2My43MS0uMjIsMzQuMTEtMjguODEsNjIuMjUtNjMuMDYsNjIuMDZaIiBmaWxsPSIjZmZmNGQ2Ii8+PHBhdGggZD0iTTY1NC4xNCwzMzEuMzRjLTQ3LjEzLDAtODYuMDIsMzQuNTctOTMuMjEsNzkuNjh2LjA3cy4wOCwwLC4wOCwwaDIuMmMxLjA3LjAyLDguOTYtLjMyLDE4LjA1LS43NSwyLjEtLjEsNC4yNS0uMiw2LjQxLS4zLDExLjQzLS41NCwyMi42OS0xLjExLDIzLjM5LTEuMTksMTIuODUtLjUxLDQ5LjYyLTIuNCw2My4wMS00LjA2LTYuMTUtMTIuODktMTIuNDctMjYuMTItMTkuMDgtMzkuOTcsMy4zLDEuMSw1Ljk3LDEuNzUsNy43NCw0LjMsMS42MiwyLjM0LDMuNDksNC41MSw1LjExLDYuODUsMS4yNywxLjg0LDIuOCwyLjg0LDUuMTIsMi41OC43LS4wOCwxLjU0LjA0LDIuMTUuMzguNjUuMzYsMS41NywxLjEzLDEuNTIsMS42My0uMDguNzEtLjg2LDEuNDMtMS40OSwxLjk2LS4zNy4zMS0xLjA1LjI0LTEuODQuNCwxLjMsMS43NCwyLjM2LDMuMDcsMy4zMiw0LjQ4LDEuNSwyLjIxLDMuMDcsMy45OSw2LjIyLDMuMy43OC0uMTcsMS44Mi44OSwyLjczLDEuMzgtLjYzLDEuMTYtMS4yNSwyLjMyLTIuMTMsMy45MywxLjY3LDIuMjIsMy42Niw1LjA1LDUuODgsNy43MS41MS42MiwxLjc0Ljg0LDIuNjYuODksNS4xMi4yOSwxMC4yOC4xOSwxNS4zNi43OSwyLjU3LjMsNS4wNCwxLjY4LDcuNDcsMi43OC4yMi4xLjM0LjI0LjUuMzcuNjkuNTQuOTIsMS4yOS42LDEuOTgtLjE0LjI5LS4zNS41Ni0uNjYuNzktMS42NSwxLjI0LTMuNTQsMi41Ny01LjQ5LDIuOTEtNS4xNi45LTEwLjM5LDEuNS0xNS42MiwxLjc5LTIuODMuMTYtNC41OSwxLjA2LTUuODYsMy42Mi0xLjEzLDIuMjgtMi43Niw0LjMtMy43Niw1LjgxLDEuMjIsMS41MywxLjk1LDIuNDMsMi42NiwzLjMzLS44Ny42Mi0xLjc0LDEuNzQtMi42MywxLjc2LTMuNDUuMDgtNS4zNiwxLjktNi43MSw0LjgzLS41NSwxLjItMS41OSwyLjE5LTIuNjQsMy42LDEuMDEuMSwxLjc5LS4wMiwyLjMuMjkuNjIuMzgsMS4zMywxLjEsMS40LDEuNzQuMDcuNTktLjU4LDEuMzMtMS4wNywxLjg3LS4yNy4zLS44Ni40OC0xLjI3LjQ0LTQuOTItLjUxLTYuMzcsMy40NS04LjUzLDYuNTMtMi4yNCwzLjItMy44Nyw3LjAzLTguMiw4LjExLS4zMy4wOC0uNjguMDktMS4zNi4xNy4xOS0uODEuMjUtMS40LjQ3LTEuOTMsNC45NS0xMi4wNyw5LjkzLTI0LjEzLDE0Ljg3LTM2LjIsMS4yOS0zLjEzLDEuMi0zLjExLTIuMDgtMy4yNC0xMi4zOC0uNDgtNDguODctMi44Mi02MS4yNC0zLjIyLS42LS4wMi0xMS41MS0uNDItMjIuNzEtLjgyLTIuMjEtLjA4LTQuNDMtLjE2LTYuNTgtLjI0LTktLjMyLTE2Ljg0LS41OS0xNy45NS0uNmgtMi4xOXMtLjIyLjAxLS4yMi4wMWwtLjA3LjVjLS42NSw0LjQ4LTEsOS4wNi0xLDEzLjcxLDAsNTIuMjYsNDIuMTUsOTQuNDIsOTQuNDIsOTQuNDJzOTQuNzYtNDIuMTYsOTQuNzYtOTQuNDItNDIuNS05NC43Ni05NC43Ni05NC43NloiIGZpbGw9IiM1YmM5ZDYiLz48cGF0aCBkPSJNNTQ4LjI2LDQyNS43MWMwLC4wNiwwLC4xMiwwLC4xOSIgZmlsbD0iIzViYzlkNiIvPjwvc3ZnPg==">
+  <div class="nav-links">
     <a href="/">Inicio</a>
     <a href="/precio/">Precios</a>
-    <a href="/pro/" class="nav-pro">Globbeo Pro</a>
-    <a href="/formulario/" class="btn-nav">Cuéntanos tu viaje</a>
-  </nav>
-</header>
+    <a class="nav-cta" href="mailto:info@globbeo.com?subject=Globbeo Pro">Globbeo Pro</a>
+  </div>
+</nav>
 
 <!-- HERO -->
-<div class="hero">
-  <span class="hero-badge">Globbeo Pro</span>
+<div class="hero-pro">
+  <span class="pro-badge">Globbeo Pro</span>
   <h1>Tienes la comunidad.<br><em>Nosotros diseñamos el viaje.</em></h1>
   <p>Viajes grupales a medida para profesionales, marcas y comunidades. Tú aportas la idea y lideras el contenido. Globbeo construye el viaje alrededor de todo eso.</p>
-  <a href="mailto:info@globbeo.com?subject=Globbeo Pro" class="btn-primary">Cuéntame tu idea →</a>
-  <a href="#como-funciona" class="btn-secondary">Cómo funciona</a>
+  <div class="hero-pro-actions">
+    <a href="mailto:info@globbeo.com?subject=Globbeo Pro" class="btn btn-turquoise">
+      Cuéntame tu idea
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <a href="#como-funciona" class="btn btn-ghost">Cómo funciona</a>
+  </div>
 </div>
 
-<div class="divider"></div>
-
 <!-- QUÉ ES -->
-<section class="section">
+<section>
   <div class="section-inner">
-    <p class="section-label">Qué es Globbeo Pro</p>
-    <h2>No es un viaje de empresa.<br><em>No es un team building genérico.</em></h2>
-    <p class="section-lead">Es un viaje diseñado desde cero alrededor de tu comunidad, tu proyecto y lo que quieres que ocurra durante esos días.</p>
-
-    <div class="two-col">
-      <div class="two-col-item">
-        <p class="col-label">Tú aportas</p>
+    <p class="section-eyebrow">Qué es Globbeo Pro</p>
+    <h2 class="section-title">No es un viaje de empresa.<br><em>No es un team building genérico.</em></h2>
+    <div class="que-es-grid">
+      <div class="que-es-col light">
+        <p class="que-es-label">Tú aportas</p>
         <h3>La comunidad y la idea</h3>
         <p>Tú conoces a tu grupo. Sabes qué los une, qué buscan y qué tipo de experiencia tendría sentido para ellos. Tú lideras el contenido.</p>
       </div>
-      <div class="two-col-item dark">
-        <p class="col-label">Globbeo aporta</p>
+      <div class="que-es-col dark">
+        <p class="que-es-label">Globbeo aporta</p>
         <h3>El diseño del viaje</h3>
         <p>Destino, ruta, alojamientos, actividades, restaurantes, ritmo y logística. Todo pensado específicamente para tu grupo y para lo que quieres crear.</p>
       </div>
@@ -376,40 +275,38 @@ footer a:hover { text-decoration: underline; }
 </section>
 
 <!-- PARA QUIÉN -->
-<section class="section sectors-bg">
+<section class="para-quien">
   <div class="section-inner">
-    <p class="section-label">Para quién es</p>
-    <h2>Para profesionales con<br><em>una comunidad y una idea.</em></h2>
-    <p class="section-lead">Si tienes un grupo de personas que comparten algo y crees que un viaje podría ser el escenario perfecto para lo que quieres crear, podemos diseñarlo.</p>
-
+    <p class="section-eyebrow">Para quién es</p>
+    <h2 class="section-title">Para profesionales con<br><em>una comunidad y una idea.</em></h2>
     <div class="sectors-grid">
-      <div class="sector">
-        <div class="sector-icon">🏃</div>
+      <div class="sector-card">
+        <span class="sector-icon">🏃</span>
         <h3>Salud y movimiento</h3>
         <p>Fisioterapeutas, entrenadores, nutricionistas, profesionales del bienestar.</p>
       </div>
-      <div class="sector">
-        <div class="sector-icon">💻</div>
+      <div class="sector-card">
+        <span class="sector-icon">💻</span>
         <h3>Negocio y trabajo remoto</h3>
         <p>Emprendedores, freelancers, nómadas digitales, comunidades de negocio.</p>
       </div>
-      <div class="sector">
-        <div class="sector-icon">📸</div>
+      <div class="sector-card">
+        <span class="sector-icon">📸</span>
         <h3>Creatividad</h3>
         <p>Fotógrafos, diseñadores, creadores de contenido y comunidades creativas.</p>
       </div>
-      <div class="sector">
-        <div class="sector-icon">🎓</div>
+      <div class="sector-card">
+        <span class="sector-icon">🎓</span>
         <h3>Formación</h3>
         <p>Mentores, formadores, academias y profesionales con comunidad propia.</p>
       </div>
-      <div class="sector">
-        <div class="sector-icon">💪</div>
+      <div class="sector-card">
+        <span class="sector-icon">💪</span>
         <h3>Fitness y deporte</h3>
         <p>Coaches, comunidades HYROX, clubes de running, boxes de CrossFit.</p>
       </div>
-      <div class="sector dark">
-        <div class="sector-icon">🌍</div>
+      <div class="sector-card dark">
+        <span class="sector-icon">🌍</span>
         <h3>¿No encajas en ninguna?</h3>
         <p>Si tienes una comunidad y una idea que tendría sentido convertir en un viaje, podemos diseñarla.</p>
       </div>
@@ -418,75 +315,71 @@ footer a:hover { text-decoration: underline; }
 </section>
 
 <!-- CÓMO FUNCIONA -->
-<section class="section" id="como-funciona">
+<section id="como-funciona">
   <div class="section-inner">
-    <p class="section-label">Cómo funciona</p>
-    <h2>Del <em>'tengo una idea'</em><br>al viaje diseñado.</h2>
-    <p class="section-lead">No necesitas llegar con el destino decidido ni tener todos los detalles resueltos. Empezamos por tu idea.</p>
-
-    <div class="steps">
-      <div style="position:relative; padding-left:48px; padding-bottom:2.5rem; border-left: 1px solid var(--beige); margin-left:30px;">
-        <div class="step-num">01</div>
-        <div style="padding-top:0.9rem;">
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Nos cuentas la idea</h3>
-          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Empezamos con una llamada para entender qué quieres crear. Quiénes viajarían, qué une al grupo, qué quieres que ocurra durante esos días, presupuesto aproximado y fechas.</p>
+    <p class="section-eyebrow">Cómo funciona</p>
+    <h2 class="section-title">Del <em>'tengo una idea'</em><br>al viaje diseñado.</h2>
+    <div class="steps-pro">
+      <div class="step-pro">
+        <div class="step-pro-num">01</div>
+        <div class="step-pro-body">
+          <h3>Nos cuentas la idea</h3>
+          <p>Empezamos con una llamada para entender qué quieres crear. Quiénes viajarían, qué une al grupo, qué quieres que ocurra durante esos días, presupuesto aproximado y fechas. No necesitas llegar con el viaje pensado.</p>
         </div>
       </div>
-      <div style="position:relative; padding-left:48px; padding-bottom:2.5rem; border-left: 1px solid var(--beige); margin-left:30px;">
-        <div class="step-num">02</div>
-        <div style="padding-top:0.9rem;">
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Definimos el concepto</h3>
-          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Convertimos esa idea en una propuesta concreta: destino, duración, estructura del viaje y tipo de experiencias. Antes de diseñar cada detalle, definimos qué viaje tiene sentido crear.</p>
+      <div class="step-pro">
+        <div class="step-pro-num">02</div>
+        <div class="step-pro-body">
+          <h3>Definimos el concepto</h3>
+          <p>Convertimos esa idea en una propuesta concreta: destino, duración, estructura del viaje y tipo de experiencias. Antes de diseñar cada detalle, definimos qué viaje tiene sentido crear.</p>
         </div>
       </div>
-      <div style="position:relative; padding-left:48px; padding-bottom:2.5rem; border-left: 1px solid var(--beige); margin-left:30px;">
-        <div class="step-num">03</div>
-        <div style="padding-top:0.9rem;">
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Diseñamos el viaje</h3>
-          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Construimos el itinerario completo: ruta, alojamientos, actividades, restaurantes, espacios de trabajo o entrenamiento cuando sean necesarios. Todo funciona como un único viaje, no como una lista de cosas que hacer.</p>
+      <div class="step-pro">
+        <div class="step-pro-num">03</div>
+        <div class="step-pro-body">
+          <h3>Diseñamos el viaje</h3>
+          <p>Construimos el itinerario completo: ruta, alojamientos, actividades, restaurantes, espacios de trabajo o entrenamiento cuando sean necesarios. Todo funciona como un único viaje, no como una lista de cosas que hacer.</p>
         </div>
       </div>
-      <div style="position:relative; padding-left:48px; padding-bottom:2.5rem; border-left: 1px solid var(--beige); margin-left:30px;">
-        <div class="step-num">04</div>
-        <div style="padding-top:0.9rem;">
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Lo adaptamos contigo</h3>
-          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Revisamos la propuesta y hacemos los ajustes necesarios. Tú conoces tu sector y tu comunidad. Nosotros conocemos el diseño del viaje.</p>
+      <div class="step-pro">
+        <div class="step-pro-num">04</div>
+        <div class="step-pro-body">
+          <h3>Lo adaptamos contigo</h3>
+          <p>Revisamos la propuesta y hacemos los ajustes necesarios. Tú conoces tu sector y tu comunidad. Nosotros conocemos el diseño del viaje.</p>
         </div>
       </div>
-      <div style="position:relative; padding-left:48px; margin-left:30px;">
-        <div class="step-num">05</div>
-        <div style="padding-top:0.9rem;">
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Recibes el viaje listo</h3>
-          <p style="font-size:0.95rem;color:#555;line-height:1.8;">Una propuesta estructurada y lista para la siguiente fase. Tú lideras el grupo y el contenido. Globbeo está detrás del diseño.</p>
+      <div class="step-pro">
+        <div class="step-pro-num">05</div>
+        <div class="step-pro-body">
+          <h3>Recibes el viaje listo</h3>
+          <p>Una propuesta estructurada y lista para la siguiente fase. Tú lideras el grupo y el contenido. Globbeo está detrás del diseño.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- POR QUÉ -->
-<section class="section why-bg">
+<!-- POR QUÉ GLOBBEO -->
+<section class="por-que">
   <div class="section-inner">
-    <p class="section-label">Por qué Globbeo</p>
-    <h2>Primero entendemos qué quieres crear.<br><em>Después decidimos el viaje.</em></h2>
-    <p class="section-lead">Un viaje grupal profesional no debería ser un viaje genérico al que después se le añade una actividad de tu sector. Lo diseñamos desde el principio alrededor de tu comunidad.</p>
-
-    <div class="why-grid">
-      <div class="why-item">
+    <p class="section-eyebrow">Por qué Globbeo</p>
+    <h2 class="section-title">Primero entendemos qué quieres crear.<br><em>Después decidimos el viaje.</em></h2>
+    <div class="por-que-grid">
+      <div class="por-que-item">
         <h4>Diseño desde cero</h4>
         <p>No adaptamos un viaje existente. Construimos el tuyo partiendo de quién es tu comunidad y qué quieres que vivan.</p>
       </div>
-      <div class="why-item">
-        <h4>Criterio real</h4>
+      <div class="por-que-item">
+        <h4>Criterio real detrás de cada decisión</h4>
         <p>Más de 45 destinos recorridos. Sabemos qué funciona, qué no y cómo hacer que un viaje de grupo tenga sentido de principio a fin.</p>
       </div>
-      <div class="why-item">
-        <h4>Tú llevas el contenido</h4>
-        <p>Nosotros no lideramos el grupo ni el contenido de tu sector. Eso es tuyo. Nosotros hacemos que el viaje sea el escenario perfecto para ello.</p>
+      <div class="por-que-item">
+        <h4>Tú lideras el contenido</h4>
+        <p>Tú llevas el conocimiento de tu sector. Nosotros hacemos que el viaje sea el escenario perfecto para ello.</p>
       </div>
-      <div class="why-item">
+      <div class="por-que-item">
         <h4>Precio a consultar</h4>
-        <p>Cada Globbeo Pro es diferente. El precio depende del proyecto. Hablamos y lo vemos.</p>
+        <p>Cada Globbeo Pro es diferente. El precio depende del proyecto. Hablamos y lo vemos juntos.</p>
       </div>
     </div>
   </div>
@@ -494,15 +387,35 @@ footer a:hover { text-decoration: underline; }
 
 <!-- CTA FINAL -->
 <div class="cta-final">
-  <p class="section-label" style="text-align:center;">Empezamos</p>
-  <h2>Cuéntame<br><em>qué tienes en mente.</em></h2>
-  <p>No necesitas saber el destino ni tener todos los detalles. Solo necesitas una idea y una comunidad. El resto lo construimos juntos.</p>
-  <a href="mailto:info@globbeo.com?subject=Globbeo Pro" class="btn-primary">Escribir a Globbeo →</a>
+  <div class="section-inner">
+    <p class="section-eyebrow">Empezamos</p>
+    <h2 class="section-title">Cuéntame<br><em>qué tienes en mente.</em></h2>
+    <p>No necesitas saber el destino ni tener todos los detalles. Solo necesitas una idea y una comunidad. El resto lo construimos juntos.</p>
+    <a href="mailto:info@globbeo.com?subject=Globbeo Pro" class="btn btn-primary">
+      Escribir a Globbeo
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
 </div>
 
 <footer>
-  <p>© 2026 Globbeo · <a href="/">Inicio</a> · <a href="/precio/">Precios</a> · <a href="/formulario/">Cuéntanos tu viaje</a> · info@globbeo.com</p>
+  <img class="footer-logo" alt="Globbeo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwODAgMTA4MCIgZmlsbD0iIzFhMjk0MiI+PHBhdGggZD0iTTI5My44OCw1ODUuMjZ2LTM4LjFjLTE3LjA4LDEuNzEtMjEuMjEsMTQuMzctMjIuMTcsMjEuMzF2MTYuNzljMCwyNi4xMS01LjE3LDMzLjAxLTE1Ljc3LDMyLjUydjIuMjJoNTMuNzF2LTIuMjJjLTEwLjU5LjQ5LTE1Ljc3LTYuNC0xNS43Ny0zMi41MloiLz48cGF0aCBkPSJNMjcxLjcsNDg2LjIzdjI3Ljk0LS4xOHMtMS4xLDIzLjQ5LDIyLjE3LDI2LjAydi0xMDQuNzdjLTYuNjUsOS42MS0yMy40LDE2LjI2LTM3Ljk0LDE2LjI2djIuMjJjMTAuNTktLjQ5LDE1Ljc3LDYuNCwxNS43NywzMi41MloiLz48cGF0aCBkPSJNODc0LjU2LDQ4Ni4yM2MtMzMuMzIsMC02MC44MywyNC40NC02NS45MSw1Ni4zNGguMDZ2LjA1aDEuNTVjLjc1LjAyLDYuMzQtLjIzLDEyLjc2LS41MywxLjQ4LS4wNywzLjAxLS4xNCw0LjUzLS4yMSw4LjA4LS4zOCwxNi4wNC0uNzksMTYuNTQtLjg0LDkuMDktLjM2LDM1LjA5LTEuNyw0NC41Ni0yLjg3LTQuMzUtOS4xMS04LjgyLTE4LjQ3LTEzLjQ5LTI4LjI2LDIuMzMuNzgsNC4yMiwxLjI0LDUuNDcsMy4wNCwxLjE1LDEuNjUsMi40NiwzLjE5LDMuNjEsNC44NC45LDEuMywxLjk4LDIuMDEsMy42MiwxLjgzLjUtLjA2LDEuMDkuMDMsMS41Mi4yNy40Ni4yNSwxLjExLjgsMS4wNywxLjE1LS4wNi41LS42MSwxLjAxLTEuMDYsMS4zOS0uMjYuMjItLjc0LjE3LTEuMy4yOC45MiwxLjIzLDEuNjcsMi4xNywyLjM1LDMuMTcsMS4wNiwxLjU2LDIuMTcsMi44Miw0LjQsMi4zNC41NS0uMTIsMS4yOC42MywxLjkzLjk3LS40NC44Mi0uODgsMS42NC0xLjUsMi43OCwxLjE4LDEuNTcsMi41OSwzLjU3LDQuMTYsNS40NS4zNi40NCwxLjIzLjU5LDEuODguNjMsMy42Mi4yLDcuMjcuMTQsMTAuODYuNTYsMS44MS4yMSwzLjU3LDEuMTksNS4yOCwxLjk2LjE1LjA3LjI0LjE3LjM1LjI2LjQ5LjM4LjY1LjkxLjQyLDEuNC0uMS4yLS4yNS40LS40Ny41Ni0xLjE2Ljg4LTIuNSwxLjgyLTMuODgsMi4wNi0zLjY1LjY0LTcuMzUsMS4wNi0xMS4wNCwxLjI3LTIsLjExLTMuMjUuNzUtNC4xNCwyLjU2LS44LDEuNjEtMS45NSwzLjA0LTIuNjYsNC4xMS44NywxLjA4LDEuMzgsMS43MiwxLjg4LDIuMzYtLjYyLjQzLTEuMjMsMS4yMy0xLjg2LDEuMjQtMi40NC4wNi0zLjc5LDEuMzQtNC43NSwzLjQyLS4zOS44NS0xLjEyLDEuNTUtMS44NywyLjU1LjcxLjA3LDEuMjctLjAyLDEuNjMuMjEuNDQuMjcuOTQuNzguOTksMS4yMy4wNS40Mi0uNDEuOTQtLjc2LDEuMzItLjE5LjIxLS42MS4zNC0uOS4zMS0zLjQ4LS4zNi00LjUsMi40NC02LjAzLDQuNjItMS41OCwyLjI2LTIuNzMsNC45Ny01LjgsNS43NC0uMjMuMDYtLjQ4LjA2LS45Ni4xMi4xMy0uNTcuMTctLjk5LjMzLTEuMzcsMy41LTguNTMsNy4wMi0xNy4wNiwxMC41MS0yNS42LjkxLTIuMjIuODUtMi4yLTEuNDctMi4yOS04Ljc1LS4zNC0zNC41NS0yLTQzLjMxLTIuMjgtLjQyLS4wMS04LjE0LS4zLTE2LjA2LS41OC0xLjU2LS4wNi0zLjEzLS4xMS00LjY1LS4xNy02LjM2LS4yMy0xMS45MS0uNDItMTIuNjktLjQzaC0xLjU1czAsLjM2LDAsLjM2aC0uMjFjLS40NiwzLjE3LS43LDYuNDEtLjcsOS43LDAsMzYuOTUsMjkuODEsNjYuNzYsNjYuNzYsNjYuNzZzNjcuMDEtMjkuODEsNjcuMDEtNjYuNzYtMzAuMDYtNjcuMDEtNjcuMDEtNjcuMDFaIi8+PHBhdGggZD0iTTgwOC42NCw1NDIuNjJzMC0uMDMsMC0uMDVsLTI5LjMtLjA5LS4wMi0uMDZzMCwuMDUsMCwuMDdsMjkuMzEuMTNaIi8+PHBhdGggZD0iTTgwOC42NSw1NDIuNTdsLTIuMTMtLjIxYy43Mi4xMiwxLjQzLjIxLDIuMTMuMjEsMCwwLDAsMCwwLDBaIi8+PHBhdGggZD0iTTgwOC43MSw1NDMuMTloLS4xNmMtLjAyLjEyLS4wMy4yNC0uMDQuMzVoLjIxczAtLjM1LDAtLjM1WiIvPjxwYXRoIGQ9Ik04MDguNyw1NDIuNThoLS4wNnMwLDAsMCwwYy4wMiwwLC4wNCwwLC4wNiwwWiIvPjxwYXRoIGQ9Ik04MDguNjQsNTQyLjYyaC4wN3YtLjA1aC0uMDZzMCwuMDMsMCwuMDVaIi8+PHBhdGggZD0iTTY4My42OSw1NDQuMDVsLTIuNDEuMDJjLTMyLjQsMS43Ny05LjIzLDQzLjAzLTkuMjMsNDMuMDNsLS4wOS0uMDdjMTEuNjMsMTkuNzUsMzMuMTIsMzIuOTgsNTcuNTYsMzIuOTgsMzEuNTMsMCw1Ny42NS0yMS42OCw2NS4wNC01MC43NWgtMi4yMmMtOC4zOCwyNC4xNC0yNy4xLDM4LjQzLTQ2LjgxLDQwLjY1LTMxLjUzLDMuNDUtNTQuMi0yMi45MS02MC44NS01MS0xLjQ4LTYuMTYtMS4zNS01LjY3LTEuNTktMTEuNThsMTI1LjQxLTMuNzhjLjAyLS4xMi4wMy0uMjMuMDQtLjM1bC00Mi40MS4yOS04Mi40NC41N1oiLz48cGF0aCBkPSJNODA2LjUyLDU0Mi4zNmMtMTYuMTMtMi43My0zOC4wMy0zMy44Ni0zOC4wMy0zMy44NmwuMDMuMDhjLTguNzEtMTIuODctMjIuMjUtMjIuMy0zOS0yMi4zNi01Ljg5LS4wMi0xMS42Ljc1LTE3LjA2LDIuMTktNy4zOSwyLjItMTcuMiw2LjY0LTI2LjksMTUuNTMtMTAuNDEsMTEuMTgtMzEuMTgsMzYuNzEtNS4zLDM4LjExbDMuNzkuMDIsOTUuMjcuNDJzMC0uMDUsMC0uMDdsLjAyLjA2LDI5LjMuMDlzMCwwLDAsMGMtLjY5LDAtMS40MS0uMDktMi4xMy0uMjFaTTc0Ny45Nyw1NDAuMTloLTY1LjVjLjk4LTE5Ljk1LDEwLjgzLTQwLjQxLDI2LjM2LTQ1LjgzLDIyLjEzLTcuODcsNDkuMTUsMTIuMjYsNTIuNjcsNDUuNjYsMCwuMDYuMDIuMTEuMDIuMTdoLTEzLjU0WiIvPjxwYXRoIGQ9Ik04MDguNjUsNTQyLjU4aC4wNnMtLjA0LDAtLjA2LDBjMCwwLDAsMCwwLDBaIi8+PHBhdGggZD0iTTU5MC4zNCw2MTUuNTZjLTE3LDAtMTguNDgtMTcuMjQtMTguNDgtMzAuM3YtMTAuNjhsLjEyLjQycy0uMTItMjQuOTQsMTguMS0yOS40MmwtMTguMjIuMTNoLS40NnMtNS44NS4wNC01Ljg1LjA0Yy0xMi4zMiwzLjk1LTE1LjIyLDE5LjY1LTE1Ljg2LDI4LjUydjEwLjk5YzAsMjYuMTEtNC45MywzMy4wMS0xNS43NywzMi41MnYyLjIyaDYwLjM2YzQxLjY3LDAsNjQuODUtMzguMjcsNjcuMjgtNzQuOTFsLTIyLjM4LjE2Yy0xLjc2LDI4LjI4LTE2LjA3LDcwLjMyLTQ4Ljg0LDcwLjMyWiIvPjxwYXRoIGQ9Ik02MjEuNjIsNDg2LjIzYy0yMC42OSwwLTM3Ljk0LDEzLjA2LTQ5Ljc2LDI5LjMydi04MC4zMWMtNy4xNSw5Ljg1LTIzLjE2LDE2LjI2LTM3Ljk0LDE2LjI2djIuMjJjMTAuODQtLjQ5LDE1Ljc3LDYuNjUsMTUuNzcsMzIuNTJ2MjIuNmMuMzcsOC44LDIuODUsMjguNDYsMTcuMjcsMzIuMTZoMi4yNnMyLjY0LjAyLDIuNjQuMDJsMjAuMzguMDljLTIxLjY4LTMuNDgtMTIuMDQtMjMtNS45NS0zMi40Miw2LjktOC43MSwxNS44LTExLjM4LDE4Ljg0LTEyLjA1LDMuMjEtLjU4LDYuNTctLjY0LDEwLjA5LS4wNSwxOS43MSwzLjIsMjQuMTQsMjcuODQsMjQuMTQsNDQuMzQsMCwuMTMsMCwuMjYtLjAxLjM5bDIyLjM4LjFjLjAzLS45LjA1LTEuODEuMDUtMi43MSwwLTI4LjA4LTEzLjc5LTUyLjQ4LTQwLjE2LTUyLjQ4WiIvPjxwYXRoIGQ9Ik00NzYuMTIsNjE1LjU2Yy0xNywwLTE4LjQ4LTE3LjI0LTE4LjQ4LTMwLjN2LTEwLjY4bC4xMi40MnMtLjEyLTI0Ljk0LDE4LjEtMjkuNDJsLTE4LjIyLjEzaC0uNDZzLTUuODUuMDQtNS44NS4wNGMtMTIuMzIsMy45NS0xNS4yMiwxOS42NS0xNS44NiwyOC41MnYxMC45OWMwLDI2LjExLTQuOTMsMzMuMDEtMTUuNzcsMzIuNTJ2Mi4yMmg2MC4zNmM0MS42NywwLDY0Ljg1LTM4LjI3LDY3LjI4LTc0LjkxbC0yMi4zOC4xNmMtMS43NiwyOC4yOC0xNi4wNyw3MC4zMi00OC44NCw3MC4zMloiLz48cGF0aCBkPSJNNTA3LjQxLDQ4Ni4yM2MtMjAuNjksMC0zNy45NCwxMy4wNi00OS43NiwyOS4zMnYtODAuMzFjLTcuMTUsOS44NS0yMy4xNiwxNi4yNi0zNy45NCwxNi4yNnYyLjIyYzEwLjg0LS40OSwxNS43Nyw2LjY1LDE1Ljc3LDMyLjUydjIyLjZjLjM3LDguOCwyLjg1LDI4LjQ2LDE3LjI3LDMyLjE2aDIuMjZzMi42NC4wMiwyLjY0LjAybDIwLjM4LjA5Yy0yMS42OC0zLjQ4LTEyLjA0LTIzLTUuOTUtMzIuNDIsNi45LTguNzEsMTUuOC0xMS4zOCwxOC44NC0xMi4wNSwzLjIxLS41OCw2LjU3LS42NCwxMC4wOS0uMDUsMTkuNzEsMy4yLDI0LjE0LDI3Ljg0LDI0LjE0LDQ0LjM0LDAsLjEzLDAsLjI2LS4wMS4zOWwyMi4zOC4xYy4wMy0uOS4wNS0xLjgxLjA1LTIuNzEsMC0yOC4wOC0xMy43OS01Mi40OC00MC4xNi01Mi40OFoiLz48cGF0aCBkPSJNNDMxLjU3LDU0Ni4wNWwtMjEuODkuMTVjNy4zLDI5Ljc3LTIuNTMsNTguMjItMjMuNzksNjUuOTEtMTkuMTgsNi42Ni00MS41MS01LjM5LTU1LjMxLTI3Ljg2aDBzLS4wMy0uMDUtLjA5LS4xNGMtLjQtLjY2LS43OC0xLjM0LTEuMTctMi4wMS00LjM4LTcuODQtMTcuNjUtMzQuNTQsNC40LTM1LjM4bC05LjQ4LjA3LTYuMDYuMDZoLS4wOGMtMTguNzkuNzMtMTkuNDEsMTMuNjYtMTguNDcsMjAuMzEsNi4zOSwzMC4yMywzMy4xMyw1Mi44Myw2NS4zMSw1Mi44MywzNi45NSwwLDY3LjAxLTI5LjgxLDY3LjAxLTY2Ljc2LDAtMi40My0uMTQtNC44Mi0uMzktNy4xOFoiLz48cGF0aCBkPSJNMzE3LjkxLDU0MC4yN3MwLDAsLjAxLDBjLjA5LDAsLjE2LjAyLjI1LjAyaC0uMTkuNzRzMTYuODkuMDgsMTYuODkuMDhjLTE4LjE5LS45Mi0xMy44NS0yMC45Mi0xMi43Ny0yNS4wMSw0LjQ0LTEwLjA0LDExLjc0LTE3LjY0LDIxLjQtMjEsMjMuNC04LjM3LDUxLjQ5LDExLjMzLDYzLjA3LDQzLjg1LjI5LjgzLjU1LDEuNjUuODEsMi40OGwyMi42NC4xYy01Ljg1LTMxLjAyLTMzLjEzLTU0LjU2LTY1LjgzLTU0LjU2LTIwLjE1LDAtMzguMTYsOC45NS01MC4zOSwyMy4wNi0yLjk4LDMuODUtMjIuMTQsMjkuODUsMy4zNSwzMC45OFoiLz48cGF0aCBkPSJNMjY0LjI0LDU0OC43MWMwLDguNDQtLjA1LDE2Ljg4LjAxLDI1LjMzLjE0LDE4LjkxLTYuOTYsMzQuNjYtMjAuODQsNDcuMy0yLjg5LDIuNjMtMi40OCwzLjk2LjE4LDYuMzksMTYuNTIsMTUuMTEsMjIuOCwzNC4xMSwyMC4xNiw1Ni4wNy0yLjgyLDIzLjQyLTIyLjE4LDQ1LjItNDUuMDIsNTEtNC4zMSwxLjA5LTguNzksMS41My0xMy4yLDIuMjMtMi42Ny40Mi0zLjg0LS42NC0zLjc4LTMuNDguMTQtNi4wNi4xNC0xMi4xNC4wMS0xOC4yLS4wNi0yLjc4LjktMy44OCwzLjc3LTQuMjgsMTUuNzEtMi4xNywyNi4xOC0xMC45NCwzMS4yNS0yNS45NCw2LjM2LTE4LjgxLTUuNDEtNDAuODYtMjQuNjItNDYuMDEtNC4wMi0xLjA4LTguMjktMS41Ny0xMi40Ni0xLjY3LTI4Ljg1LS43Mi01My43Ni0yMS44NS01OS42MS00OS4zNC03LjMtMzQuMjgsMTMuNjUtNjcuODgsNDkuMzQtNzUuMzUsNC4yMi0uODgsOC42NS0xLjAyLDEyLjk4LTEuMDEsMTkuMTEuMDMsMzguMjIuMzMsNTcuMzIuMzIsMy41NSwwLDQuNDcsMS4yMiw0LjQyLDQuNi0uMTgsMTAuNjgtLjA3LDIxLjM3LS4wNywzMi4wNS4wNSwwLC4wOSwwLC4xNCwwWk0yMDEuNDIsNjExLjQ1YzIwLjEyLjExLDM2LjkxLTE2LjQxLDM3LjA0LTM2LjQ1LjEzLTIwLjgtMTYuMjYtMzcuMjUtMzcuMjgtMzcuNDItMTkuODItLjE2LTM2LjQ1LDE2LjU5LTM2LjYyLDM2Ljg4LS4xNywyMC4yNSwxNi40LDM2Ljg4LDM2Ljg2LDM2Ljk5WiIvPjwvc3ZnPg==">
+  <p class="footer-line">"No diseñamos viajes. Diseñamos cómo quieres vivirlos."</p>
+  <div class="footer-links">
+    <a href="/">Inicio</a>
+    <a href="/formulario/">Cuéntanos tu viaje</a>
+    <a href="/precio/">Calcular precio</a>
+    <a href="https://instagram.com/globbeo" target="_blank">Instagram</a>
+  </div>
+  <p class="footer-copy">Globbeo · Diseño de viajes a medida</p>
 </footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
 
 </body>
 </html>
