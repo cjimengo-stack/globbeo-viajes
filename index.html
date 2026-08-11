@@ -80,10 +80,8 @@
     opacity: 0; animation: riseIn .8s ease .2s forwards;
   }
   .hero-title em { font-style: italic; color: var(--turquoise); }
-
   .hero-cycle-wrap {
-    margin-top: 30px;
-    height: 34px;
+    margin-top: 30px; height: 34px;
     display: flex; align-items: center; justify-content: center;
     opacity: 0; animation: riseIn .8s ease .35s forwards;
   }
@@ -94,22 +92,17 @@
     transition: opacity .35s ease, transform .35s ease;
   }
   .hero-cycle.swap { opacity: 0; transform: translateY(6px); }
-
   .hero-stack {
     margin-top: 30px; max-width: 480px;
     animation: riseIn .8s ease .45s forwards; opacity: 0;
   }
-  .hero-stack p {
-    font-size: clamp(17px, 2.1vw, 21px); font-weight: 600; color: var(--navy);
-    line-height: 1.45;
-  }
+  .hero-stack p { font-size: clamp(17px, 2.1vw, 21px); font-weight: 600; color: var(--navy); line-height: 1.45; }
   .hero-stack em { font-style: italic; color: var(--turquoise); font-weight: 600; }
   .hero-actions {
     margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
     opacity: 0; animation: riseIn .8s ease .55s forwards;
   }
   @keyframes riseIn { from { opacity: 0; transform: translateY(14px);} to {opacity: 1; transform: translateY(0);} }
-
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 15px 30px; border-radius: 999px; font-weight: 600; font-size: 15.5px;
@@ -122,7 +115,6 @@
   .btn-secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
   .btn-secondary:hover { background: rgba(20,45,87,0.05); }
   .btn svg { width: 16px; height: 16px; }
-
   .hero-scroll-hint {
     position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
     font-size: 12px; color: var(--navy); opacity: 0.4;
@@ -146,14 +138,10 @@
   .section-title em { font-style: italic; color: var(--turquoise); }
 
   /* ===== DIFERENCIADOR ===== */
-  .diff {
-    background: var(--navy); color: var(--cream);
-  }
+  .diff { background: var(--navy); color: var(--cream); }
   .diff .section-eyebrow { color: var(--turquoise); }
   .diff .section-title { color: var(--cream); }
-  .diff-grid {
-    margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  }
+  .diff-grid { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .diff-col { padding: 22px 18px; border-radius: 14px; }
   .diff-them { background: var(--cream); border: 1px solid var(--beige); }
   .diff-us { background: var(--butter); }
@@ -165,77 +153,93 @@
   .diff-us .diff-line { color: var(--navy); }
   .diff-us-note { font-family: 'Playfair Display', serif; font-style: italic; font-size: 13px; color: var(--navy); opacity: 0.6; margin-top: 8px; }
   .diff-pain-stack { max-width: 560px; margin: 0 auto 32px; text-align: center; }
-  .diff-pain-stack p {
-    font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; opacity: 0.85;
-    margin-bottom: 6px;
-  }
+  .diff-pain-stack p { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; opacity: 0.85; margin-bottom: 6px; }
   .diff-pain-stack p:last-child { opacity: 1; font-weight: 600; margin-bottom: 0; }
-  .diff-pain-sub {
-    font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: clamp(13px, 1.6vw, 14.5px); opacity: 0.65; margin-top: -2px;
-  }
+  .diff-pain-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(13px, 1.6vw, 14.5px); opacity: 0.65; margin-top: -2px; }
   .quote-accent { color: var(--navy); font-style: normal; font-weight: 700; font-size: 1.08em; text-decoration: underline; text-decoration-color: var(--turquoise); text-underline-offset: 3px; }
-  .diff-desire {
-    text-align: center; font-family: 'Playfair Display', serif; font-style: italic;
-    font-size: clamp(17px, 2.2vw, 20px); margin-top: 32px;
-  }
-  @media (max-width: 620px) {
-    .diff-grid { grid-template-columns: 1fr; }
-  }
+  .diff-desire { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.2vw, 20px); margin-top: 32px; }
+  @media (max-width: 620px) { .diff-grid { grid-template-columns: 1fr; } }
 
   /* ===== CÓMO FUNCIONA ===== */
   .steps { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
   @media (max-width: 780px) { .steps { grid-template-columns: 1fr; gap: 48px; } }
-  .step { text-align: center; }
-  .step-num {
-    font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600;
-    color: var(--turquoise); margin-bottom: 18px; letter-spacing: 0.04em;
-  }
-  .step {
-    text-align: left; background: #ffffff; border-radius: 18px;
-    padding: 32px 28px; border: 1px solid rgba(20,45,87,0.08);
-    box-shadow: 0 2px 10px rgba(20,45,87,0.04);
-  }
-  .step-icon-wrap {
-    width: 56px; height: 56px; margin-bottom: 20px;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 50%; background: var(--butter);
-  }
+  .step { text-align: left; background: #ffffff; border-radius: 18px; padding: 32px 28px; border: 1px solid rgba(20,45,87,0.08); box-shadow: 0 2px 10px rgba(20,45,87,0.04); }
+  .step-num { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--turquoise); margin-bottom: 18px; letter-spacing: 0.04em; }
+  .step-icon-wrap { width: 56px; height: 56px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--butter); }
   .step-icon-wrap svg { width: 26px; height: 26px; color: var(--navy); }
   .step h3 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 20px; margin-bottom: 12px; }
   .step-lead { font-size: 15.5px; font-weight: 600; color: var(--navy); line-height: 1.5; margin-bottom: 8px; }
   .step-detail { font-size: 14px; color: var(--navy); opacity: 0.65; line-height: 1.65; }
   .step-list-label { font-size: 13px; font-weight: 600; color: var(--turquoise); letter-spacing: 0.03em; margin-top: 14px; margin-bottom: 8px; }
   .step-list { list-style: none; margin: 0 0 10px; padding: 0; }
-  .step-list li {
-    font-size: 14px; color: var(--navy); padding: 8px 0 8px 22px; position: relative;
-    border-top: 1px solid rgba(20,45,87,0.08);
-  }
+  .step-list li { font-size: 14px; color: var(--navy); padding: 8px 0 8px 22px; position: relative; border-top: 1px solid rgba(20,45,87,0.08); }
   .step-list li:first-child { border-top: none; }
-  .step-list li::before {
-    content: ''; position: absolute; left: 2px; top: 15px;
-    width: 6px; height: 6px; border-radius: 50%; background: var(--turquoise);
-  }
+  .step-list li::before { content: ''; position: absolute; left: 2px; top: 15px; width: 6px; height: 6px; border-radius: 50%; background: var(--turquoise); }
   .step-note { font-size: 13.5px; font-style: italic; color: var(--navy); opacity: 0.55; margin-top: 10px; }
 
   /* ===== DOS CAMINOS ===== */
   .paths { background: var(--butter); }
   .paths-grid { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   @media (max-width: 720px) { .paths-grid { grid-template-columns: 1fr; } }
-  .path-card {
-    background: var(--cream); border-radius: 20px; padding: 40px 34px;
-    display: flex; flex-direction: column; align-items: center; text-align: center;
-    border: 1px solid rgba(20,45,87,0.08);
-  }
+  .path-card { background: var(--cream); border-radius: 20px; padding: 40px 34px; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid rgba(20,45,87,0.08); }
   .path-icon { width: 42px; height: 42px; color: var(--turquoise); margin-bottom: 20px; }
   .path-card h3 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 23px; margin-bottom: 10px; }
   .path-card p { font-size: 15px; opacity: 0.75; line-height: 1.6; margin-bottom: 28px; flex-grow: 1; }
 
-  /* ===== FOOTER ===== */
-  footer {
-    padding: 64px 20px 40px; text-align: center; border-top: 1px solid var(--beige);
+  /* ===== SERVICIOS ===== */
+  .servicios-grid {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
   }
+  .servicio-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 36px 28px;
+    border: 1px solid rgba(20,45,87,0.08);
+    box-shadow: 0 2px 10px rgba(20,45,87,0.04);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .servicio-card.dark { background: var(--navy); border-color: var(--navy); }
+  .servicio-badge {
+    position: absolute; top: 16px; right: 16px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+    padding: 4px 12px; border-radius: 999px;
+  }
+  .servicio-badge.light { background: var(--butter); color: var(--navy); }
+  .servicio-badge.pro { background: rgba(91,201,214,0.2); color: var(--turquoise); }
+  .servicio-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--butter);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .servicio-card.dark .servicio-icon { background: rgba(91,201,214,0.15); }
+  .servicio-icon svg { width: 26px; height: 26px; color: var(--navy); }
+  .servicio-card.dark .servicio-icon svg { color: var(--turquoise); }
+  .servicio-card h3 {
+    font-family: 'Playfair Display', serif; font-weight: 500;
+    font-size: 20px; margin-bottom: 12px; color: var(--navy);
+  }
+  .servicio-card.dark h3 { color: var(--cream); }
+  .servicio-card p {
+    font-size: 14px; color: var(--navy); opacity: 0.65;
+    line-height: 1.65; flex-grow: 1; margin-bottom: 24px;
+  }
+  .servicio-card.dark p { color: var(--beige); opacity: 1; }
+  .servicio-footer { display: flex; align-items: center; justify-content: space-between; }
+  .servicio-precio { font-size: 14px; font-weight: 600; color: var(--turquoise); }
+  .servicio-consultar { font-size: 14px; font-weight: 500; color: var(--navy); opacity: 0.4; }
+  .servicio-link {
+    font-size: 14px; font-weight: 600; color: var(--turquoise);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer { padding: 64px 20px 40px; text-align: center; border-top: 1px solid var(--beige); }
   .footer-logo { height: 56px; width: auto; margin: 0 auto 18px; display: block; }
   .footer-line { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; opacity: 0.75; margin-bottom: 24px; }
   .footer-links { display: flex; gap: 24px; justify-content: center; font-size: 13.5px; font-weight: 500; opacity: 0.7; flex-wrap: wrap; }
@@ -245,7 +249,6 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   }
-
   a:focus-visible, button:focus-visible { outline: 2px solid var(--turquoise); outline-offset: 3px; }
 </style>
 </head>
@@ -378,6 +381,52 @@
   </div>
 </section>
 
+<!-- SECCIÓN SERVICIOS -->
+<section>
+  <div class="section-inner">
+    <p class="section-eyebrow">Lo que hacemos</p>
+    <h2 class="section-title">Un servicio para cada forma<br><em>de querer viajar.</em></h2>
+    <div class="servicios-grid">
+
+      <div class="servicio-card">
+        <div class="servicio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Experiencia personalizada</h3>
+        <p>Tu viaje diseñado alrededor de quién eres. No el de Instagram. El tuyo.</p>
+        <div class="servicio-footer">
+          <span class="servicio-precio">Desde 149€</span>
+          <a href="/formulario/" class="btn btn-primary" style="padding:10px 20px;font-size:13.5px;">Empezar</a>
+        </div>
+      </div>
+
+      <div class="servicio-card">
+        <span class="servicio-badge light">Próximamente</span>
+        <div class="servicio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Viajes grupales</h3>
+        <p>Grupos pequeños, destinos únicos. Máximo 8 personas. Liderados por Carla.</p>
+        <span class="servicio-consultar">Precio a consultar</span>
+      </div>
+
+      <div class="servicio-card dark">
+        <span class="servicio-badge pro">Próximamente</span>
+        <div class="servicio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Globbeo Pro</h3>
+        <p>Viajes grupales para profesionales, marcas y comunidades. Tú aportas la idea. Globbeo diseña el viaje.</p>
+        <a href="/pro/" class="servicio-link">
+          Saber más
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer>
   <img class="footer-logo" alt="Globbeo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwODAgMTA4MCIgZmlsbD0iIzFhMjk0MiI+PHBhdGggZD0iTTI5My44OCw1ODUuMjZ2LTM4LjFjLTE3LjA4LDEuNzEtMjEuMjEsMTQuMzctMjIuMTcsMjEuMzF2MTYuNzljMCwyNi4xMS01LjE3LDMzLjAxLTE1Ljc3LDMyLjUydjIuMjJoNTMuNzF2LTIuMjJjLTEwLjU5LjQ5LTE1Ljc3LTYuNC0xNS43Ny0zMi41MloiLz48cGF0aCBkPSJNMjcxLjcsNDg2LjIzdjI3Ljk0LS4xOHMtMS4xLDIzLjQ5LDIyLjE3LDI2LjAydi0xMDQuNzdjLTYuNjUsOS42MS0yMy40LDE2LjI2LTM3Ljk0LDE2LjI2djIuMjJjMTAuNTktLjQ5LDE1Ljc3LDYuNCwxNS43NywzMi41MloiLz48cGF0aCBkPSJNODc0LjU2LDQ4Ni4yM2MtMzMuMzIsMC02MC44MywyNC40NC02NS45MSw1Ni4zNGguMDZ2LjA1aDEuNTVjLjc1LjAyLDYuMzQtLjIzLDEyLjc2LS41MywxLjQ4LS4wNywzLjAxLS4xNCw0LjUzLS4yMSw4LjA4LS4zOCwxNi4wNC0uNzksMTYuNTQtLjg0LDkuMDktLjM2LDM1LjA5LTEuNyw0NC41Ni0yLjg3LTQuMzUtOS4xMS04LjgyLTE4LjQ3LTEzLjQ5LTI4LjI2LDIuMzMuNzgsNC4yMiwxLjI0LDUuNDcsMy4wNCwxLjE1LDEuNjUsMi40NiwzLjE5LDMuNjEsNC44NC45LDEuMywxLjk4LDIuMDEsMy42MiwxLjgzLjUtLjA2LDEuMDkuMDMsMS41Mi4yNy40Ni4yNSwxLjExLjgsMS4wNywxLjE1LS4wNi41LS42MSwxLjAxLTEuMDYsMS4zOS0uMjYuMjItLjc0LjE3LTEuMy4yOC45MiwxLjIzLDEuNjcsMi4xNywyLjM1LDMuMTcsMS4wNiwxLjU2LDIuMTcsMi44Miw0LjQsMi4zNC41NS0uMTIsMS4yOC42MywxLjkzLjk3LS40NC44Mi0uODgsMS42NC0xLjUsMi43OCwxLjE4LDEuNTcsMi41OSwzLjU3LDQuMTYsNS40NS4zNi40NCwxLjIzLjU5LDEuODguNjMsMy42Mi4yLDcuMjcuMTQsMTAuODYuNTYsMS44MS4yMSwzLjU3LDEuMTksNS4yOCwxLjk2LjE1LjA3LjI0LjE3LjM1LjI2LjQ5LjM4LjY1LjkxLjQyLDEuNC0uMS4yLS4yNS40LS40Ny41Ni0xLjE2Ljg4LTIuNSwxLjgyLTMuODgsMi4wNi0zLjY1LjY0LTcuMzUsMS4wNi0xMS4wNCwxLjI3LTIsLjExLTMuMjUuNzUtNC4xNCwyLjU2LS44LDEuNjEtMS45NSwzLjA0LTIuNjYsNC4xMS44NywxLjA4LDEuMzgsMS43MiwxLjg4LDIuMzYtLjYyLjQzLTEuMjMsMS4yMy0xLjg2LDEuMjQtMi40NC4wNi0zLjc5LDEuMzQtNC43NSwzLjQyLS4zOS44NS0xLjEyLDEuNTUtMS44NywyLjU1LjcxLjA3LDEuMjctLjAyLDEuNjMuMjEuNDQuMjcuOTQuNzguOTksMS4yMy4wNS40Mi0uNDEuOTQtLjc2LDEuMzItLjE5LjIxLS42MS4zNC0uOS4zMS0zLjQ4LS4zNi00LjUsMi40NC02LjAzLDQuNjItMS41OCwyLjI2LTIuNzMsNC45Ny01LjgsNS43NC0uMjMuMDYtLjQ4LjA2LS45Ni4xMi4xMy0uNTcuMTctLjk5LjMzLTEuMzcsMy41LTguNTMsNy4wMi0xNy4wNiwxMC41MS0yNS42LjkxLTIuMjIuODUtMi4yLTEuNDctMi4yOS04Ljc1LS4zNC0zNC41NS0yLTQzLjMxLTIuMjgtLjQyLS4wMS04LjE0LS4zLTE2LjA2LS41OC0xLjU2LS4wNi0zLjEzLS4xMS00LjY1LS4xNy02LjM2LS4yMy0xMS45MS0uNDItMTIuNjktLjQzaC0xLjU1czAsLjM2LDAsLjM2aC0uMjFjLS40NiwzLjE3LS43LDYuNDEtLjcsOS43LDAsMzYuOTUsMjkuODEsNjYuNzYsNjYuNzYsNjYuNzZzNjcuMDEtMjkuODEsNjcuMDEtNjYuNzYtMzAuMDYtNjcuMDEtNjcuMDEtNjcuMDFaIi8+PHBhdGggZD0iTTgwOC42NCw1NDIuNjJzMC0uMDMsMC0uMDVsLTI5LjMtLjA5LS4wMi0uMDZzMCwuMDUsMCwuMDdsMjkuMzEuMTNaIi8+PHBhdGggZD0iTTgwOC42NSw1NDIuNTdsLTIuMTMtLjIxYy43Mi4xMiwxLjQzLjIxLDIuMTMuMjEsMCwwLDAsMCwwLDBaIi8+PHBhdGggZD0iTTgwOC43MSw1NDMuMTloLS4xNmMtLjAyLjEyLS4wMy4yNC0uMDQuMzVoLjIxczAtLjM1LDAtLjM1WiIvPjxwYXRoIGQ9Ik04MDguNyw1NDIuNThoLS4wNnMwLDAsMCwwYy4wMiwwLC4wNCwwLC4wNiwwWiIvPjxwYXRoIGQ9Ik04MDguNjQsNTQyLjYyaC4wN3YtLjA1aC0uMDZzMCwuMDMsMCwuMDVaIi8+PHBhdGggZD0iTTY4My42OSw1NDQuMDVsLTIuNDEuMDJjLTMyLjQsMS43Ny05LjIzLDQzLjAzLTkuMjMsNDMuMDNsLS4wOS0uMDdjMTEuNjMsMTkuNzUsMzMuMTIsMzIuOTgsNTcuNTYsMzIuOTgsMzEuNTMsMCw1Ny42NS0yMS42OCw2NS4wNC01MC43NWgtMi4yMmMtOC4zOCwyNC4xNC0yNy4xLDM4LjQzLTQ2LjgxLDQwLjY1LTMxLjUzLDMuNDUtNTQuMi0yMi45MS02MC44NS01MS0xLjQ4LTYuMTYtMS4zNS01LjY3LTEuNTktMTEuNThsMTI1LjQxLTMuNzhjLjAyLS4xMi4wMy0uMjMuMDQtLjM1bC00Mi40MS4yOS04Mi40NC41N1oiLz48cGF0aCBkPSJNODA2LjUyLDU0Mi4zNmMtMTYuMTMtMi43My0zOC4wMy0zMy44Ni0zOC4wMy0zMy44NmwuMDMuMDhjLTguNzEtMTIuODctMjIuMjUtMjIuMy0zOS0yMi4zNi01Ljg5LS4wMi0xMS42Ljc1LTE3LjA2LDIuMTktNy4zOSwyLjItMTcuMiw2LjY0LTI2LjksMTUuNTMtMTAuNDEsMTEuMTgtMzEuMTgsMzYuNzEtNS4zLDM4LjExbDMuNzkuMDIsOTUuMjcuNDJzMC0uMDUsMC0uMDdsLjAyLjA2LDI5LjMuMDlzMCwwLDAsMGMtLjY5LDAtMS40MS0uMDktMi4xMy0uMjFaTTc0Ny45Nyw1NDAuMTloLTY1LjVjLjk4LTE5Ljk1LDEwLjgzLTQwLjQxLDI2LjM2LTQ1LjgzLDIyLjEzLTcuODcsNDkuMTUsMTIuMjYsNTIuNjcsNDUuNjYsMCwuMDYuMDIuMTEuMDIuMTdoLTEzLjU0WiIvPjxwYXRoIGQ9Ik04MDguNjUsNTQyLjU4aC4wNnMtLjA0LDAtLjA2LDBjMCwwLDAsMCwwLDBaIi8+PHBhdGggZD0iTTU5MC4zNCw2MTUuNTZjLTE3LDAtMTguNDgtMTcuMjQtMTguNDgtMzAuM3YtMTAuNjhsLjEyLjQycy0uMTItMjQuOTQsMTguMS0yOS40MmwtMTguMjIuMTNoLS40NnMtNS44NS4wNC01Ljg1LjA0Yy0xMi4zMiwzLjk1LTE1LjIyLDE5LjY1LTE1Ljg2LDI4LjUydjEwLjk5YzAsMjYuMTEtNC45MywzMy4wMS0xNS43NywzMi41MnYyLjIyaDYwLjM2YzQxLjY3LDAsNjQuODUtMzguMjcsNjcuMjgtNzQuOTFsLTIyLjM4LjE2Yy0xLjc2LDI4LjI4LTE2LjA3LDcwLjMyLTQ4Ljg0LDcwLjMyWiIvPjxwYXRoIGQ9Ik02MjEuNjIsNDg2LjIzYy0yMC42OSwwLTM3Ljk0LDEzLjA2LTQ5Ljc2LDI5LjMydi04MC4zMWMtNy4xNSw5Ljg1LTIzLjE2LDE2LjI2LTM3Ljk0LDE2LjI2djIuMjJjMTAuODQtLjQ5LDE1Ljc3LDYuNjUsMTUuNzcsMzIuNTJ2MjIuNmMuMzcsOC44LDIuODUsMjguNDYsMTcuMjcsMzIuMTZoMi4yNnMyLjY0LjAyLDIuNjQuMDJsMjAuMzguMDljLTIxLjY4LTMuNDgtMTIuMDQtMjMtNS45NS0zMi40Miw2LjktOC43MSwxNS44LTExLjM4LDE4Ljg0LTEyLjA1LDMuMjEtLjU4LDYuNTctLjY0LDEwLjA5LS4wNSwxOS43MSwzLjIsMjQuMTQsMjcuODQsMjQuMTQsNDQuMzQsMCwuMTMsMCwuMjYtLjAxLjM5bDIyLjM4LjFjLjAzLS45LjA1LTEuODEuMDUtMi43MSwwLTI4LjA4LTEzLjc5LTUyLjQ4LTQwLjE2LTUyLjQ4WiIvPjxwYXRoIGQ9Ik00NzYuMTIsNjE1LjU2Yy0xNywwLTE4LjQ4LTE3LjI0LTE4LjQ4LTMwLjN2LTEwLjY4bC4xMi40MnMtLjEyLTI0Ljk0LDE4LjEtMjkuNDJsLTE4LjIyLjEzaC0uNDZzLTUuODUuMDQtNS44NS4wNGMtMTIuMzIsMy45NS0xNS4yMiwxOS42NS0xNS44NiwyOC41MnYxMC45OWMwLDI2LjExLTQuOTMsMzMuMDEtMTUuNzcsMzIuNTJ2Mi4yMmg2MC4zNmM0MS42NywwLDY0Ljg1LTM4LjI3LDY3LjI4LTc0LjkxbC0yMi4zOC4xNmMtMS43NiwyOC4yOC0xNi4wNyw3MC4zMi00OC44NCw3MC4zMloiLz48cGF0aCBkPSJNNTA3LjQxLDQ4Ni4yM2MtMjAuNjksMC0zNy45NCwxMy4wNi00OS43NiwyOS4zMnYtODAuMzFjLTcuMTUsOS44NS0yMy4xNiwxNi4yNi0zNy45NCwxNi4yNnYyLjIyYzEwLjg0LS40OSwxNS43Nyw2LjY1LDE1Ljc3LDMyLjUydjIyLjZjLjM3LDguOCwyLjg1LDI4LjQ2LDE3LjI3LDMyLjE2aDIuMjZzMi42NC4wMiwyLjY0LjAybDIwLjM4LjA5Yy0yMS42OC0zLjQ4LTEyLjA0LTIzLTUuOTUtMzIuNDIsNi45LTguNzEsMTUuOC0xMS4zOCwxOC44NC0xMi4wNSwzLjIxLS41OCw2LjU3LS42NCwxMC4wOS0uMDUsMTkuNzEsMy4yLDI0LjE0LDI3Ljg0LDI0LjE0LDQ0LjM0LDAsLjEzLDAsLjI2LS4wMS4zOWwyMi4zOC4xYy4wMy0uOS4wNS0xLjgxLjA1LTIuNzEsMC0yOC4wOC0xMy43OS01Mi40OC00MC4xNi01Mi40OFoiLz48cGF0aCBkPSJNNDMxLjU3LDU0Ni4wNWwtMjEuODkuMTVjNy4zLDI5Ljc3LTIuNTMsNTguMjItMjMuNzksNjUuOTEtMTkuMTgsNi42Ni00MS41MS01LjM5LTU1LjMxLTI3Ljg2aDBzLS4wMy0uMDUtLjA5LS4xNGMtLjQtLjY2LS43OC0xLjM0LTEuMTctMi4wMS00LjM4LTcuODQtMTcuNjUtMzQuNTQsNC40LTM1LjM4bC05LjQ4LjA3LTYuMDYuMDZoLS4wOGMtMTguNzkuNzMtMTkuNDEsMTMuNjYtMTguNDcsMjAuMzEsNi4zOSwzMC4yMywzMy4xMyw1Mi44Myw2NS4zMSw1Mi44MywzNi45NSwwLDY3LjAxLTI5LjgxLDY3LjAxLTY2Ljc2LDAtMi40My0uMTQtNC44Mi0uMzktNy4xOFoiLz48cGF0aCBkPSJNMzE3LjkxLDU0MC4yN3MwLDAsLjAxLDBjLjA5LDAsLjE2LjAyLjI1LjAyaC0uMTkuNzRzMTYuODkuMDgsMTYuODkuMDhjLTE4LjE5LS45Mi0xMy44NS0yMC45Mi0xMi43Ny0yNS4wMSw0LjQ0LTEwLjA0LDExLjc0LTE3LjY0LDIxLjQtMjEsMjMuNC04LjM3LDUxLjQ5LDExLjMzLDYzLjA3LDQzLjg1LjI5LjgzLjU1LDEuNjUuODEsMi40OGwyMi42NC4xYy01Ljg1LTMxLjAyLTMzLjEzLTU0LjU2LTY1LjgzLTU0LjU2LTIwLjE1LDAtMzguMTYsOC45NS01MC4zOSwyMy4wNi0yLjk4LDMuODUtMjIuMTQsMjkuODUsMy4zNSwzMC45OFoiLz48cGF0aCBkPSJNMjY0LjI0LDU0OC43MWMwLDguNDQtLjA1LDE2Ljg4LjAxLDI1LjMzLjE0LDE4LjkxLTYuOTYsMzQuNjYtMjAuODQsNDcuMy0yLjg5LDIuNjMtMi40OCwzLjk2LjE4LDYuMzksMTYuNTIsMTUuMTEsMjIuOCwzNC4xMSwyMC4xNiw1Ni4wNy0yLjgyLDIzLjQyLTIyLjE4LDQ1LjItNDUuMDIsNTEtNC4zMSwxLjA5LTguNzksMS41My0xMy4yLDIuMjMtMi42Ny40Mi0zLjg0LS42NC0zLjc4LTMuNDguMTQtNi4wNi4xNC0xMi4xNC4wMS0xOC4yLS4wNi0yLjc4LjktMy44OCwzLjc3LTQuMjgsMTUuNzEtMi4xNywyNi4xOC0xMC45NCwzMS4yNS0yNS45NCw2LjM2LTE4LjgxLTUuNDEtNDAuODYtMjQuNjItNDYuMDEtNC4wMi0xLjA4LTguMjktMS41Ny0xMi40Ni0xLjY3LTI4Ljg1LS43Mi01My43Ni0yMS44NS01OS42MS00OS4zNC03LjMtMzQuMjgsMTMuNjUtNjcuODgsNDkuMzQtNzUuMzUsNC4yMi0uODgsOC42NS0xLjAyLDEyLjk4LTEuMDEsMTkuMTEuMDMsMzguMjIuMzMsNTcuMzIuMzIsMy41NSwwLDQuNDcsMS4yMiw0LjQyLDQuNi0uMTgsMTAuNjgtLjA3LDIxLjM3LS4wNywzMi4wNS4wNSwwLC4wOSwwLC4xNCwwWk0yMDEuNDIsNjExLjQ1YzIwLjEyLjExLDM2LjkxLTE2LjQxLDM3LjA0LTM2LjQ1LjEzLTIwLjgtMTYuMjYtMzcuMjUtMzcuMjgtMzcuNDItMTkuODItLjE2LTM2LjQ1LDE2LjU5LTM2LjYyLDM2Ljg4LS4xNywyMC4yNSwxNi40LDM2Ljg4LDM2Ljg2LDM2Ljk5WiIvPjwvc3ZnPg==">
   <p class="footer-line">"No diseñamos viajes. Diseñamos cómo quieres vivirlos."</p>
@@ -390,15 +439,11 @@
 </footer>
 
 <script>
-  // Nav border al hacer scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  // Ciclo de perfiles de viajero en el hero — el elemento firma:
-  // demuestra "empezamos por la persona" mostrando distintos tipos
-  // de viajero antes de mencionar ningún destino.
   const profiles = [
     'Para quien necesita apagar el móvil de verdad',
     'Para quien viaja solo por primera vez',
