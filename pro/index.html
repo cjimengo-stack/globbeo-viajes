@@ -41,18 +41,20 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 20px clamp(20px, 5vw, 56px);
     z-index: 50;
-    background: rgba(250,248,245,0.88);
-    backdrop-filter: blur(6px);
+    background: transparent;
+    backdrop-filter: none;
     border-bottom: 1px solid transparent;
-    transition: border-color .2s ease;
+    transition: background .2s ease, border-color .2s ease, backdrop-filter .2s ease;
   }
-  nav.scrolled { border-bottom-color: var(--beige); }
+  nav.scrolled { background: rgba(20,45,87,0.95); backdrop-filter: blur(6px); border-bottom-color: rgba(255,255,255,0.1); }
+  nav.scrolled .nav-links a { color: var(--cream); }
+  nav.scrolled .nav-cta { background: var(--turquoise); color: var(--navy); }
   .nav-logo { height: 46px; width: auto; display: block; }
-  .nav-links { display: flex; gap: clamp(16px, 3vw, 32px); align-items: center; font-size: 14px; font-weight: 500; }
-  .nav-links a.ig { opacity: 0.7; display: inline-flex; align-items: center; gap: 6px; }
-  .nav-links a.ig:hover { opacity: 1; }
+  .nav-links { display: flex; gap: clamp(16px, 3vw, 32px); align-items: center; font-size: 14px; font-weight: 500; color: var(--cream); }
+  .nav-links a { color: var(--cream); }
+  .nav-links a:hover { opacity: 0.8; }
   .nav-cta {
-    background: var(--navy); color: var(--cream);
+    background: var(--turquoise); color: var(--navy);
     padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 13.5px;
     transition: opacity .15s ease;
   }
@@ -234,9 +236,9 @@
 <nav id="nav">
   <img class="nav-logo" alt="Globbeo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwODAgMTA4MCI+PGNpcmNsZSBjeD0iNTQwIiBjeT0iNTQwIiByPSI1NDAiIGZpbGw9IiMxYTI5NDIiLz48cGF0aCBkPSJNNTYzLjExLDQxMS40MmMtNi41OC0uMzktMTQuMjYtLjYxLTIxLjAyLS45Mi0uMTgtLjAxLS4zOC0uMDItLjU3LS4wMy0uMzgtLjAyLS43OC0uMDMtMS4xNS0uMDUtLjUtLjAyLS44Ni0uMDEtMS4xMi4wMy0zMi4wMiwwLTY0LjA1LS40OC05Ni4wNy0uNTQtNy4zOC0uMDEtMTQuOTIuMjItMjIuMSwxLjcyLTYwLjc2LDEyLjcyLTk2LjQyLDY5LjkzLTg0LDEyOC4yOSw5Ljk2LDQ2LjgsNTIuMzYsODIuNzcsMTAxLjQ5LDg0LDcuMS4xOCwxNC4zNywxLjAxLDIxLjIsMi44NCwzMi43LDguNzcsNTIuNzQsNDYuMyw0MS45MSw3OC4zMy04LjY0LDI1LjU0LTI2LjQ2LDQwLjQ3LTUzLjIxLDQ0LjE2LTQuODguNjctNi41MSwyLjU2LTYuNDIsNy4yOC4yMSwxMC4zMy4yMiwyMC42Ni0uMDMsMzAuOTktLjEyLDQuODQsMS44OCw2LjY1LDYuNDMsNS45Myw3LjUxLTEuMTgsMTUuMTMtMS45MywyMi40Ny0zLjgsMzguODgtOS44Nyw3MS44NS00Ni45NSw3Ni42NC04Ni44Myw0LjQ5LTM3LjM5LTYuMjEtNjkuNzQtMzQuMzMtOTUuNDYtNC41Mi00LjEzLTUuMjItNi40LS4zLTEwLjg4LDIzLjYzLTIxLjUzLDM1LjczLTQ4LjM0LDM1LjQ4LTgwLjU0LS4xMS0xNC4zNy0uMDItMjguNzUtLjAyLTQzLjEyaC0uMjNjMC0xNS43NS0uMTMtMzEuNS4wMy00Ny4yNS4wMi4wNC4wNC4wOC4wNS4xMS0uMDYtMTAuMjkuODctMTMuMDUsMTQuODUtMTQuM1pNNDQxLjQ1LDU3OS42OGMtMzQuODQtLjE5LTYzLjA0LTI4LjUtNjIuNzUtNjIuOTguMjktMzQuNTUsMjguNi02My4wNiw2Mi4zNS02Mi43OSwzNS43OC4yOSw2My42OSwyOC4zMSw2My40Nyw2My43MS0uMjIsMzQuMTEtMjguODEsNjIuMjUtNjMuMDYsNjIuMDZaIiBmaWxsPSIjZmZmNGQ2Ii8+PHBhdGggZD0iTTY1NC4xNCwzMzEuMzRjLTQ3LjEzLDAtODYuMDIsMzQuNTctOTMuMjEsNzkuNjh2LjA3cy4wOCwwLC4wOCwwaDIuMmMxLjA3LjAyLDguOTYtLjMyLDE4LjA1LS43NSwyLjEtLjEsNC4yNS0uMiw2LjQxLS4zLDExLjQzLS41NCwyMi42OS0xLjExLDIzLjM5LTEuMTksMTIuODUtLjUxLDQ5LjYyLTIuNCw2My4wMS00LjA2LTYuMTUtMTIuODktMTIuNDctMjYuMTItMTkuMDgtMzkuOTcsMy4zLDEuMSw1Ljk3LDEuNzUsNy43NCw0LjMsMS42MiwyLjM0LDMuNDksNC41MSw1LjExLDYuODUsMS4yNywxLjg0LDIuOCwyLjg0LDUuMTIsMi41OC43LS4wOCwxLjU0LjA0LDIuMTUuMzguNjUuMzYsMS41NywxLjEzLDEuNTIsMS42My0uMDguNzEtLjg2LDEuNDMtMS40OSwxLjk2LS4zNy4zMS0xLjA1LjI0LTEuODQuNCwxLjMsMS43NCwyLjM2LDMuMDcsMy4zMiw0LjQ4LDEuNSwyLjIxLDMuMDcsMy45OSw2LjIyLDMuMy43OC0uMTcsMS44Mi44OSwyLjczLDEuMzgtLjYzLDEuMTYtMS4yNSwyLjMyLTIuMTMsMy45MywxLjY3LDIuMjIsMy42Niw1LjA1LDUuODgsNy43MS41MS42MiwxLjc0Ljg0LDIuNjYuODksNS4xMi4yOSwxMC4yOC4xOSwxNS4zNi43OSwyLjU3LjMsNS4wNCwxLjY4LDcuNDcsMi43OC4yMi4xLjM0LjI0LjUuMzcuNjkuNTQuOTIsMS4yOS42LDEuOTgtLjE0LjI5LS4zNS41Ni0uNjYuNzktMS42NSwxLjI0LTMuNTQsMi41Ny01LjQ5LDIuOTEtNS4xNi45LTEwLjM5LDEuNS0xNS42MiwxLjc5LTIuODMuMTYtNC41OSwxLjA2LTUuODYsMy42Mi0xLjEzLDIuMjgtMi43Niw0LjMtMy43Niw1LjgxLDEuMjIsMS41MywxLjk1LDIuNDMsMi42NiwzLjMzLS44Ny42Mi0xLjc0LDEuNzQtMi42MywxLjc2LTMuNDUuMDgtNS4zNiwxLjktNi43MSw0LjgzLS41NSwxLjItMS41OSwyLjE5LTIuNjQsMy42LDEuMDEuMSwxLjc5LS4wMiwyLjMuMjkuNjIuMzgsMS4zMywxLjEsMS40LDEuNzQuMDcuNTktLjU4LDEuMzMtMS4wNywxLjg3LS4yNy4zLS44Ni40OC0xLjI3LjQ0LTQuOTItLjUxLTYuMzcsMy40NS04LjUzLDYuNTMtMi4yNCwzLjItMy44Nyw3LjAzLTguMiw4LjExLS4zMy4wOC0uNjguMDktMS4zNi4xNy4xOS0uODEuMjUtMS40LjQ3LTEuOTMsNC45NS0xMi4wNyw5LjkzLTI0LjEzLDE0Ljg3LTM2LjIsMS4yOS0zLjEzLDEuMi0zLjExLTIuMDgtMy4yNC0xMi4zOC0uNDgtNDguODctMi44Mi02MS4yNC0zLjIyLS42LS4wMi0xMS41MS0uNDItMjIuNzEtLjgyLTIuMjEtLjA4LTQuNDMtLjE2LTYuNTgtLjI0LTktLjMyLTE2Ljg0LS41OS0xNy45NS0uNmgtMi4xOXMtLjIyLjAxLS4yMi4wMWwtLjA3LjVjLS42NSw0LjQ4LTEsOS4wNi0xLDEzLjcxLDAsNTIuMjYsNDIuMTUsOTQuNDIsOTQuNDIsOTQuNDJzOTQuNzYtNDIuMTYsOTQuNzYtOTQuNDItNDIuNS05NC43Ni05NC43Ni05NC43NloiIGZpbGw9IiM1YmM5ZDYiLz48cGF0aCBkPSJNNTQ4LjI2LDQyNS43MWMwLC4wNiwwLC4xMiwwLC4xOSIgZmlsbD0iIzViYzlkNiIvPjwvc3ZnPg==">
   <div class="nav-links">
-    <a href="/">Inicio</a>
+    <a href="/" style="display:inline-flex;align-items:center;gap:6px;opacity:0.7;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Inicio</a>
     <a href="/precio/">Precios</a>
-    <a class="nav-cta" href="mailto:info@globbeo.com?subject=Globbeo Pro">Globbeo Pro</a>
+    <a class="nav-cta" href="mailto:info@globbeo.com?subject=Globbeo Pro">Cuéntame tu idea</a>
   </div>
 </nav>
 
@@ -358,6 +360,12 @@
     </div>
   </div>
 </section>
+
+<!-- CTA MITAD -->
+<div style="background:var(--butter);padding:60px 20px;text-align:center;">
+  <p style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:500;color:var(--navy);margin-bottom:24px;">¿Tienes una comunidad y una idea?<br><em style="color:var(--turquoise);">Hablemos.</em></p>
+  <a href="mailto:info@globbeo.com?subject=Globbeo Pro" class="btn btn-primary">Cuéntame tu idea <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
 
 <!-- POR QUÉ GLOBBEO -->
 <section class="por-que">
