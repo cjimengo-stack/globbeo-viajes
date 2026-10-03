@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#142d57"><meta name="robots" content="noindex">
+<title>Raja Ampat: los proveedores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#142d57;--turq:#5bc9d6;--cream:#faf8f5;--butter:#fff4d6;--arena:#dcc8b0;
+  --gris:#6b6459;--gris2:#8a8378;--linea:rgba(20,45,87,.13);--blanco:#fff}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--cream);color:var(--navy);font-size:16.5px;line-height:1.62;
+  font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.12}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.demo{background:var(--turq);color:var(--navy);font-size:13.5px;font-weight:700;text-align:center;padding:10px 16px}
+header{padding:44px 0 26px}
+.eti{display:inline-block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;
+  color:var(--cream);background:var(--navy);padding:6px 13px;border-radius:100px}
+h1{font-size:clamp(30px,7vw,50px);margin:18px 0 12px}
+header p{color:var(--gris);font-size:17px;max-width:58ch}
+nav.ix{position:sticky;top:0;z-index:40;background:rgba(250,248,245,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--linea)}
+nav.ix .wrap{display:flex;gap:5px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav.ix .wrap::-webkit-scrollbar{display:none}
+nav.ix a{text-decoration:none;font-size:13px;font-weight:700;color:var(--gris2);white-space:nowrap;
+  padding:7px 12px;border-radius:100px;background:var(--blanco);border:1px solid var(--linea)}
+section{padding:34px 0;border-top:1px solid var(--linea)}
+section:first-of-type{border-top:none}
+h2{font-size:clamp(24px,5.5vw,35px);margin-bottom:6px}
+h3{font-size:20px;margin-bottom:6px}
+.sub{color:var(--gris2);font-size:15.5px;margin-bottom:20px;max-width:62ch}
+p+p{margin-top:10px}
+.tarj{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:22px;margin-bottom:12px}
+.dosc{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:760px){.dosc{grid-template-columns:1fr 1fr}}
+ul.lim{list-style:none}
+ul.lim li{display:flex;gap:11px;padding:9px 0;border-top:1px solid var(--linea);font-size:15.5px;line-height:1.45}
+ul.lim li:first-child{border-top:none}
+ul.lim li::before{content:'';flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:var(--turq);margin-top:9px}
+ul.lim.no li::before{background:#c9694f}
+table{width:100%;border-collapse:collapse;background:var(--blanco);border:1px solid var(--linea);
+  border-radius:16px;overflow:hidden;font-size:15px}
+th,td{padding:12px 14px;text-align:left;border-top:1px solid var(--linea);vertical-align:top}
+th{background:var(--butter);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
+  color:var(--gris);border-top:none}
+td.num{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{background:#eaf7f9;font-weight:700}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0}
+.aviso{background:#fdf0ec;border:1px solid rgba(201,105,79,.35);border-left:4px solid #c9694f;
+  border-radius:14px;padding:18px 20px;margin:14px 0}
+.aviso b{color:#a84f38}
+.bien{background:#eaf7f9;border:1px solid rgba(91,201,214,.5);border-left:4px solid var(--turq);
+  border-radius:14px;padding:18px 20px;margin:14px 0}
+.preg{background:var(--butter);border:1px solid var(--arena);border-left:4px solid var(--arena);
+  border-radius:14px;padding:18px 20px;margin:14px 0}
+.copiar{position:relative;background:var(--navy);color:var(--cream);border-radius:18px;padding:22px 22px 60px;
+  margin:14px 0;white-space:pre-wrap;font-size:15px;line-height:1.62}
+.copiar .cp{position:absolute;right:14px;bottom:14px;background:var(--turq);color:var(--navy);border:none;
+  font:inherit;font-size:13px;font-weight:700;border-radius:100px;padding:9px 18px;cursor:pointer}
+.copiar .cp.ok{background:#7BE0C0}
+.rot{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gris2);margin:22px 0 2px}
+a{color:#166b78}
+footer{padding:38px 0 60px;color:var(--gris2);font-size:14px;border-top:1px solid var(--linea)}
+.chivato{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(150%);
+  background:var(--navy);color:#fff;padding:12px 20px;border-radius:100px;font-size:14px;font-weight:700;
+  z-index:80;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.chivato.ver{transform:translateX(-50%) translateY(0)}
+</style>
+</head><body>
+<div class="demo">Proveedores reales, con nombre. Ninguno está contactado todavía.</div>
+
+<div class="wrap"><header>
+  <span class="eti">Raja Ampat · Proveedores</span>
+  <h1>Quién te lo puede hacer allí</h1>
+  <p>Pediste los proveedores locales y aquí están, con nombre, isla, cuánta gente les cabe y lo que
+  cobran por traer y llevar. Todo sale de la web de la asociación de homestays de Raja Ampat, que
+  es de los propios dueños y garantiza que no te cobran más de lo que publican.</p>
+</header></div>
+
+<nav class="ix"><div class="wrap">
+  <a href="#alojar">Dónde dormir</a>
+  <a href="#barco">El barco</a>
+  <a href="#llegar">Vuelos y ferry</a>
+  <a href="#permisos">Permisos</a>
+  <a href="#escribir">Qué les escribes</a>
+  <a href="#orden">En qué orden</a>
+  <a href="#combinar">Combinar o no</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="alojar">
+  <h2>1 · Dónde duerme el grupo</h2>
+  <p class="sub">La regla que manda aquí: <b>tiene que caber el grupo entero en el mismo sitio</b>.
+  Nueve personas repartidas en dos islas son dos barcos y el doble de líos.</p>
+
+  <div class="tarj" style="border-color:var(--turq);background:#eaf7f9">
+    <h3>Arborek Dive Homestay</h3>
+    <p><b>Isla:</b> Arborek</p>
+    <p><b>Cabe:</b> 5 bungalós sobre el agua, hasta 3 en cada uno. <b>Caben 15</b></p>
+    <p><b>Traslado desde Waisai:</b> 1.500.000 a 7.000.000 Rp, según la barca que haga falta</p>
+  </div>
+  <div class="tarj" style="border-color:var(--turq);background:#eaf7f9">
+    <h3>Yenbuba Homestay</h3>
+    <p><b>Isla:</b> Kri</p>
+    <p><b>Cabe:</b> 7 sobre el agua de 2, y 2 en tierra con baño de 3. <b>Caben 20</b></p>
+    <p><b>Traslado desde Waisai:</b> Por confirmar</p>
+  </div>
+  <div class="tarj" style="border-color:var(--turq);background:#eaf7f9">
+    <h3>Kordiris Dive Homestay</h3>
+    <p><b>Isla:</b> Gam</p>
+    <p><b>Cabe:</b> 6 sobre el agua y 2 de playa, de 2 en 2. <b>Caben 16</b></p>
+    <p><b>Traslado desde Waisai:</b> 500.000 Rp en lancha rápida, repartido entre los que van</p>
+  </div>
+  <div class="tarj" style="border-color:var(--turq);background:#eaf7f9">
+    <h3>Nyanse Homestay</h3>
+    <p><b>Isla:</b> Gam, entre Sawinggrai y Kapisawar</p>
+    <p><b>Cabe:</b> 6 sobre el agua, de 2 en 2. <b>Caben 12</b></p>
+    <p><b>Traslado desde Waisai:</b> Por confirmar</p>
+  </div>
+  <div class="tarj">
+    <h3>Mangkur Kodon</h3>
+    <p><b>Isla:</b> Kri, punta oeste</p>
+    <p><b>Cabe:</b> 5 bungalós sobre el agua, de 2 en 2. <b>Caben 10</b></p>
+    <p><b>Traslado desde Waisai:</b> 800.000 Rp, barca de 6, repartido</p>
+  </div>
+  <div class="tarj">
+    <h3>Kayafyof Homestay</h3>
+    <p><b>Isla:</b> Arborek</p>
+    <p><b>Cabe:</b> Por confirmar</p>
+    <p><b>Traslado desde Waisai:</b> 1.300.000 Rp en longboat de 4, o 2.500.000 Rp en rápida de 10</p>
+  </div>
+  <div class="tarj">
+    <h3>Kalabia Homestay</h3>
+    <p><b>Isla:</b> Arborek</p>
+    <p><b>Cabe:</b> Por confirmar</p>
+    <p><b>Traslado desde Waisai:</b> 1.000.000 Rp por trayecto, longboat de 4, repartido</p>
+  </div>
+  <div class="tarj">
+    <h3>Adefiro Homestay</h3>
+    <p><b>Isla:</b> Arborek</p>
+    <p><b>Cabe:</b> Por confirmar</p>
+    <p><b>Traslado desde Waisai:</b> 1.200.000 Rp en longboat</p>
+  </div>
+
+  <div class="bien">
+    <b>Los cuatro que cogen a nueve personas de una sola vez</b>, marcados en azul: Yenbuba (20),
+    Kordiris (16), Arborek Dive Homestay (15) y Nyanse (12). Mangkur Kodon se queda en 10, o sea que
+    cabéis, pero sin sitio si alguien se apunta de más. De los cuatro que quedan todavía no se sabe
+    la capacidad, y eso es justo lo primero que hay que preguntarles.
+  </div>
+
+  <div class="tw"><table>
+    <tr><th>Lo que cuesta dormir</th><th>Cuánto</th></tr>
+    <tr><td>Media de la asociación, por persona y noche</td><td class="num">350.000 Rp</td></tr>
+    <tr><td>Arborek Dive Homestay, dos personas y noche</td><td class="num">unos 57 €</td></tr>
+    <tr><td>Mangkur Kodon, dos personas y noche</td><td class="num">unos 51 €</td></tr>
+  </table></div>
+
+  <p><b>Todos esos precios son con las tres comidas dentro</b>, más agua, té y café sin límite. Eso
+  es lo que hace que Raja Ampat salga mucho más barato de lo que la gente se imagina, y es un
+  argumento de venta, no un detalle.</p>
+
+  <div class="aviso">
+    <b>Un aviso de la propia web de la asociación.</b> Entre el 11 y el 16 de agosto de 2026 no
+    estaban aceptando reservas nuevas porque estaban cambiando la web. Hoy es 16, así que debería
+    estar volviendo. Si al escribir sale error, no es que el homestay esté cerrado.
+  </div>
+</section>
+
+<section id="barco">
+  <h2>2 · El barco, que es lo que manda en el presupuesto</h2>
+  <p class="sub">El alojamiento es barato. El barco no, y es lo que hace que el viaje salga o no
+  salga según cuánta gente vaya.</p>
+
+  <div class="tarj">
+    <h3>La forma barata de moverse, y es la que recomiendan ellos mismos</h3>
+    <p>No volver a Waisai cada día. Se duerme en un sitio, y <b>el dueño de cada homestay te lleva
+    al siguiente</b>. Así el barco no hace kilómetros en vacío y pagas solo el trayecto que usas.</p>
+    <p>La otra forma es contratar una barca para todos los días. Cuesta más, pero con nueve personas
+    y una ruta fija te da libertad de horarios, que con un grupo pagando 1.750 € importa.</p>
+  </div>
+
+  <div class="tw"><table>
+    <tr><th>Referencia real</th><th>Cuánto</th></tr>
+    <tr><td>Waisai a Piaynemo, solo ida, con Transwisata</td><td class="num">950.000 Rp</td></tr>
+    <tr><td>Piaynemo con noche allí, barca entera</td><td class="num">6.000.000 Rp</td></tr>
+    <tr><td>Gasolina en Waisai</td><td class="num">10.000 Rp el litro</td></tr>
+    <tr><td>Gasolina en las islas de fuera</td><td class="num">hasta 12.000 Rp el litro</td></tr>
+    <tr><td>Un motor de 40 caballos, ida y vuelta larga</td><td class="num">unos 70 litros</td></tr>
+  </table></div>
+
+  <div class="preg">
+    <b>Para qué sirven esos números.</b> No son tarifas: son el coste de la gasolina, y los publica
+    la asociación justo para que sepas si un precio que te dan es razonable o te están inflando.
+    Si alguien te pide 1.500.000 Rp por un trayecto que gasta 700.000 de gasolina, está bien.
+    Si te pide 4.000.000, pregunta por qué.
+  </div>
+</section>
+
+<section id="llegar">
+  <h2>3 · Cómo llega el grupo</h2>
+
+  <div class="tw"><table>
+    <tr><th>Tramo</th><th>Con quién</th><th>Cuánto</th></tr>
+    <tr><td>Bali a Sorong, ida y vuelta</td><td>Garuda directo, o Batik y Citilink con escala</td>
+      <td class="num">desde unos 255 €<br>3 h 10 el directo</td></tr>
+    <tr><td>Sorong a Waisai, ferry</td><td>Ferry público, clase business</td>
+      <td class="num">250.000 Rp por trayecto</td></tr>
+    <tr><td>Waisai al homestay</td><td>El propio homestay</td><td class="num">de 500.000 a 2.500.000 Rp</td></tr>
+  </table></div>
+
+  <div class="bien">
+    <b>Un dato que juega a tu favor.</b> Febrero es de los meses más baratos del año para volar de
+    Bali a Sorong. La fecha que salía más barata al mirar era justo el <b>7 de febrero de 2027</b>,
+    que cae en la primera quincena que ya habíamos elegido por el tiempo. Las dos cosas coinciden,
+    y eso no siempre pasa.
+  </div>
+</section>
+
+<section id="permisos">
+  <h2>4 · Permisos, y aquí hay un cambio reciente</h2>
+
+  <div class="aviso">
+    <b>Ojo, que esto ha cambiado hace dos semanas y afecta a tu tabla de costes.</b> Desde el
+    <b>3 de agosto de 2026</b> el permiso del parque marino son <b>1.000.000 de rupias</b> por
+    persona extranjera, y vale un año. Y además hay <b>una entrada de visitante que antes no
+    estaba</b>, que se paga al llegar al puerto de Waisai. Eso son unos 17 € por cabeza que no
+    estaban en el cálculo.
+  </div>
+
+  <div class="tw"><table>
+    <tr><th>Qué</th><th>Cuánto</th><th>Dónde se paga</th></tr>
+    <tr><td>Permiso del parque marino</td><td class="num">1.000.000 Rp</td>
+      <td>En el puerto de Sorong, en la oficina de Waisai, o por internet cuando vuelva a funcionar</td></tr>
+    <tr><td>Entrada de visitante</td><td class="num">unas 300.000 Rp<br>por confirmar</td>
+      <td>Al llegar al puerto de Waisai</td></tr>
+  </table></div>
+
+  <p>Son las dos únicas tasas oficiales. Cualquier otra cosa que os pidan es una entrada local de
+  un sitio concreto, y esas son pequeñas y normales.</p>
+</section>
+
+<section id="escribir">
+  <h2>5 · Qué les escribes, palabra por palabra</h2>
+  <p class="sub">En inglés, porque es lo que usan. Corto y con las tres cosas que necesitas saber.</p>
+
+  <div class="copiar">Hello,
+
+My name is Carla, from Globbeo. We organise small group trips in Indonesia.
+
+I am planning a trip to Raja Ampat for February 2027, for a group of 9 people including myself as the guide. We would like to stay 3 nights with you.
+
+Could you please tell me:
+
+1. Do you have space for 9 people on the same dates in early February 2027?
+2. What is the price per person per night, full board, for a group of 9?
+3. What is the cost of the boat transfer from Waisai for the whole group, and how many boats would we need?
+
+We would also like to hire a boat for full day trips while we stay with you. Please let me know if you can arrange that and what it costs per day for our group.
+
+Thank you very much,
+Carla
+Globbeo<button class="cp" type="button">Copiar</button></div>
+
+  <div class="preg">
+    <b>Por qué pregunta el traslado y el barco en el mismo mensaje.</b> Porque el que te lleva suele
+    ser el mismo que te puede sacar cada día, y así te ahorras buscar barquero aparte. Es la forma
+    de trabajar que recomienda la propia asociación.
+  </div>
+</section>
+
+<section id="orden">
+  <h2>6 · En qué orden se hace, para no pagar de más</h2>
+  <p class="sub">Aquí hay un orden que importa, porque lo caro se reserva antes que lo barato.</p>
+
+  <div class="tarj">
+    <ul class="lim">
+      <li><b>Primero, tú decides las fechas.</b> No se puede pedir precio sin fecha, y las de
+      febrero de 2027 hay que fijarlas ya</li>
+      <li><b>Segundo, escribes a los tres que caben:</b> Arborek Dive Homestay, Yenbuba y Kordiris.
+      A los tres a la vez, no de uno en uno, que tardan días en contestar</li>
+      <li><b>Tercero, con el precio del barco en la mano</b>, se cierra la tabla de costes y se
+      confirma si el viaje se vende a 1.750 €</li>
+      <li><b>Cuarto, el sondeo por Instagram.</b> Nunca antes: si sale y no tienes sitio, quedas
+      mal, y si no sale, no has gastado nada</li>
+      <li><b>Y solo entonces se cobran las señales</b> y se reserva de verdad</li>
+    </ul>
+  </div>
+
+  <div class="aviso">
+    <b>Lo que no hay que hacer.</b> Reservar los homestays antes de saber si hay ocho personas.
+    Ellos no piden señal por escribirles, así que una reserva sin gente vendida es un compromiso
+    tuyo con una familia que ha dejado los bungalós bloqueados. Se pregunta disponibilidad, se
+    cierra cuando hay señales cobradas.
+  </div>
+</section>
+
+<section id="combinar">
+  <h2>7 · Lo de combinar homestay y barco de dormir</h2>
+  <p class="sub">Me preguntaste si se puede combinar o si hay un sistema mejor. Se puede, y aquí
+  está el número que decide.</p>
+
+  <div class="tarj">
+    <h3>Combinar de verdad las dos cosas no sale</h3>
+    <p>Un barco de dormir para nueve personas se alquila entero, y los pequeños de madera empiezan
+    en unos <b>1.500 dólares la noche</b>. Tres noches a bordo son 4.500 dólares, o sea unos
+    <b>500 € más por plaza</b>. Con eso el viaje se te va de 1.750 a 2.300 y deja de ser lo que
+    querías vender.</p>
+  </div>
+
+  <div class="bien">
+    <b>La combinación que sí funciona es la que ya está en la propuesta:</b> dormir en homestay y
+    contratar una barca privada para los días de ruta. Duermes barato y navegas cuando quieres, que
+    es justo lo que te da el barco de dormir, pero sin pagarlo por la noche.
+  </div>
+
+  <div class="tarj">
+    <h3>Y hay una tercera forma, la que recomiendan ellos mismos</h3>
+    <p>No dormir siempre en el mismo sitio: <b>dos o tres noches en cada isla, y que el dueño de
+    cada homestay te lleve al siguiente</b>. Así el grupo se mueve sin pagar barca de vuelta en
+    vacío, y de paso ven tres sitios distintos en vez de uno.</p>
+    <p>La pega es que hay que cuadrar disponibilidad en tres sitios a la vez para nueve personas, y
+    eso con dos meses de antelación es difícil. <b>Para el primer viaje yo iría a base fija</b>, y a
+    partir del segundo, cuando ya conozcas a la gente de allí, se puede repartir.</p>
+  </div>
+</section>
+
+</div>
+
+<div class="wrap"><footer>
+  Documento interno de Globbeo. 16 de agosto de 2026. Los precios salen de
+  <a href="https://www.stayrajaampat.com/">stayrajaampat.com</a>, que es la web de la asociación de
+  homestays. Los números y las plazas de la propuesta están en <a href="/raja-ampat/">Raja Ampat</a>,
+  y lo de la agencia en <a href="/raja-ampat-zafiro/">esta otra</a>.
+</footer></div>
+
+<div class="chivato" id="chivato">Copiado</div>
+<script>
+document.querySelectorAll('.copiar .cp').forEach(function(b){
+  b.addEventListener('click',function(){
+    var caja=b.parentNode.cloneNode(true);
+    var bt=caja.querySelector('.cp'); if(bt) bt.remove();
+    var txt=caja.textContent.trim();
+    function ok(){
+      b.textContent='Copiado'; b.classList.add('ok');
+      var c=document.getElementById('chivato'); c.classList.add('ver');
+      setTimeout(function(){ b.textContent='Copiar'; b.classList.remove('ok'); c.classList.remove('ver'); },1900);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok,function(){});
+    }else{
+      var t=document.createElement('textarea'); t.value=txt; document.body.appendChild(t);
+      t.select(); try{document.execCommand('copy');ok();}catch(e){} t.remove();
+    }
+  });
+});
+</script>
+</body></html>
