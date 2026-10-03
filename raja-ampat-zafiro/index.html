@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#142d57"><meta name="robots" content="noindex">
+<title>Raja Ampat y la agencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#142d57;--turq:#5bc9d6;--cream:#faf8f5;--butter:#fff4d6;--arena:#dcc8b0;
+  --gris:#6b6459;--gris2:#8a8378;--linea:rgba(20,45,87,.13);--blanco:#fff}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--cream);color:var(--navy);font-size:16.5px;line-height:1.62;
+  font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.12}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.demo{background:var(--turq);color:var(--navy);font-size:13.5px;font-weight:700;text-align:center;padding:10px 16px}
+header{padding:44px 0 26px}
+.eti{display:inline-block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;
+  color:var(--cream);background:var(--navy);padding:6px 13px;border-radius:100px}
+h1{font-size:clamp(30px,7vw,50px);margin:18px 0 12px}
+header p{color:var(--gris);font-size:17px;max-width:58ch}
+nav.ix{position:sticky;top:0;z-index:40;background:rgba(250,248,245,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--linea)}
+nav.ix .wrap{display:flex;gap:5px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav.ix .wrap::-webkit-scrollbar{display:none}
+nav.ix a{text-decoration:none;font-size:13px;font-weight:700;color:var(--gris2);white-space:nowrap;
+  padding:7px 12px;border-radius:100px;background:var(--blanco);border:1px solid var(--linea)}
+section{padding:34px 0;border-top:1px solid var(--linea)}
+section:first-of-type{border-top:none}
+h2{font-size:clamp(24px,5.5vw,35px);margin-bottom:6px}
+h3{font-size:20px;margin-bottom:6px}
+.sub{color:var(--gris2);font-size:15.5px;margin-bottom:20px;max-width:62ch}
+p+p{margin-top:10px}
+.tarj{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:22px;margin-bottom:12px}
+.dosc{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:760px){.dosc{grid-template-columns:1fr 1fr}}
+ul.lim{list-style:none}
+ul.lim li{display:flex;gap:11px;padding:9px 0;border-top:1px solid var(--linea);font-size:15.5px;line-height:1.45}
+ul.lim li:first-child{border-top:none}
+ul.lim li::before{content:'';flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:var(--turq);margin-top:9px}
+ul.lim.no li::before{background:#c9694f}
+table{width:100%;border-collapse:collapse;background:var(--blanco);border:1px solid var(--linea);
+  border-radius:16px;overflow:hidden;font-size:15px}
+th,td{padding:12px 14px;text-align:left;border-top:1px solid var(--linea);vertical-align:top}
+th{background:var(--butter);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
+  color:var(--gris);border-top:none}
+td.num{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{background:#eaf7f9;font-weight:700}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0}
+.aviso{background:#fdf0ec;border:1px solid rgba(201,105,79,.35);border-left:4px solid #c9694f;
+  border-radius:14px;padding:18px 20px;margin:14px 0}
+.aviso b{color:#a84f38}
+.bien{background:#eaf7f9;border:1px solid rgba(91,201,214,.5);border-left:4px solid var(--turq);
+  border-radius:14px;padding:18px 20px;margin:14px 0}
+.preg{background:var(--butter);border:1px solid var(--arena);border-left:4px solid var(--arena);
+  border-radius:14px;padding:18px 20px;margin:14px 0}
+.copiar{position:relative;background:var(--navy);color:var(--cream);border-radius:18px;padding:22px 22px 60px;
+  margin:14px 0;white-space:pre-wrap;font-size:15px;line-height:1.62}
+.copiar .cp{position:absolute;right:14px;bottom:14px;background:var(--turq);color:var(--navy);border:none;
+  font:inherit;font-size:13px;font-weight:700;border-radius:100px;padding:9px 18px;cursor:pointer}
+.copiar .cp.ok{background:#7BE0C0}
+.rot{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gris2);margin:22px 0 2px}
+a{color:#166b78}
+footer{padding:38px 0 60px;color:var(--gris2);font-size:14px;border-top:1px solid var(--linea)}
+.chivato{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(150%);
+  background:var(--navy);color:#fff;padding:12px 20px;border-radius:100px;font-size:14px;font-weight:700;
+  z-index:80;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.chivato.ver{transform:translateX(-50%) translateY(0)}
+</style>
+</head><body>
+<div class="demo">Documento interno. Nada de esto se ha mandado a nadie todavía.</div>
+
+<div class="wrap"><header>
+  <span class="eti">Raja Ampat · La agencia</span>
+  <h1>Lo que le mandas a Zafiro, y lo que no</h1>
+  <p>Me pediste la propuesta para mandársela a Zafiro Viajes, a ver si ellos pueden encargarse de
+  cerrar el viaje. Está escrita y lista para copiar. Antes hay dos cosas que tienes que decidir, y
+  una de ellas cambia bastante dinero.</p>
+</header></div>
+
+<nav class="ix"><div class="wrap">
+  <a href="#cual">Cuál de los dos</a>
+  <a href="#noles">Lo que no les mandas</a>
+  <a href="#formas">Las tres formas</a>
+  <a href="#legal">Lo legal</a>
+  <a href="#correo">El correo</a>
+  <a href="#brief">El brief</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="cual">
+  <h2>1 · Antes de nada: ¿cuál de los dos?</h2>
+  <p class="sub">Hay dos empresas españolas que se llaman casi igual, y no son la misma.</p>
+  <div class="dosc">
+    <div class="tarj">
+      <h3>Zafiro Tours</h3>
+      <p>Franquicia grande, unas 500 oficinas por España. Cada oficina es de un franquiciado
+      distinto, así que hablar con una no es hablar con la central.</p>
+    </div>
+    <div class="tarj">
+      <h3>Viajes Zafiro</h3>
+      <p>Agencia de Madrid, unos 40 años, y dice especializarse en grupos y viajes de empresa.
+      Por lo que buscan, esta encaja más con lo que necesitas.</p>
+    </div>
+  </div>
+  <div class="preg">
+    <b>Dime cuál es y si tienes contacto de alguien concreto.</b> Con el nombre de la persona
+    cambio el correo en dos minutos. Y si el contacto te lo pasó alguien, mejor todavía: un correo
+    frío a una agencia se lee muy distinto que uno que llega recomendado.
+  </div>
+</section>
+
+<section id="noles">
+  <h2>2 · Lo que NO les mandas, y esto es importante</h2>
+  <p class="sub">Un viaje se puede copiar entero. Lo que no se puede copiar es a quién se lo vendes.</p>
+
+  <div class="aviso">
+    <b>Nada de esto sale de tu ordenador.</b>
+    <ul class="lim no">
+      <li>La tabla de costes. Que sepan que te cuesta 880 € la plaza es entregarles tu margen</li>
+      <li>Lo que vas a cobrar por plaza</li>
+      <li>Los nombres de los homestays y del barquero</li>
+      <li>La ruta día por día con los sitios exactos</li>
+    </ul>
+    Una agencia con tu ruta, tus proveedores y tus precios ya no te necesita para nada. Y no es
+    mala fe: es que si tienen el producto, lo venden ellos.
+  </div>
+
+  <div class="bien">
+    <b>Lo que sí ven, y sobra para que te contesten.</b> El destino, las fechas, cuánta gente,
+    qué tipo de viaje es, qué necesitas de ellos y qué pones tú. Con eso una agencia sabe
+    perfectamente si le interesa o no.
+  </div>
+</section>
+
+<section id="formas">
+  <h2>3 · Las tres formas de trabajar con ellos</h2>
+  <p class="sub">Es la decisión que más dinero mueve, así que va con números. Sobre el viaje de
+  ocho plazas a 1.750 €.</p>
+
+  <div class="tarj">
+    <h3>A · Ellos lo operan todo</h3>
+    <p>Contratan, cobran, facturan y responden. Tú les llevas la gente.</p>
+    <p><b>Te queda: 175 a 260 € por plaza.</b> Con ocho, entre 1.400 y 2.100 € en total.</p>
+  </div>
+  <div class="tarj" style="border-color:var(--turq);background:#eaf7f9">
+    <h3>B · Ellos ponen la parte de agencia</h3>
+    <p>Vuelos, seguros, factura legal y respaldo. El viaje lo diseñas y lo guías tú.</p>
+    <p><b>Te queda: 700 a 800 € por plaza.</b> Con ocho, entre 5.600 y 6.400 € en total.</p>
+  </div>
+  <div class="tarj">
+    <h3>C · Sin agencia</h3>
+    <p>Lo vendes tú directo, como hasta ahora.</p>
+    <p><b>Te queda: 853 € por plaza.</b> Con ocho, unos 5.900 € en total.</p>
+  </div>
+
+  <div class="bien">
+    <b>Mi recomendación es la B, y con diferencia.</b> Con la A cobras una comisión por hacer el
+    trabajo más difícil de todos, que es conseguir a ocho personas que se gasten 1.750 €. Con la B
+    pierdes entre 70 y 170 € por plaza y a cambio te quitas los vuelos de nueve personas, el seguro,
+    la factura y el susto de que alguien cancele.
+  </div>
+
+  <p>Y hay una cosa de la B que no se ve en la tabla: <b>el viaje sigue siendo de Globbeo</b>. La
+  agencia es el proveedor, no la marca. Si el año que viene decides hacerlo sola, puedes.</p>
+
+  <div class="aviso">
+    <b>El riesgo real de la A, dicho claro.</b> Si ellos operan y ellos cobran, en el segundo viaje
+    ya saben hacerlo sin ti. Tú serías la que lleva clientes, y esa es la parte que cualquiera
+    sustituye por publicidad. No te digo que no lo hagas, te digo que lo sepas antes.
+  </div>
+</section>
+
+<section id="legal">
+  <h2>4 · Por qué una agencia te viene bien de todas formas</h2>
+  <p class="sub">Esto no es una opinión de márketing, es la razón práctica por la que te conviene
+  tener una agencia detrás aunque el margen sea menor.</p>
+
+  <p>Cuando vendes por 1.750 € un paquete que junta <b>vuelo y alojamiento</b>, eso en España tiene
+  un nombre concreto, viaje combinado, y venderlo al público suele estar reservado a agencias con
+  licencia. Con una agencia detrás, esa parte deja de ser tu problema: la venta la respalda quien
+  tiene el título para hacerlo.</p>
+
+  <div class="preg">
+    <b>Yo no soy quien para decirte lo que es legal y lo que no.</b> Lo que te digo es que esta es
+    la pregunta que hay que hacerle a un asesor antes de cobrar la primera señal, y que la respuesta
+    puede cambiar la forma de venderlo. Si prefieres, se la puedes preguntar directamente a la
+    agencia: ellos viven de esto y te lo van a explicar en dos minutos.
+  </div>
+
+  <p>Lo mismo pasa en Indonesia: llevar a un grupo y cobrarles allí también quiere su papeleo. Con
+  un operador local contratado, esa parte también está cubierta. De eso te hablo en la otra página,
+  la de los proveedores.</p>
+</section>
+
+<section id="correo">
+  <h2>5 · El correo, listo para mandar</h2>
+  <p class="sub">Corto a propósito. Un correo largo a una agencia no se lee, y este solo tiene que
+  conseguir una respuesta, no cerrar nada.</p>
+
+  <p class="rot">Asunto</p>
+  <div class="copiar">Grupo de 8 a Raja Ampat en febrero de 2027, buscamos agencia<button class="cp" type="button">Copiar</button></div>
+
+  <p class="rot">El correo</p>
+  <div class="copiar">Hola [nombre]:
+
+Soy Carla Jiménez, de Globbeo. Organizamos viajes de grupo pequeños en Indonesia, y estoy preparando uno a Raja Ampat, en la Papúa indonesia, para febrero de 2027.
+
+Es un grupo de 8 personas más yo, que voy guiando. Diez días de puerta a puerta, siete noches allí, alojamiento local y navegación diaria. La parte de destino la llevo yo: la ruta, los alojamientos, los barcos y el guiado están diseñados y con proveedores identificados.
+
+Lo que busco es una agencia que se encargue de la parte que no me toca:
+
+- Los vuelos internacionales del grupo y los internos hasta Sorong
+- El seguro de viaje obligatorio
+- La facturación y el respaldo de la venta en España
+- Y, si os encaja, las condiciones de cancelación y la gestión de cobros
+
+Me interesa saber tres cosas: si trabajáis con grupos pequeños a destinos así, cómo trabajaríais conmigo (comisión, neto o encargo) y con cuánta antelación necesitáis cerrar las plazas.
+
+Si os parece, os paso el resumen del viaje y lo vemos en una llamada de veinte minutos.
+
+Gracias,
+Carla Jiménez
+Globbeo · globbeo.com<button class="cp" type="button">Copiar</button></div>
+
+  <div class="bien">
+    <b>Fíjate en lo que hace ese correo.</b> Deja claro desde la primera línea que el producto ya
+    existe y es tuyo, y les pide una cosa concreta. No les pregunta si quieren organizarte un viaje:
+    les propone entrar en uno que ya está hecho. Eso cambia quién manda en la conversación.
+  </div>
+</section>
+
+<section id="brief">
+  <h2>6 · El resumen que les pasas después</h2>
+  <p class="sub">Solo cuando contesten. Es lo que pueden ver sin que se lleven el viaje puesto.</p>
+
+  <div class="copiar">RAJA AMPAT · FEBRERO 2027
+Resumen para agencia · Globbeo
+
+EL VIAJE
+Destino: Raja Ampat, Papúa Occidental, Indonesia.
+Fechas previstas: primera quincena de febrero de 2027, 10 días de puerta a puerta.
+Grupo: 8 plazas más la guía. Mínimo para salir: 5 plazas.
+Tipo: alojamiento local sobre el agua, navegación diaria, snorkel y naturaleza. Nivel medio, sin exigencia técnica.
+Perfil del viajero: adulto de 30 a 50 años, viajero con experiencia, busca sitios poco masificados.
+
+QUÉ APORTA GLOBBEO
+Diseño completo de la ruta y los días.
+Alojamientos y embarcaciones contratados en destino.
+Guía acompañante durante todo el viaje.
+Itinerario digital personalizado para cada viajero, que funciona sin cobertura.
+La venta y la comunicación con el viajero.
+
+QUÉ BUSCAMOS DE LA AGENCIA
+Vuelos internacionales y vuelo interno hasta Sorong para el grupo.
+Seguro de viaje.
+Facturación y respaldo de la venta en España.
+Condiciones de cancelación y, si procede, gestión de cobros.
+
+CALENDARIO
+Sondeo y reservas: a partir de septiembre de 2026.
+Plazas cerradas: 30 de noviembre de 2026.
+Emisión de billetes: diciembre de 2026.
+Salida: febrero de 2027.
+
+CONTACTO
+Carla Jiménez · Globbeo · globbeo.com<button class="cp" type="button">Copiar</button></div>
+
+  <div class="preg">
+    <b>Lo que falta ahí a propósito.</b> No hay precio de venta, no hay costes y no hay nombres de
+    proveedores. Si te preguntan el precio al que lo vendes, se dice, no pasa nada. Los costes y los
+    proveedores, no.
+  </div>
+</section>
+
+</div>
+
+<div class="wrap"><footer>
+  Documento interno de Globbeo. 16 de agosto de 2026. Los números salen de la propuesta de
+  <a href="/raja-ampat/">Raja Ampat</a> y los proveedores están en
+  <a href="/raja-ampat-proveedores/">la otra página</a>.
+</footer></div>
+
+<div class="chivato" id="chivato">Copiado</div>
+<script>
+document.querySelectorAll('.copiar .cp').forEach(function(b){
+  b.addEventListener('click',function(){
+    var caja=b.parentNode.cloneNode(true);
+    var bt=caja.querySelector('.cp'); if(bt) bt.remove();
+    var txt=caja.textContent.trim();
+    function ok(){
+      b.textContent='Copiado'; b.classList.add('ok');
+      var c=document.getElementById('chivato'); c.classList.add('ver');
+      setTimeout(function(){ b.textContent='Copiar'; b.classList.remove('ok'); c.classList.remove('ver'); },1900);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok,function(){});
+    }else{
+      var t=document.createElement('textarea'); t.value=txt; document.body.appendChild(t);
+      t.select(); try{document.execCommand('copy');ok();}catch(e){} t.remove();
+    }
+  });
+});
+</script>
+</body></html>
