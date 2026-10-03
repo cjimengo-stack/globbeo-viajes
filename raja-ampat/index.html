@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#142d57"><meta name="robots" content="noindex">
+<title>Raja Ampat · la propuesta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#142d57;--turq:#5bc9d6;--cream:#faf8f5;--butter:#fff4d6;
+  --ink:#142d57;--ink-2:#4a5b7a;--ink-3:#8593aa;--line:#e3e0d8;--surface:#ffffff;--warn:#c2582f}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;line-height:1.14;letter-spacing:-.01em}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.barra{height:6px;background:linear-gradient(90deg,var(--navy),var(--turq),var(--butter))}
+
+header{background:var(--navy);color:#fff;padding:52px 0 44px}
+header .wrap{max-width:900px}
+.et{display:inline-block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;
+  background:var(--turq);color:var(--navy);padding:7px 14px;border-radius:100px}
+header h1{font-size:clamp(32px,7.5vw,54px);margin:18px 0 14px;color:#fff}
+header p{color:rgba(255,255,255,.78);font-size:17px;max-width:58ch}
+.fichas{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.fichas span{font-size:13px;font-weight:600;background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:8px 15px;color:#fff}
+.fichas span b{color:var(--turq)}
+
+nav.ix{position:sticky;top:0;z-index:40;background:rgba(250,248,245,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+nav.ix .wrap{display:flex;gap:5px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav.ix .wrap::-webkit-scrollbar{display:none}
+nav.ix a{text-decoration:none;font-size:13px;font-weight:700;color:var(--ink-3);white-space:nowrap;
+  padding:7px 12px;border-radius:100px;background:var(--surface);border:1px solid var(--line)}
+
+section{padding:36px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:none}
+h2{font-size:clamp(24px,5.2vw,34px);margin-bottom:8px}
+.sub{color:var(--ink-3);font-size:15.5px;margin-bottom:20px;max-width:62ch}
+h3{font-size:20px;margin-bottom:6px}
+p+p{margin-top:10px}
+
+.tarj{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:12px}
+.dosc{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:760px){.dosc{grid-template-columns:1fr 1fr}}
+
+.big{background:var(--navy);color:#fff;border-radius:22px;padding:28px 26px;margin:16px 0}
+.big h3{color:#fff;font-size:23px}
+.big p{color:rgba(255,255,255,.8)}
+.big .cifra{font-family:'Playfair Display',serif;font-size:clamp(40px,10vw,64px);font-weight:700;
+  color:var(--turq);line-height:1;margin:10px 0 4px}
+
+ul.lim{list-style:none}
+ul.lim li{display:flex;gap:11px;padding:9px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.45}
+ul.lim li:first-child{border-top:none}
+ul.lim li::before{content:'';flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:var(--turq);margin-top:9px}
+.big ul.lim li{border-top-color:rgba(255,255,255,.16)}
+.big ul.lim li::before{background:var(--turq)}
+
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;font-size:15px}
+th,td{padding:12px 14px;text-align:left;border-top:1px solid var(--line)}
+th{background:#efece4;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:800;
+  color:var(--ink-3);border-top:none}
+td.num{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{background:var(--butter);font-weight:800}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0}
+
+.dia{display:grid;grid-template-columns:60px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.dia:first-of-type{border-top:none}
+.dia .n{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--navy);
+  background:var(--butter);border-radius:12px;height:52px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;line-height:1.1}
+.dia .n em{font-style:normal;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.dia b{display:block;font-size:17px}
+.dia p{font-size:15px;color:var(--ink-2);margin-top:3px}
+
+.aviso{background:#fff4ee;border:1px solid rgba(194,88,47,.3);border-left:4px solid var(--warn);
+  border-radius:14px;padding:18px 20px;margin:14px 0}
+.aviso b{color:var(--warn)}
+.bien{background:#eefafb;border:1px solid rgba(91,201,214,.45);border-left:4px solid var(--turq);
+  border-radius:14px;padding:18px 20px;margin:14px 0}
+
+.copiar{position:relative;background:var(--navy);color:#eef3f8;border-radius:18px;padding:22px 22px 60px;
+  margin:14px 0;white-space:pre-wrap;font-size:15px;line-height:1.62}
+.copiar .cp{position:absolute;right:14px;bottom:14px;background:var(--turq);color:var(--navy);border:none;
+  font:inherit;font-size:13px;font-weight:800;border-radius:100px;padding:9px 18px;cursor:pointer}
+.copiar .cp.ok{background:#8fe0a8}
+.rot{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--ink-3);margin:22px 0 2px}
+
+footer{padding:38px 0 60px;color:var(--ink-3);font-size:14px;border-top:1px solid var(--line)}
+.chivato{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(150%);
+  background:var(--navy);color:#fff;padding:12px 20px;border-radius:100px;font-size:14px;font-weight:700;
+  z-index:80;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.chivato.ver{transform:translateX(-50%) translateY(0)}
+</style></head><body>
+<div class="barra"></div>
+
+<header><div class="wrap">
+  <span class="et">Globbeo · propuesta interna</span>
+  <h1>Raja Ampat, el viaje</h1>
+  <p>Me pediste que lo investigara yo y que te lo enseñara. Aquí está entero: cuántos días,
+  cuánta gente, cuándo, con quién, lo que cuesta y a cuánto lo vendes. Con la decisión ya tomada
+  en cada punto, para que solo tengas que decir sí o cambiarla.</p>
+  <div class="fichas">
+    <span><b>8</b> personas más tú</span>
+    <span><b>10</b> días de puerta a puerta</span>
+    <span><b>1.750 €</b> por plaza</span>
+    <span><b>5.900 €</b> limpios para ti</span>
+  </div>
+</div></header>
+
+<nav class="ix"><div class="wrap">
+  <a href="#resumen">La recomendación</a>
+  <a href="#cuando">Cuándo</a>
+  <a href="#ruta">La ruta</a>
+  <a href="#numeros">Los números</a>
+  <a href="#precio">El precio</a>
+  <a href="#llenar">Cómo se llena</a>
+  <a href="#pendiente">Lo que falta</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="resumen">
+  <h2>La recomendación, en corto</h2>
+  <p class="sub">Cinco decisiones. Si te vale, se pone en marcha esta semana.</p>
+
+  <div class="dosc">
+    <div class="tarj">
+      <h3>1. Ocho personas, más tú</h3>
+      <p>El barco privado que se usa allí es de ocho plazas y cuesta lo mismo con cinco que con
+      ocho. Ocho es el número donde el barco sale a cuenta y el grupo sigue siendo un grupo, no
+      una excursión.</p>
+      <p>Con más de diez necesitas dos barcos, dos guías y alguien ayudándote. Con menos de cinco
+      pierdes dinero.</p>
+    </div>
+    <div class="tarj">
+      <h3>2. Diez días de puerta a puerta</h3>
+      <p>Siete noches allí, más el día de ida y el de vuelta, más una noche de tránsito en Sorong.
+      Raja Ampat está lejos de todo: menos de siete noches es pasar el viaje viajando.</p>
+      <p>Más de siete noches sube el precio sin subir lo que la gente se lleva.</p>
+    </div>
+    <div class="tarj">
+      <h3>3. Homestays, no barco de vivir a bordo</h3>
+      <p>Un liveaboard cuesta entre 400 y 1.000 dólares por persona y noche. Siete noches son de
+      2.800 a 7.000 dólares solo de alojamiento, sin vuelos.</p>
+      <p>Los homestays de las islas cuestan entre 24 y 55 dólares por persona y noche con las tres
+      comidas. Y con un barco privado alquilado para el grupo por días llegas a los mismos sitios.
+      <b>Es el mismo viaje por la cuarta parte.</b></p>
+    </div>
+    <div class="tarj">
+      <h3>4. Febrero de 2027</h3>
+      <p>Del 7 al 16 de febrero. Es cuando el mar está más plano y el agua más limpia, y hay mantas.
+      Y te deja seis meses para venderlo, que es lo que necesita un viaje de este precio.</p>
+      <p>Noviembre también es buena época, pero son tres meses y los vuelos suben metiéndose en
+      diciembre.</p>
+    </div>
+  </div>
+
+  <div class="big">
+    <h3>5. El precio</h3>
+    <div class="cifra">1.750 €</div>
+    <p>Por plaza, con todo incluido desde Bali: vuelos internos, ferry, permiso del parque,
+    alojamiento con las tres comidas, barco privado y tú guiando. La única cosa que se paga aparte
+    es cómo llega cada uno a Bali.</p>
+    <ul class="lim" style="margin-top:14px">
+      <li>Te cuesta unos <b>897 € por persona</b></li>
+      <li>Te quedan <b>853 € limpios por plaza</b></li>
+      <li>Con ocho plazas, <b>6.824 €</b>, menos lo que te cuesta a ti ir, quedan <b>unos 5.900 €</b></li>
+    </ul>
+  </div>
+</section>
+
+<section id="cuando">
+  <h2>Cuándo, y por qué no en cualquier mes</h2>
+  <p class="sub">Raja Ampat tiene temporada de verdad, no es marketing. Elegir mal el mes es la
+  diferencia entre agua de cristal y una semana de lluvia y mar movido.</p>
+
+  <div class="tw">
+  <table>
+    <tr><th>Época</th><th>Cómo está</th><th>Sirve</th></tr>
+    <tr><td><b>Noviembre a marzo</b></td><td>Mar más plano y mejor visibilidad del año. Mantas</td>
+        <td class="num">Sí, es la buena</td></tr>
+    <tr><td><b>Septiembre y octubre</b></td><td>Buena, con mantas, algo más de viento</td>
+        <td class="num">Sí</td></tr>
+    <tr><td><b>Abril</b></td><td>Todavía se puede, ya de bajada</td><td class="num">Regular</td></tr>
+    <tr><td><b>Mayo a agosto</b></td><td>Época de viento y mar movido. Muchos sitios cierran</td>
+        <td class="num">No</td></tr>
+  </table>
+  </div>
+
+  <div class="bien">
+    <b>Por qué febrero y no noviembre.</b> Los dos meses son buenos en el agua. La diferencia es
+    comercial: un viaje de 1.750 € no se vende en tres semanas. Con febrero abres las plazas en
+    septiembre, tienes cinco meses de historias y de contenido enseñando el sitio, y la gente
+    paga a plazos sin ahogarse. Noviembre te obliga a llenarlo en septiembre y encima con los
+    vuelos ya subiendo hacia Navidad.
+  </div>
+</section>
+
+<section id="ruta">
+  <h2>La ruta, día por día</h2>
+  <p class="sub">Dos bases y un barco privado para moverse. Nada de cambiar de sitio cada noche,
+  que es lo que agota a la gente y lo que hace que un viaje se recuerde mal.</p>
+
+  <div class="dia"><div class="n">1<em>Día</em></div><div>
+    <b>Bali a Sorong</b>
+    <p>Vuelo desde Denpasar con una escala, normalmente en Makassar o Yakarta. Se llega de noche
+    o de madrugada. Se duerme en Sorong, cerca del puerto.</p></div></div>
+
+  <div class="dia"><div class="n">2<em>Día</em></div><div>
+    <b>Ferry a Waisai y primera zambullida</b>
+    <p>Ferry de dos horas desde Sorong. Traslado en barca a la isla de Kri, en el estrecho de
+    Dampier. Tarde de snorkel en el propio muelle, que ya es uno de los sitios con más peces del
+    mundo.</p></div></div>
+
+  <div class="dia"><div class="n">3<em>Día</em></div><div>
+    <b>Manta Sandy</b>
+    <p>Día completo de barco. Es el sitio donde las mantas se paran a que las limpien y se quedan
+    dando vueltas encima. Por la tarde, el arrecife de Mioskon.</p></div></div>
+
+  <div class="dia"><div class="n">4<em>Día</em></div><div>
+    <b>Arborek y Friwen Wall</b>
+    <p>La isla de Arborek, con su muelle de coral blando, y la pared de Friwen. Comida en la isla
+    con la gente del pueblo.</p></div></div>
+
+  <div class="dia"><div class="n">5<em>Día</em></div><div>
+    <b>Traslado a la zona de Piaynemo</b>
+    <p>Se cambia de base a las islas Fam. Por el camino, la barra de arena de Pasir Timbul, que
+    aparece y desaparece con la marea.</p></div></div>
+
+  <div class="dia"><div class="n">6<em>Día</em></div><div>
+    <b>Piaynemo</b>
+    <p>El mirador de la postal, la laguna estrella. Se sube temprano, antes de que lleguen los
+    barcos de día. Tarde libre en la isla.</p></div></div>
+
+  <div class="dia"><div class="n">7<em>Día</em></div><div>
+    <b>Kabui y las lagunas escondidas</b>
+    <p>Día de barco por la bahía de Kabui, entre los islotes de piedra. Kayak por las lagunas
+    cerradas.</p></div></div>
+
+  <div class="dia"><div class="n">8<em>Día</em></div><div>
+    <b>Día suelto</b>
+    <p>A propósito sin plan. En un sitio así siempre hay un día que se cae por el tiempo, y si no
+    se cae, es el día que la gente pide para no hacer nada.</p></div></div>
+
+  <div class="dia"><div class="n">9<em>Día</em></div><div>
+    <b>Vuelta a Sorong</b>
+    <p>Ferry por la mañana y noche en Sorong.</p></div></div>
+
+  <div class="dia"><div class="n">10<em>Día</em></div><div>
+    <b>Sorong a Bali</b>
+    <p>Vuelo de vuelta.</p></div></div>
+
+  <div class="aviso">
+    <b>Wayag no entra, y es a propósito.</b> Es la foto más conocida de Raja Ampat, pero está a
+    seis horas de barco desde Waisai y solo se llega bien desde un liveaboard. Meterlo obliga a
+    dos días enteros de navegación y a subir el precio 400 € por persona. Se dice claro en la
+    venta, para que nadie llegue esperándolo.
+  </div>
+</section>
+
+<section id="numeros">
+  <h2>Lo que cuesta de verdad</h2>
+  <p class="sub">Por persona y en euros, contando el grupo de ocho. Te marco lo que está
+  comprobado y lo que es estimación mía a falta de pedir precio al proveedor.</p>
+
+  <div class="tw">
+  <table>
+    <tr><th>Concepto</th><th>Por persona</th><th>De dónde sale</th></tr>
+    <tr><td><b>Vuelo Bali a Sorong, ida y vuelta</b></td><td class="num">255 €</td>
+        <td>Estimación. Con escala, fuera de temporada alta</td></tr>
+    <tr><td><b>Ferry Sorong a Waisai, ida y vuelta</b></td><td class="num">32 €</td>
+        <td>Comprobado. Clase business, 250.000 rupias por trayecto, más tasas</td></tr>
+    <tr><td><b>Permiso del parque marino</b></td><td class="num">60 €</td>
+        <td>Comprobado. 1.000.000 de rupias desde el 3 de agosto de 2026, vale un año entero</td></tr>
+    <tr><td><b>Entrada de visitante</b></td><td class="num">17 €</td>
+        <td><b>Nueva.</b> Unas 300.000 rupias, se paga al llegar al puerto de Waisai. Falta confirmar el importe exacto</td></tr>
+    <tr><td><b>Homestay, 7 noches con las tres comidas</b></td><td class="num">255 €</td>
+        <td>Comprobado. Entre 27 y 50 dólares por noche según la isla</td></tr>
+    <tr><td><b>Barco privado, 4 días completos</b></td><td class="num">200 €</td>
+        <td>Comprobado. 7.000.000 de rupias al día por barco de 8, repartido</td></tr>
+    <tr><td><b>Noches en Sorong, traslados y tasas</b></td><td class="num">78 €</td>
+        <td>Estimación</td></tr>
+    <tr class="total"><td><b>Total que te cuesta</b></td><td class="num">897 €</td>
+        <td>Con ocho personas en el grupo</td></tr>
+  </table>
+  </div>
+
+  <h3 style="margin-top:26px">Qué pasa si no se llena</h3>
+  <p class="sub">El barco es el que manda: cuesta lo mismo con cinco que con ocho, así que cuanta
+  menos gente, más caro te sale cada plaza.</p>
+
+  <div class="tw">
+  <table>
+    <tr><th>Personas</th><th>Te cuesta cada una</th><th>Ganas por plaza</th><th>Total limpio</th></tr>
+    <tr><td class="num">4</td><td class="num">1.097 €</td><td class="num">653 €</td><td class="num">1.500 €</td></tr>
+    <tr><td class="num">5</td><td class="num">1.017 €</td><td class="num">733 €</td><td class="num">2.650 €</td></tr>
+    <tr><td class="num">6</td><td class="num">964 €</td><td class="num">786 €</td><td class="num">3.750 €</td></tr>
+    <tr class="total"><td class="num">8</td><td class="num">897 €</td><td class="num">853 €</td><td class="num">5.900 €</td></tr>
+    <tr><td class="num">10</td><td class="num">937 €</td><td class="num">813 €</td><td class="num">7.200 €</td></tr>
+  </table>
+  </div>
+
+  <div class="aviso">
+    <b>Con diez sube el coste, no baja.</b> Porque a partir de nueve hace falta un segundo barco
+    algunos días. Por eso ocho es el número, y no es una cifra puesta por gusto.
+  </div>
+
+  <div class="bien">
+    <b>El mínimo para que salga: cinco plazas.</b> Por debajo de cinco lo cancelas y devuelves las
+    señales. Eso se dice desde el primer día en la página de venta, porque un viaje cancelado
+    avisando no rompe nada y uno cancelado por sorpresa te quema la marca entera.
+  </div>
+</section>
+
+<section id="precio">
+  <h2>El precio y cómo se cobra</h2>
+
+  <div class="dosc">
+    <div class="tarj">
+      <h3>Qué entra en los 1.750 €</h3>
+      <ul class="lim">
+        <li>Vuelos Bali a Sorong, ida y vuelta</li>
+        <li>Ferry y todos los traslados en barca</li>
+        <li>Permiso del parque marino y entrada de visitante</li>
+        <li>7 noches en homestay con desayuno, comida y cena</li>
+        <li>Barco privado con guía en el agua los días de ruta</li>
+        <li>Equipo de snorkel y kayaks</li>
+        <li>Tú, guiando y con el viaje resuelto de principio a fin</li>
+      </ul>
+    </div>
+    <div class="tarj">
+      <h3>Qué no entra, y se dice antes</h3>
+      <ul class="lim">
+        <li>Llegar a Bali. Cada uno viene de donde viene</li>
+        <li>El seguro de viaje, que es obligatorio para venir</li>
+        <li>Buceo con botella, si alguien lo quiere</li>
+        <li>Bebidas fuera de las comidas</li>
+        <li>Propinas</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:22px">Cómo se cobra</h3>
+  <div class="tw">
+  <table>
+    <tr><th>Cuándo</th><th>Cuánto</th><th>Para qué</th></tr>
+    <tr><td><b>Al reservar</b></td><td class="num">450 €</td>
+        <td>No se devuelve salvo que canceles tú el viaje. Es lo que hace que la plaza sea real</td></tr>
+    <tr><td><b>1 de diciembre</b></td><td class="num">650 €</td><td>Con esto pagas los vuelos internos</td></tr>
+    <tr><td><b>10 de enero</b></td><td class="num">650 €</td><td>Un mes antes de salir</td></tr>
+  </table>
+  </div>
+
+  <div class="bien">
+    <b>Por qué a plazos y no de golpe.</b> 1.750 € de una vez frena a mucha gente que sí puede
+    pagarlo en tres veces. Y a ti te viene mejor: cobras la señal ahora, en diciembre, y en enero,
+    en vez de tener el dinero parado hasta febrero.
+  </div>
+</section>
+
+<section id="llenar">
+  <h2>Cómo se llenan ocho plazas</h2>
+  <p class="sub">Tienes 2.600 seguidores y 404.000 visualizaciones. Ocho personas es el 0,3 % de
+  la gente que ya te ve. No hace falta que crezcas nada, hace falta enseñarlo.</p>
+
+  <div class="dia"><div class="n">1<em>Paso</em></div><div>
+    <b>Sondeo antes de anunciar nada</b>
+    <p>Una historia con una pregunta abierta: «Estoy preparando un viaje de una semana a Raja
+    Ampat en febrero. ¿Te lo cuento?». Quien conteste entra en una lista. Si no llegan a veinte
+    respuestas, el viaje no se abre y no has perdido nada.</p></div></div>
+
+  <div class="dia"><div class="n">2<em>Paso</em></div><div>
+    <b>La página del viaje</b>
+    <p>La misma que el itinerario de ejemplo que ya tienes, pero de venta: la ruta día por día, lo
+    que entra, lo que no, el precio y el botón de reservar. Sin fotos de banco, con el estilo de
+    Globbeo.</p></div></div>
+
+  <div class="dia"><div class="n">3<em>Paso</em></div><div>
+    <b>Apertura solo para la lista</b>
+    <p>Cuarenta y ocho horas de acceso antes que nadie, para quien contestó al sondeo. Ahí suelen
+    salir la mitad de las plazas.</p></div></div>
+
+  <div class="dia"><div class="n">4<em>Paso</em></div><div>
+    <b>Cinco meses de contenido del sitio</b>
+    <p>No de venta: del sitio. Las mantas, las lagunas, las islas de piedra, la gente de los
+    homestays. Un viaje de una semana lejos se vende enseñando adónde se va, no repitiendo que
+    quedan plazas.</p></div></div>
+
+  <div class="aviso">
+    <b>El número real de plazas, siempre.</b> Nada de escasez inventada. Si quedan cuatro, dices
+    cuatro. Si quedan siete, dices siete. Ya lo tenemos decidido y aquí vale igual.
+  </div>
+
+  <p class="rot">Para el sondeo de la historia</p>
+  <div class="copiar">Estoy preparando un viaje de una semana a Raja Ampat para febrero.
+
+Ocho personas, no más. Snorkel con mantas, las lagunas de Piaynemo, dormir en las islas con la gente de allí. Nada de hotel ni de excursión de autobús.
+
+Si te lo quieres pensar, contéstame a esta historia y te mando la ruta y el precio antes que a nadie.<button class="cp" type="button">Copiar</button></div>
+</section>
+
+<section id="pendiente">
+  <h2>Lo que falta y quién lo hace</h2>
+  <p class="sub">Nada de esto lo decides tú. Es trabajo mío y de proveedores, y va después de que
+  digas que sí.</p>
+
+  <div class="tarj">
+    <ul class="lim">
+      <li><b>Pedir precio real a tres homestays</b> de Kri y de las islas Fam para las fechas
+      exactas, y a dos empresas de barco. Los precios de arriba son los públicos, y en grupo casi
+      siempre bajan</li>
+      <li><b>Comprobar los vuelos</b> de Denpasar a Sorong para esas fechas, que es el número menos
+      firme de la tabla</li>
+      <li><b>Confirmar si el permiso del parque</b> sigue siendo anual en 2027 y si ha cambiado de
+      precio</li>
+      <li><b>La página de venta</b> con el botón de reserva y los tres pagos en Stripe</li>
+      <li><b>Decidir si Globbeo o tú.</b> Mi recomendación es que vaya con Globbeo, porque es un
+      viaje, no una consultoría, y no se mezclan</li>
+    </ul>
+  </div>
+
+  <div class="bien">
+    <b>Lo único que necesito de ti para arrancar:</b> que me digas si te vale febrero, si te vale
+    el precio de 1.750 y si el viaje sale con Globbeo. Con esas tres cosas pido presupuestos y te
+    traigo los números cerrados.
+  </div>
+</section>
+
+</div>
+
+<div class="wrap"><footer>
+  Propuesta interna para Carla. Los precios marcados como comprobados salen de fuentes públicas de
+  agosto de 2026 y hay que confirmarlos con los proveedores antes de vender ninguna plaza.
+</footer></div>
+
+<div class="chivato" id="chivato">Copiado</div>
+<script>
+document.querySelectorAll('.copiar .cp').forEach(function(b){
+  b.addEventListener('click',function(){
+    var caja=b.parentNode.cloneNode(true);
+    var bt=caja.querySelector('.cp'); if(bt) bt.remove();
+    var txt=caja.textContent.trim();
+    function ok(){
+      b.textContent='Copiado'; b.classList.add('ok');
+      var c=document.getElementById('chivato'); c.classList.add('ver');
+      setTimeout(function(){ b.textContent='Copiar'; b.classList.remove('ok'); c.classList.remove('ver'); },1900);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok,function(){});
+    }else{
+      var t=document.createElement('textarea'); t.value=txt; document.body.appendChild(t);
+      t.select(); try{document.execCommand('copy');ok();}catch(e){} t.remove();
+    }
+  });
+});
+</script>
+</body></html>
